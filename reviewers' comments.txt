@@ -1,0 +1,65 @@
+Reviewers' comments:
+
+The referees made the following points about this paper.
+
+Editor comments:
+1. The presentation/organisation of the paper needs some revision.
+2. The authors should cite previous related work and explain the additional contribution of the current proposal.
+
+
+Reviewer #1: The paper describes an ongoing European FP7 research project, MUSES. It mainly covers the concept behind MUSES, the description of the architecture, and a high level description of the soft computing methods to be used, as no actual results have been obtained so far.
+
+A comparison to existing commercial applications is also included, but this seems taken from their commercial brochures; it does not offer any clues on how they differ from the functionality offered by MUSES.
+
+It is also unclear how this paper differs from previous work by the same authors (and others), which also aimed to describe the system; more specifically:
+"Enforcing corporate security policies via computational intelligence techniques", GECCO Comp '14 Proceedings of the 2014 conference companion on Genetic and evolutionary computation Pages 1245-1252 
+
+
+In this reviewer's opinion, the authors should wait till they have results to present.
+
+
+
+The relationship between the scope of the special issue and the subjects dealt by MUSES is also unclear
+
+
+
+Reviewer #2: 
+= Global comments =
+
+I'm concerned about the novelty of the information provided in the document. [REF1] and [REF2] are two already published papers by the same authors.
+
+[REF1] A.M. Mora, P. De las Cuevas, J.J. Merelo, S. Zamarripa, M. Juan, A.I. Esparcia-Alcázar, M. Burvall, H. Arfwedson, and Z. Hodaie,  MUSES A corporate user-centric system which applies CI methods. Presented at the TRECK track at ACM-SAC 2014.
+[REF2] A.M. Mora, P. de las Cuevas, J.J. Merelo, S. Zamarripa, A.I. Esparcia-Alcázar, Enforcing Corporate Security Policies via Computational Intelligence Techniques. Presented at the SecDef Workshop at ACM-GECCO 2014. July 2014
+
+Comparing these references with the current article, which includes 21 pages:
+
+- The introduction in page 2 is very similar to the introduction in [REF2]
+- Pages 3-4 are the same than section 2 in [REF2]
+- Pages 12-15 are strikingly similar to [REF1], even using the same figures.
+- Pages 15-19 are a raw copy of [REF2], nearly word by word.
+- Pages 19-21 are extremely similar to section 4 in [REF1] and section 5 in [REF2], put together.
+
+Hence, the only *new* research this reviewer is able to identify is section 3 (pages 5-11), which includes a very detailed state-of-the-art of current tools for corporate mobile security. Unfortunately, this is not really a paper focused on the state-of-the-art in this field.
+
+The work is good and based on good ideas, and the fact that it is already accepted in two conferences proves this. This is why I will recommended a MAJOR REVIEW of the paper. In mi opinion, the authors should consider:
+
+a) extending the state-of-the-art section, and converting the paper in a "state of the art" or tools for corporate mobile security. They already provide very detailed descriptions of IBM, Samsung, Sophos and a few other system, but only a hint about WSO2 and Blackphone, which are identified as the main competitors of MUSES in section 5. In this case, sections 4 and 5 are not really needed, but a description of MUSES as another system like the others could be a good idea.
+b) reducing the length of the state-of-the-art section, currently too long in my opinion, and adding lots of new information and descriptions of new work, research and results to the sections 4 and 5.
+
+My preferences are for option b). In case the authors are interested, they will find next specific comments for a major revision of the work.
+
+= Specific comments =
+
+According to page 12, line 7 "the user interacts with the devices (...) through the MUSES graphical interface inside his or her own context". This is surprising. I have pictured MUSES as a hyper-visor module but, according to this sentence, MUSES is a GUI that contains every application the user has access to. I think further clarification are needed about how the user interacts with his applications and what this GUI the authors are describing is exactly. Contexts in this sentence "(situation, connection, status)" do not match contexts in figure 2 "(social, economical, political)".
+
+Page 13. The first reason to use a client/server architecture is that the event correlation and self-adaptation processes need a very powerful machine (a server), but this statement seems not be based on any real experiment run by the authors or any previous references. In addition, I find the second reason to user a client/server architecture quite surprising. Quoting: "there are two clearly separated parts in the system, namely the users (clients) and the enterprise (server)" I think this is a very weak justification. I can identify many other actors in the system: data providers (cloud system, databases...), other workers in the enterprise (for corporate applications), the friends of the user (for private applications), external application providers... Hence, if the "second reason" is of any real value, MUSES would have a P2P architecture. From my point of view, the reasons given by the authors are too week and, in any case, there is not really any necessity to justify
+why MUSES has a client/server architecture.
+
+Page 13, line 45 says all data in MUSES will be encrypted. It is not clear if the authors mean "the Decision Table and the even logger", or "all data in the devices, including personal data, contact list, emails..." If it is the latter, authors should explain how MUSES enforces this policy. Does it control all applications in the mobile phone? Does the mobile phone run only white-listed applications?
+
+Some specific examples about the kind of user activity MUSES monitors and the kind of actuators MUSES implements will be welcome. As is, sensors and actuators seem like a general idea and readers will understand the system better with specific examples.
+
+Page 14, line 47 identifies the MusCRTEP as the core of the MUSES system and provides two references. Unfortunately, these references are not the implementation of MusCRTEP but a general definition of what a decision system does. These references are not really needed and a much more detailed description of MusCRTEP would be welcome since even the authors identify this module as the core of the system.
+
+Page 18, lines 20-37 hint about the importance of privacy enhancing technologies in a system that monitors the activity of the user and sends this activity to a centralized server to be "anonymously managed". Further information about how the system manages this information is needed (does private information ever leaves the personal devices? Which activity is monitored and collected?), as well as an explanation about how these data is anonymized. Is it anonymized at the mobile phone? Or in the server's database?
+
