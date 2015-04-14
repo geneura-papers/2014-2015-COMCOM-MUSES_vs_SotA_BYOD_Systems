@@ -115,8 +115,6 @@ This situation leads to a need of protecting the organisation's side, but also t
 Many tools for companies, as well as for devices, which have adopted the BYOD have been released in the past four years. This way, and
 more focused on the enterprise, there are some tools which offer the CSO ways to control the devices which enter in the system, requiring users to employ strong passwords, for instance, and also to protect the employees data by means of data encryption and data protection by having strong and secure passwords. Other tools for managing a BYOD situation add to their features guidelines for the CSOs to develop good ISPs. On the other hand, many solutions have been presented which are more focused on the device side, although they implement also the server side. Some of those tools have influenced the development of the MUSES system  itself (Section \ref{sec:muses}), which can complement them, as adds other features that go beyond the state of the art. The present section introduces the most relevant features of these products, as they can be considered related to the MUSES objectives.
 
-% Don't completely like the intro for being too focused to MUSES.
-
 %----------------------------------------------------------------------------
 
 \subsection{IBM Mobile Security}
@@ -137,18 +135,20 @@ Having a look into what IBM offer as ``services'', three services can be found:
 \subsection{Sophos Mobile Control}
 \label{subsec:sophos}
 
-Sophos is a company founded in 1985 focused on IT security and data protection for businesses. Their \textit{Mobile Device Management} main product \cite{Sophos_tool} is Sophos Mobile Control. It is oriented to IT administration for mobile devices, trying to offer to the users the possibility of choosing the delivery model to suit their needs, i.e., between on-premise and Software as a Service (SaaS).
+Contrarily to IBM's solution services, Sophos offer a whole product for securing BYOD environments, which is called Mobile Control \cite{Sophos_tool}. It is oriented to IT administration for mobile devices, and it can be deployed in two ways: on-premises, which means that all data and services remain in the servers of the company, and as Software as a Service (SaaS), so that the services are provided through Lightweight Directory Access Control (LDAP). LDAP is an application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network.
 
-The tool offers the possibility of managing all workers and co-workers smartphones and tablets from a single-based console. The console monitors the devices throughout their full life cycle: from the initial set up and enrolment, right through to decommissioning. Other features are similar to IBM's product, adding some new like being able to connect to an existing user directory using Lightweight Directory Access Control (LDAP)\footnote{LDAP is an application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network.}.
-	
-Additional security is provided by the incorporation of \textit{Malware and Web protection}, so that the user does not need to install anti-malware software by him or herself. Regarding the compliance enforcement, the main goal is not to sacrifice company's security in favour of flexibility for the users, which has been demonstrated \cite{SecPolPenalty09} that could result in bad (unwilling or not) users' behaviour. Thus, company's BYOD initiative should include an acceptable use policy to ensure the users are aware of any measures the company may take if a device breaches any ISPs. Sophos aims to reach this by doing three main tasks: First, by enforcing IPSs, i.e. allowing setting up user and group-based security policies separately. The security settings can also vary from one platform to another, thus looking to support all of them is necessary to set task bundles and individual actions for many different violations. Secondly, by a risk mitigation in which the actions to perform can be set according to the severity of a breach. For minor cases, the company may want to simply inform to the user, but if sensitive data is at risk, a remote wipe may be the chosen option. As previously stated, the actions vary for each platform, but the most common platforms such as Android and iOS allow blocking email access, notifying the admin, performing a remote lock or wiping, locating a device using 3D maps, triggering a remote alarm, transferring a task bundle combining a number of actions, and Sophos's solution adds the possibility of trigger a scan. Finally, compliance check, i.e. though some of the most widely used features include allow or disallow root rights or jailbreaking, require encryption, and whitelist or blacklist apps. Sophos also allows disabling malware apps, setting maximum intervals since last \textit{Mobile Security scan}, and allowing or disallowing suspicious apps and potentially unwanted apps (named PUAs).
-	
-Then, the Enterprise App Store included in Sophos Mobile Control allows the company to supply the users with recommended and/or required apps directly on their devices. Both company's in-house and app store apps are suggested directly on the user's mobile device, so they can click to trigger the installation. Also, for keeping the employees working without increasing the burden for the IT department, the self-service portal built-in included in Sophos's solution has many features. Among others, it shall be mentioned that, wanting the employees to use their personal devices at work, they can register them (with a provided step-by-step process) and agree to an acceptable company-defined use policy. All profiles, including email access, would be available after registration, and the portal may be accessed from any PC with Internet access, or even from a mobile device itself. Furthermore, when a device is eventually stolen, users can choose to remotely locate, lock or wipe their devices and reset their passcode without having to contact the company help desk. From the company side, they can define which features are available in a self-service portal from the administrator console.
+The tool manages all employees' smartphones and tablets from a single-based console. This console monitors the devices since initial set up and registration, until they log off. Other features are similar to IBM's product, adding some new such as the incorporation of a service called Malware and Web protection, so that there is no need for having a previously installed antivirus in the devices.
+
+With regard to compliance enforcement, the main goal of this Mobile Control tool is to give more importance to company security, instead of giving more flexibility to the users. But it has been demonstrated by Herath and Rao in \cite{SecPolPenalty09} that this practise can result in bad (even not on purpose) users' behaviour. Thus, company BYOD initiative should include an acceptable use policy to ensure that the users are aware of the measures that the company would take if a device breaches any ISPs. Sophos aims to reach this by doing three main tasks: First, by allowing setting up user and group-based security policies separately. Secondly, by a risk mitigation in which the actions to perform can be set according to the severity of the breach. For minor cases, the company may want to simply inform to the user, but if sensitive data is at risk, a remote wipe may be the chosen option. Finally, compliance check, by constantly performing scans to detect malware and putting the devices in quarantine when they are found infected.
+
+And given the fact that this tools is more focused in the company than in the user, it is worth mentioning that the MUSES tries to focus in the users, being user-centric. This means that letting the user know about a risky situation, instead of making them feel ``watched''.
 
 %----------------------------------------------------------------------------
 
-\subsection{Samsung's Knox Mobile Security Suite}
-\label{subsec:samsungknox}
+\subsection{Samsung's KNOX and Blackberry Balance}
+\label{subsec:samsungblackberry}
+
+Even though these two tools are provided by two different manufacturers, Samsung and Blackberry, they both have in common their situation. They are not being successful in spite of their features. On the one hand, Blackberry sales have been decreasing since 2010 \cite{Blackberry_sales}. 
 
 As part of its SAFE (Samsung for enterprise) brand, Samsung revealed at the Barcelona Mobile World Congress 2013 the Knox application \cite{Samsung_tool}, which was expected to be available on its last Galaxy smartphone generation. The solution is available since December 2013.
 The main feature of this security package is the use of different containers, or environments, for business and personal sides. Each one even includes its own graphic configuration (wallpapers, colours, and so on), in order to be more easily recognised and distinguished by the user.
@@ -167,10 +167,12 @@ It is important to take into account that if an enterprise decides to deploy thi
 
 %----------------------------------------------------------------------------
 
-\subsection{Good's Bring Your Own Device solution}
-\label{subsec:goodsbyod}
+\subsection{Blackphone}
+\label{subsec:blackphone}
 
-Good Technology is a company that was founded in 1996 in California. The philosophy followed by Good is similar to Samsung's Knox one: to create a secure container that places an unreachable partition between personal and business data in order to protect company's assets. The solutions that they offer \cite{Good_tool} are similar than the previous ones. They have focused in mobile (not laptops) devices, though they support a different of Operating Systems (OSs), and in separating personal and company data. A Good's secure Network Operations Center (NOC) is introduced for dealing with the unauthorised devices, or for providing access to secure collaboration solutions (email, PIM, calendar), intranet, and in-house or third-party mobile applications. Finally, Good offers best practise recommendations to help the company's BYOD policies such as reimbursements and stipends. There is a document available at Good's webpage\footnote{\url{http://www1.good.com/mobility-management-solutions/bring-your-own-device}} which contains several questions about Information Security Policies and how to cope with all of them.
+On the device side, one of the most powerful solutions found in the BYOD state of the art seems to be to directly use a phone which has been developed with data security in mind such as the BlackPhone \cite{Blackphone_site}. It has its own Android-based operating system, called \textit{PrivatOS}, which includes a privacy-focused application store (called \textit{Silent Store}) that takes care of the problem of applications which ask for certain permissions that can lead, for instance, to personal data leakage \cite{gangula2013survey}. This BlackPhone also allows a remote wiping of the data if the device is lost or stolen. The main disadvantage of this solution is either the enterprise having to make
+an investment and buy these smartphones to the employees (which, in fact, is against the BYOD philosophy), or to make employees buy them,
+so they cannot use the device they already have. On the contrary, the MUSES system proposed in this work is designed as device-independent.
 
 %----------------------------------------------------------------------------
 
@@ -202,34 +204,27 @@ In addition to the work profiles, there will be considered other high-level ones
 \subsection{Other tools}
 \label{subsec:othertools}
 
-There have arisen several other corporate-security aimed tools inside the BYOD philosophy, such as:
+There exist other corporate security-aimed tools inside the BYOD philosophy, such as:
 
 \subsubsection{WSO2 - Enterprise Mobility Manager \cite{WSO2_tool}}
-An open source platform aimed to manage the corporate and personal mobile devices in the enterprise. Its main features are:
-\begin{itemize}
-\item Mobile Device Management: a console to manage the corporate/personal devices, adding policies online, role-based permissions, etc.
-\item Mobile Application Management: tool designed to manage the apps to be enrolled on the system (in the devices).
-\item Enterprise App Store: specific apps for the enterprise environment.
-\item Mobile Data Security: containerization and encryption of data.
-\end{itemize}
 
+WSO2 Enterprise Mobility Manager (WSO2 EMM) \citep{wso2_tool} is an open source platform that also works with the BYOD program. Some of this WSO2 EMM key features are:
 
-\subsubsection{Blackphone  \cite{Blackphone}}
-A phone designed to be used as a corporate device (in addition to personal uses). It includes an own OS, named PrivatOS, including useful tools to this end. The features of this OS are:
-\begin{itemize}
-\item It is built on Android.
-\item It uses anonymous searching.
-\item It includes a few bundled apps, all of them privacy-enabled.
-\item It lets a smart disabling of all Wi-Fi connections except trusted hotspots.
-\item It permits a fine-grained control on app permissions in a single interface.
-\item It offers a total control on private calls, texting, video chat, file exchange (up to 100MB), browsing, and conference calls.
-\item There are frequent security updates from Blackphone directly.
-\item It permits an anonymous remote wipe and anti theft (in Android it requires use of centralized cloud account).
-\end{itemize}
+\begin{description}
+  \item[Mobile Device Management] that is used to manage both user and corporate owned devices, providing support for Android and iOS at the moment. It should be noted that this tool allowes the tracking of every enrolled device, as well as obtaining reports and analytics of their use.
+  \item[Mobile Application Management] With regard to the software, this platform is able to allow or deny the use of applications on enrolled devices based on the role of the user or policies, thus restricting the use of some apps to certain users.
+  \item[Enterprise App Store] This store provides users with both enterprise and public applications approved by the company.
+  \item[Mobile Data Security] WSO2 also allows the user's data to be encrypted via password.
+\end{description}
 
+\subsubsection{Good's Bring Your Own Device solution}
+
+Good Technology is a company that was founded in 1996 in California. The philosophy followed by Good is similar to Samsung's Knox one: to create a secure container that places an unreachable partition between personal and business data in order to protect company's assets. The solutions that they offer \cite{Good_tool} are similar than the previous ones. They have focused in mobile (not laptops) devices, though they support a different of Operating Systems (OSs), and in separating personal and company data. A Good's secure Network Operations Center (NOC) is introduced for dealing with the unauthorised devices, or for providing access to secure collaboration solutions (email, PIM, calendar), intranet, and in-house or third-party mobile applications. Finally, Good offers best practise recommendations to help the company's BYOD policies such as reimbursements and stipends. There is a document available at Good's webpage\footnote{\url{http://www1.good.com/mobility-management-solutions/bring-your-own-device}} which contains several questions about Information Security Policies and how to cope with all of them.
 
 \subsubsection{Azzurri - Icon Mobilise \cite{AzurriMDM}}
-It is a cloud-based service to manage enterprise devices from the BYOD point of view (protecting sensitive corporate data and also letting the users enjoy them privately), by outsourcing the management of those devices to Azzurri. 
+
+It is a cloud-based service to manage enterprise devices from the BYOD point of view (protecting sensitive corporate data and also letting the users enjoy them privately), by outsourcing the management of those devices to Azzurri.
+ 
 \begin{itemize}
 \item It offers a centrally deployment, administration and securing of all mobile devices regardless of their OS.
 \item It manages and enforces security policies `over the air' for both corporate and employee-owned mobile devices.
@@ -239,14 +234,10 @@ It is a cloud-based service to manage enterprise devices from the BYOD point of 
 
 
 \subsubsection{Citrix - XenMobile}
-It is a tool implemented with Worx App SDK \cite{WorxSDK}:
-\begin{itemize}
-\item It Includes the concept of framework-enabled app.
-\item There can be defined fine-grained policies associated to the apps by means of a specific graphical user interface.
-\item It offers a dedicated micro VPN to connect to Citrix-protected backend services.
-\item All Worx-enabled apps can interact with each other for a seamless experience. It covers native and HTML5 apps.
-\item It separates business and personal applications inside a secure mobile container.
-\end{itemize}
+
+XenMobile with Worx App SDK, made by Citrix Systems, provides BYOD security services to companies using fine-grained policies to prevent users from performing unallowed actions (like using the mobile phone's camera, GPS or microphone) \cite{WorxSDK}. These policies can be turned on or off using its own GUI. Citrix is framework-enabled, and it is aware of some (or all) apps installed on the device. All the apps that are Worx-enable are capable of interacting, and thus offering the user a better experience. 
+
+It is also important to point out that Citrix differenciates between apps used by the user privately and those used for business, locating both on a secure mobile container that is encrypted, and can be locked remotely for safety reasons. Another feature of Citrix is that it uses dedicated micro VPN to connect to Citrix-protected backend services.
 
 Once the main tools and systems in this area have been introduced, in the following section our own system (still in development) is presented, giving an overview on its general architecture. Moreover we devote a subsection to describe its main features: the use of Data Mining + Machine Learning techniques, and also its self-adaptation ability using Computational Intelligence methods, which compose the real difference with all these tools. 
 
