@@ -149,7 +149,7 @@ Thus, given the fact that this tool is more focused in the company than in the u
 \label{subsec:samsungblackberry}
 
 Even though these two tools are provided by two different manufacturers, Samsung and Blackberry, they both have in common their situation. They are not being successful in spite of their features. On the one hand, Blackberry sales have been decreasing since 2010 \cite{Blackberry_sales}. 
-On the other hand, Samsung revealed at the Barcelona Mobile World Congress 2013 the KNOX application \cite{Samsung_mwc13}, which was expected to be available on its last Galaxy smartphone generation. Then, it was delayed and again presented in the same congress in 2014 \cite{Samsung_mwc14}, but still semained delayed until it was apparently found insecure \cite{Samsung_insecure}. Finally, Samsung decided to collaborate with Google in Android Work (see Section \ref{subsec:androidwork}).
+On the other hand, Samsung revealed at the Barcelona Mobile World Congress 2013 the KNOX application \cite{Samsung_mwc13}, which was expected to be available on its last Galaxy smartphone generation. Then, it was delayed and again presented in the same congress in 2014 \cite{Samsung_mwc14}, but still semained delayed until it was apparently found insecure \cite{Samsung_insecure}. Finally, Samsung decided to collaborate with Google in Android Work \cite{Samsung_android} (see Section \ref{subsec:androidwork}).
 
 With regard to their features, Samsung KNOX, as well as Blackberry Balance, are more focused on the device side, while the solutions mentioned in previous subsections were more centered in being tools for CSOs. This also means that they are not device-independent, as KNOX is only for Samsung devices and Balance is integrated in BlackBerry 10 \cite{Blackberry_tool}.
 
@@ -176,16 +176,16 @@ so they cannot use the device they already have. On the contrary, the MUSES syst
 \subsection{Android Work}
 \label{subsec:androidwork}
 
-This tool is the Google approach in the mobile enterprise security area, and  will run on Android 5.0 ``Lollipop''. It follows the idea of containers, previously presented in the Samsung Knox description. Thus the container will be used to manage (encrypted) corporate data, and also to restrict what the users can do with them, but the environment will be as usual, i.e. there will not be a separate workspace for doing this.
+This tool is the Google approach in the mobile enterprise security area, and  will run on Android 5.0 ``Lollipop''. It follows the idea of containers, previously presented in the Samsung KNOX description. Thus the container will be used to manage (encrypted) corporate data, and also to restrict what the users can do with them. This is called a ``dual-persona'' smartphone \cite{AndroidWork_review}.
 
-This system will be strongly related with the Google Play market, as the applications will be `categorized' as \textit{managed}\footnote{ A concept previously introduced in Apple devices}. Thus Android Work will provide the CSOs with a tool to define which apps would be managed, i.e. which ones could be installed by the users and considered as corporate-related applications. Moreover the enterprise IT department could define specific security policies on these apps, in addition to the inherent protection that the container provides.
+This system will be strongly related with the Google Play market, as the applications will be `categorized'. Thus, Android Work will provide the CSOs with a tool to define which apps would be allowed for being installed by the users and considered as corporate-related applications. Several enterprise-security aimed applications will be offered in the market, so the IT would decide which ones will be installed (even as a bundle) in the employees' devices, and also, they can manage the updates of these apps, in order to ensure that all the employees are up to date. For instance, one app could manage the creation of personal/work profiles, so the user just could access corporate assets after login in into the app. Moreover, the enterprise IT department could define specific security policies on these apps, in addition to the inherent protection that the container provides. However, the specifications of this tool \cite{AndroidWork_tool} do not include the ``self-adaptation'' as a feature, as the MUSES system does. 
 
-Several enterprise-security aimed applications will be offered in the market, so the IT would decide which ones will be installed (even as a bundle) in the employees' devices, and also, they can manage the updates of these apps, in order to ensure that all the employees are up to date. For instance one app could manage the creation of personal/work profiles, so the user just could access corporate assets after login in into the app.
-
-Thus, the system will provide a framework for IT staff to manage business devices but also, importantly, personal devices being used in a BYOD context (The CSO would give you an activation code in order to `connect' the smartphone to the enterprise and use this Android Work).
-Thus, IT admins will be able to specify which Google Play apps will be available for users to install through this work profile, including being able to provision apps to specific individuals or groups (inside the company).
+Even though it does not analyse the system information for security rules evolution purposes, it offers policy management. Thus, the system will provide a framework for IT staff to manage business devices but also, and more importantly, personal devices being used in a BYOD context (The CSO would give the employee an activation code in order to `connect' the smartphone to the enterprise and use this Android Work).
+Therefore, IT admins will be able to specify which Google Play apps will be available for users to install through this work profile, including being able to provision apps to specific individuals or groups (inside the company).
 
 In addition to the work profiles, there will be considered other high-level ones with the ability to administrate the device from the corporate-security point of view, or as the owner, with all the privileges on the device.
+
+Android work has only one advantage over MUSES, and roughly over all solutions, which is the ability to act over the Android kernel. All the other tools only have permission for monitoring the running processes in the devices, while Android work has, for instance, the ability to provide a `work' version of its native apps. MUSES, instead, depends on if the developers adapt their applications through a MUSES API, transforming them to MUSES Aware apps (see Section \ref{subsec:client}). In any other case, and most of all with the ``self-adaptation'' feature of MUSES, it can be said that MUSES has more advantages than the Google solution.
 
 %----------------------------------------------------------------------------
 
@@ -269,6 +269,7 @@ All data in MUSES will be encrypted.
 % ----------------------------------------------------------
 
 \subsection{Client/Device architecture}
+\label{subsec:client}
 
 There are three main components in this side:
 \begin{itemize}
