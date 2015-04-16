@@ -68,49 +68,31 @@ Corporate mobile security \sep End-to-end security solutions \sep User-centric s
 \section{Introduction}
 \label{sec:intro}
 
-The way on how data has been stored and accessed in companies has
-completely changed along the last years. The scenario where
-company-owned servers are being accessed by desktop PCs (and maybe
-laptops) from inside the company facilities has been transformed into
-another where data, increasingly a company asset, is distributed
-between a number of machines, maybe not all owned by the company, and
-working on the famous Cloud. Besides, being
-stored in the cloud or not, data is being consulted and modified
-through a wide variety of devices, some of them owned by the company's
-employees, in what is called the Bring Your Own Device (BYOD)
-philosophy. This philosophy has become highly successful due to the impact that
-portable devices (such as smartphones and tablets) are having on the
-market. % There should be a reference for this - JJ
-Data security and privacy are key factors for a company, thus, in
-order to protect them, it is usual to define Organisational Security
-Policies. Their definition is nowadays a very difficult problem, since
-the BYOD tendency means that several factors must be considered
-\cite{Opp_Security11}, most of them previously ignored or non
-considered in security systems. For instance, the current mixture
-between personal and professional information in these devices (the
-user could navigate inside social networks where there could be
-friends and also company partners or clients). 
+The way how users have used their devices has changed in the past few years, even the number of different devices per user is increasing because of the so-called Internet of Things \cite{weber2010internet}. Thanks to it, users have more flexibility, and also at their works, because now they can use their devices to access company assets and continue working outside of the workplace. To allow this way of working is what has been called called the Bring Your Own Device (BYOD) philosophy.
 
-In this scenario several solutions have arisen in order to manage the corporate security. Some solutions are focused only on smartphones, while others are thought for laptops; also some are implemented for a certain platform, but others consider multiplatform. However, most of them try to be non-intrusive (regarding the users' personal data), friendly and easy to use. 
+Data security and privacy are key factors for a company, and thus, in
+order to protect them, it is usual that the Chief Security Officer (CSO) of a company defines a set of Organisational Security
+Policies \cite{Opp_Security11}. However, allowing a BYOD environment means to take care of the risks that the use of personal smartphones can bring to the company \cite{gangula2013survey}. For instance, the mixture between personal and professional information in these devices would allow the user to navigate inside social networks, where important data could be leaked in the event of a security incident. 
 
-Moreover, it has been demonstrated that people are the main hazard regarding the company security \cite{Adams_Users05}, so in this situation, some monitorization and security-aimed applications are arising, aiming to cope with the concept of seamless working experience on different devices. 
-This concept is a methodology of work which allows users to start/continue a working session over multiple devices and locations without any significant loss of data. This new situation has a big impact from the point of view of the security \cite{Schu_SecPatterns05}, since the company's data borders have changed in the last years, so now the users can access significant data from outside the enterprise, and possibly through a non absolutely secure channel. %Antares - Yo quitaba lo de significant loss of data, ya que significant se repite después.
+In this scenario several solutions have appeared in order to manage corporate security. Most of the solutions are focused for both smartphones and desktop PCs, although some are implemented for a certain platform. However, almost all of them try to be non-intrusive (regarding the users' personal data), friendly and easy to use. 
 
-Thus, this work introduces a recently released (in alpha) system named
+Moreover, it has been demonstrated that employees who ignore the company security policies are the main hazard for the company security \cite{Adams_Users05}. In this situation, the tools that are appearing in the market aim to cope with the concept of seamless working experience on different devices. This concept is a methodology of work which allows users to start/continue a working session, over multiple devices and locations, without any significant loss of data. This new situation has a big impact from the point of view of the security \cite{Schu_SecPatterns05}, since the company data borders have changed in the last years, ans therefore now the users can access important data from outside the enterprise, and possibly through a non absolutely secure channel. %Antares - Yo quitaba lo de significant loss of data, ya que significant se repite después.
+%Cambiado
+
+This work introduces a recently released system named
 MUSES, from Multiplatform Usable Endpoint Security, which is a
 dev\-ice\--in\-de\-pen\-dent end-to end user-centric tool, based on a
 set of security rules defined as specifications of the Corporate
-Security Policies, but with the ability of `learning' from the user's
+Security Policies. In addition, it has the ability of `learning' from the user's (the employees)
 past behaviour and adapt the set of rules, or even inferring new ones,
-in order to deal with potential future security incidents due to the
-user's. %FERGU: The user's "algo que falta"? o eso hace referencia a
+in order to deal with potential security incidents that they might cause in the future. %FERGU: The user's "algo que falta"? o eso hace referencia a
         %su culpa? 
 %"lo del usuario", literalmente. Pero mejorquitarlo - JJ
 Then the system will react, in a non-intrusive way, to the potentially
-dangerous sequence of actions (events) that he or she is conducting at
+dangerous sequence of actions (events) that the employees are conducting at
 any time. 
 
-To this end MUSES analyses the users' behaviour by means of Data
+To this end, MUSES analyses the users' behaviour by means of Data
 Mining (DM) techniques \cite{DataMining_Lee01} and Machine Learning
 (ML) methods \cite{MachineLearning_Bishop06}, extracting a set of
 patterns which will be later processed by means of Computational
@@ -119,18 +101,16 @@ Intelligence (CI) algorithms, namely Evolutionary Computation methods
 already presented in
 \cite{DBLP:conf/sac/MoraCGZJEBAH14,DBLP:conf/gecco/MoraCGZE14}. However,
 the implementation was in its early stages when those papers were
-submitted. After the release of the first prototypes and additional
-work on the data mining techniques used \cite{mora14:urls} we have a
-clearer idea of MUSES capabilities and, as such, will be presented in
+submitted. After the release of the first prototype, an additional
+work on the data mining techniques was conducted in \cite{mora14:urls} so that we have a
+clearer idea of MUSES capabilities and, as such, they will be presented in
 this paper. 
 
-MUSES will include some important modules in the loop, %FERGU: no habéis hablado de ese loop, decid mejor "core" (no lo cambio yo por si no tiene sentido)
- such as an Event Processor, which performs an event correlation task \cite{SurveyEventCorrelation_Tiffany02}, matching occurred events with rules to deal with them and extracting threads that a Real-Time Risk and Trust Analysis Engine (RT2AE) \cite{RT2AE_SOTICS13} will process (along with other trust data and profiles), to select the best subset.
+MUSES will include some important modules in it core, %FERGU: no habéis hablado de ese loop, decid mejor "core" (no lo cambio yo por si no tiene sentido)
+%cambiado
+ such as an Event Processor, which performs an event correlation task \cite{SurveyEventCorrelation_Tiffany02}, matching occurred events with rules to deal with them, and extracting threats that a Real-Time Risk and Trust Analysis Engine (RT2AE) \cite{RT2AE_SOTICS13} will process (along with other trust data and profiles), to select the best subset of policies.
 
-
-In this paper, the system architecture is presented, in addition to a deep description of the soft computing methods the system will apply.
-
-But first, this work presents a brief overview of the main existing solutions in this environment. Then a comparison between these tools and MUSES is also conducted, focusing on the advances beyond the state of the art that this novel system (being developed inside an European Project\footnote{\url{http://musesproject.eu/}} of the same name) will bring. 
+But first, this work presents a brief overview of the main existing solutions in this environment. Then, a comparison between these tools and MUSES is also conducted, focusing on the advances beyond the state of the art that this novel system (being developed inside an European Project\footnote{\url{http://musesproject.eu/}} of the same name) includes. 
 
 The rest of the paper is organized as follows. First, some background situation about enterprise security is presented in Section \ref{sec:preliminaryconcepts}, explaining how BYOD philosophy affects it. Then, the main tools/solutions are detailed in Section \ref{sec:toolsreview}, even if they are still in development.  
 Then, in Section \ref{sec:muses}, the Multiplatform Usable Endpoint Security System is presented (architecture + soft computing techniques). Its advantages and benefits in comparison with the other solutions are commented in Section \ref{sec:comparison}.
