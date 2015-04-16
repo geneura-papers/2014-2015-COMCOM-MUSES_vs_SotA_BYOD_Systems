@@ -19,7 +19,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   AUTHORS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\author{P. de las Cuevas, A.M. Mora, J.J. Merelo, P. García-Sánchez, A. Fernández-Ares}
+\author{P. de las Cuevas, A.M. Mora, J.J. Merelo,\\ P. García-Sánchez, A. Fernández-Ares}
 \ead{\{paloma, amorag, jmerelo, pgarcia, antares\}@geneura.ugr.es}
 \address{Departamento de Arquitectura y Tecnología de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain}
 %\author{A. M. Mora}
@@ -258,7 +258,8 @@ The designed MUSES architecture is shown in Figure \ref{fig:architecture}. It is
 %\end{center}
 \end{figure}
 
-The use of a server is mainly based in the need of a powerful machine, able to work with massive amounts of data (\textit{Big Data}) \ref{BigData_11}. Thus, part of the high computational cost methods to apply will be derived to this high-performance server, as the mobile devices do not count with enough computational power. These methods will include Data Mining \cite{Cios07DataMining} and Machine Learning \ref{MachineLearning_Bishop06} techniques. This server will also centralise the data gathering from all the devices in the company, composing a big database to which the commented techniques will be applied.
+The use of a server is mainly based on the need of a powerful machine, able to work with massive amounts of data (\textit{Big Data}) \cite{BigData_11}, since the algorithms to apply to them require high computational costs \cite{Shirkhorshidi14Review}.
+Moreover, part of the high computational cost methods to apply will be derived to this high-performance server, as the mobile devices do not count with enough computational power. These methods will include Data Mining \cite{DataMining_Lee01} and Machine Learning \cite{MachineLearning_Bishop06} techniques, which have been proved to be computationally expensive \cite{Cios07DataMining}. This server will be also devoted to centralise the data gathering from all the devices in the company, composing a big database to which the commented techniques will be applied.
 
 The system considers two working modes for every device: online and offline. In the \textit{online} mode the device can connect with the MUSES server, so it can request the server to make a decision. On the other hand, in \textit{offline} mode the server cannot be reached by the device (there is not an available connection between them), so all the decisions should be made locally.
 This will be done using an up-to-date copy on the Decision Table inside the Local database, which will contain decisions for any type of detected event, along with the default actions to be performed if no rule is met. Anyway, in this mode, the gathered information by the sensors in the device will be stored for later submission to the server side (when a connection is available), in order to be processed in the knowledge refinement process.
@@ -472,7 +473,7 @@ TIN2011-28627-C04-02
 awarded by the CEI-BioTIC UGR.  
 
 \bibliographystyle{elsarticle-num}
-\bibliography{geneura-latin1,review_muses}
+\bibliography{review_muses} %geneura-latin1
 
 % Antonio - Poner la bibliografía en fichero .bib
 
