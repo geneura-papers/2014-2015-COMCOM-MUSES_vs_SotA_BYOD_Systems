@@ -42,7 +42,7 @@ MUSES (Multiplatform Usable Endpoint Security), able
 to securely manage BYOD environments, is described. % <- Solution
 MUSES has been developed to cope with security issues with regard to enterprise security policies, but as a user-centric tool. It considers users' behaviour in order to adapt, improve, or even increase the defined set of security rules. To do this, the system applies Machine Learning and Computational Intelligence techniques, being also able to predict future security incidences produced by these users. % <- Solution, details.
 MUSES, which has released its first prototype this year, is compared with the most relevant
-solutions offered by other companies to deal with the same issues as, remarking the advantages that our system will offer with
+solutions offered by other companies to deal with the same issues as, remarking the advantages that our system offers with
 respect to them. % <- we will explain why is better in the work
 
 % What do we do in this paper? Present the
@@ -102,18 +102,15 @@ dev\-ice\--in\-de\-pen\-dent end-to end user-centric tool, based on a
 set of security rules defined as specifications of the Corporate
 Security Policies, but with the ability of `learning' from the user's
 past behaviour and adapt the set of rules, or even inferring new ones,
-in order to deal with potential future security incidents due to the
-user's. %FERGU: The user's "algo que falta"? o eso hace referencia a
-        %su culpa? 
-%"lo del usuario", literalmente. Pero mejorquitarlo - JJ
-Then the system will react, in a non-intrusive way, to the potentially
+in order to deal with potential future security incidents. 
+Then the system  reacts, in a non-intrusive way, to the potentially
 dangerous sequence of actions (events) that he or she is conducting at
 any time. 
 
 To this end MUSES analyses the users' behaviour by means of Data
 Mining (DM) techniques \cite{DataMining_Lee01} and Machine Learning
 (ML) methods \cite{MachineLearning_Bishop06}, extracting a set of
-patterns which will be later processed by means of Computational
+patterns which is later processed by means of Computational
 Intelligence (CI) algorithms, namely Evolutionary Computation methods
 \cite{EAs_Back96,GP_Koza92}. The general ideas behind MUSES were
 already presented in
@@ -124,13 +121,13 @@ work on the data mining techniques used \cite{mora14:urls} we have a
 clearer idea of MUSES capabilities and, as such, will be presented in
 this paper. 
 
-MUSES will include some important modules in the loop, %FERGU: no habéis hablado de ese loop, decid mejor "core" (no lo cambio yo por si no tiene sentido)
- such as an Event Processor, which performs an event correlation task \cite{SurveyEventCorrelation_Tiffany02}, matching occurred events with rules to deal with them and extracting threads that a Real-Time Risk and Trust Analysis Engine (RT2AE) \cite{RT2AE_SOTICS13} will process (along with other trust data and profiles), to select the best subset.
+MUSES includes some important modules in the loop, %FERGU: no habéis hablado de ese loop, decid mejor "core" (no lo cambio yo por si no tiene sentido)
+ such as an Event Processor, which performs an event correlation task \cite{SurveyEventCorrelation_Tiffany02}, matching occurred events with rules to deal with them and extracting threads that a Real-Time Risk and Trust Analysis Engine (RT2AE) \cite{RT2AE_SOTICS13} process (along with other trust data and profiles), to select the best subset.
 
 
-In this paper, the system architecture is presented, in addition to a deep description of the soft computing methods the system will apply.
+In this paper, the system architecture is presented, in addition to a deep description of the soft computing methods the system applies.
 
-But first, this work presents a brief overview of the main existing solutions in this environment. Then a comparison between these tools and MUSES is also conducted, focusing on the advances beyond the state of the art that this novel system (being developed inside an European Project\footnote{\url{http://musesproject.eu/}} of the same name) will bring. 
+But first, this work presents a brief overview of the main existing solutions in this environment. Then a comparison between these tools and MUSES is also conducted, focusing on the advances beyond the state of the art that this novel system (being developed inside an European Project\footnote{\url{http://musesproject.eu/}} of the same name) offers. 
 
 The rest of the paper is organized as follows. First, some background situation about enterprise security is presented in Section \ref{sec:preliminaryconcepts}, explaining how BYOD philosophy affects it. Then, the main tools/solutions are detailed in Section \ref{sec:toolsreview}, even if they are still in development.  
 Then, in Section \ref{sec:muses}, the Multiplatform Usable Endpoint Security System is presented (architecture + soft computing techniques). Its advantages and benefits in comparison with the other solutions are commented in Section \ref{sec:comparison}.
@@ -314,7 +311,7 @@ connection, status).
 
 As a summary, this application includes two modules: a \textit{controller} and an \textit{actuator}. The first one monitors the environment (context) and the user's behaviour, translating his/her actions in a sequence of events. These events, along with the patterns defining the user's conduct, are processed by the system in real-time by means of a Risk and Trust Analysis Engine (RT2AE) and an Event Correlation module. Then, a decision is taken in the corporate security operations centre (SOC) side, considering the RT2AE output and the set of security rules adapted to that specific user and context. The corresponding feedback is communicated to the user through the \textit{actuator}, which is also in charge of triggering the recommended actions to stop the user's or application's doings, in case it is required.
 
-The designed MUSES architecture is shown in Figure \ref{fig:architecture}. It is a \textit{client/server} approach in which the \textit{client} program will be installed in every user's mobile or portable device, independently of the platform (operating system and type of device). The \textit{server} side would be installed in the corporate SOC. Both sides are connected through a secure channel (using HTTPS) over the Internet. In that figure just the high-level components in each part are shown, along with the information flows labelled as `Info XX'. %FERGU: esto no se si es de muses y posiblemente esté por terminar, pero quitad las comillas raras
+The designed MUSES architecture is shown in Figure \ref{fig:architecture}. It is a \textit{client/server} approach in which the \textit{client} program can be installed in every user's mobile or portable device, independently of the platform (operating system and type of device). The \textit{server} side can be installed in the corporate SOC. Both sides are connected through a secure channel (using HTTPS) over the Internet. In that figure just the high-level components in each part are shown, along with the information flows labelled as `Info XX'. %FERGU: esto no se si es de muses y posiblemente esté por terminar, pero quitad las comillas raras
 
 \begin{figure}[ht]
 %\begin{center}
@@ -326,13 +323,13 @@ The designed MUSES architecture is shown in Figure \ref{fig:architecture}. It is
 \end{figure}
 
 The use of a server is mainly based on the need of a powerful machine, able to work with massive amounts of data (\textit{Big Data}) \cite{BigData_11}, since the algorithms to apply to them require high computational costs \cite{Shirkhorshidi14Review}.
-Moreover, part of the high computational cost methods to apply will be derived to this high-performance server, as the mobile devices do not count with enough computational power. These methods will include Data Mining \cite{DataMining_Lee01} and Machine Learning \cite{MachineLearning_Bishop06} techniques, which have been proved to be computationally expensive \cite{Cios07DataMining}. This server will be also devoted to centralise the data gathering from all the devices in the company, composing a big database to which the commented techniques will be applied.
+Moreover, part of the high computational cost methods to apply needs to be derived to this high-performance server, as the mobile devices do not count with enough computational power. These methods include Data Mining \cite{DataMining_Lee01} and Machine Learning \cite{MachineLearning_Bishop06} techniques, which have been proved to be computationally expensive \cite{Cios07DataMining}. This server is also devoted to centralise the data gathering from all the devices in the company, composing a big database to which the commented techniques can be applied.
 
 The system considers two working modes for every device: online and offline. In the \textit{online} mode the device can connect with the MUSES server, so it can request the server to make a decision. On the other hand, in \textit{offline} mode the server cannot be reached by the device (there is not an available connection between them), so all the decisions should be made locally.
-This will be done using an up-to-date copy on the Decision Table inside the Local database, which will contain decisions for any type of detected event, along with the default actions to be performed if no rule is met. Anyway, in this mode, the gathered information by the sensors in the device will be stored for later submission to the server side (when a connection is available), in order to be processed in the knowledge refinement process.
-Moreover, when switching from offline to online mode, the device will receive an updated copy of the Decision Rules (the so-called Device Policies), as a kind of antivirus database, in order to work again perfectly in offline mode (if the connection is lost).
+This is done using an up-to-date copy on the Decision Table inside the Local database, which contains decisions for any type of detected event, along with the default actions to be performed if no rule is met. Anyway, in this mode, the gathered information by the sensors in the device  is stored for later submission to the server side (when a connection is available), in order to be processed in the knowledge refinement process.
+Moreover, when switching from offline to online mode, the device  receives an updated copy of the Decision Rules (the so-called Device Policies), as a kind of antivirus database, in order to work again perfectly in offline mode (if the connection is lost).
 
-All data in MUSES will be encrypted. %FERGU: esta frase esta un poco forever alone aquí, falta algo por mencionar? Que tecnología se usará, cómo se encriptará y todo eso.
+All data in MUSES  is encrypted. %FERGU: esta frase esta un poco forever alone aquí, falta algo por mencionar? Que tecnología se usará, cómo se encriptará y todo eso.
 % Antonio - Sí, se va a comentar mejor en uno de los Issues. ;)
 
 % ----------------------------------------------------------
@@ -342,7 +339,7 @@ All data in MUSES will be encrypted. %FERGU: esta frase esta un poco forever alo
 
 There are three main components in this side:
 \begin{itemize}
- 	 \item \textit{Local Database}: it is a local security-based storage, which includes the set of security rules to be applied locally (Device Policies), user authentication data, and a cache of gathered events and information. The latter will be useful when the device is in offline mode, so these data are stored to be later submitted to the server side. 
+ 	 \item \textit{Local Database}: it is a local security-based storage, which includes the set of security rules to be applied locally (Device Policies), user authentication data, and a cache of gathered events and information. The latter is useful when the device is in offline mode, so these data are stored to be later submitted to the server side. 
 %It contains the so-called \textit{Decision Table}, a set of rules in which the antecedents are high-level events, and the consequents are the corresponding decisions/actions, namely `allow', `deny' or `request' (the decision must be made in the server side).
  	 \item \textit{Device Monitor (MusDM)}: module which gathers the events and information produced by the user. It also acts following the decisions made by the system, in order to allow or deny the controlled application (or the user) for doing something. It is composed by a monitoring and an actuator submodules.
  	 \item \textit{Access Control System (MusACS)}: module in charge of making the decisions considering the gathered data. These decisions can be made locally (if possible), or can be requested to the server (if there is no rule which matches with the occurred events). 
@@ -351,7 +348,7 @@ There are three main components in this side:
 \end{itemize}
 
 The rest of the components are: the \textit{MUSES User Interface (UI)}, the application through which the user interacts with the system; and the \textit{Connection Manager} which controls the communications between client and server sides. 
-In addition, there are two types of applications considered in this system: on the one hand the \textit{MUSES Aware App}, which is an application adapted to MUSES, so the system can directly interact with it (monitoring and acting). This application must be implemented using the MUSES API (Application Program Interface)\footnote{The MUSES API will be defined in the project, so for every application desired to be MUSES Aware, it should be implemented using this.}. On the other hand the \textit{Non MUSES Aware App} is that which MUSES cannot directly interact with. Usually it will be accessed through the operating system (OS). So the type of information to gather from them and also the type of actions to do over them will vary depending on the OS. In most of the cases MUSES could just detect/recognize very specific events, and also do very limited actions to prevent or block them (maybe showing a screen on the top until something is accomplished by the user). This is due to the usual forbiddance or limitation of interactions with other applications that the OSs have. %FERGU: forbiddance parece que existe, pero el corrector me dice que no. Prohibition mejor?
+In addition, there are two types of applications considered in this system: on the one hand the \textit{MUSES Aware App}, which is an application adapted to MUSES, so the system can directly interact with it (monitoring and acting). This application must be implemented using the MUSES API (Application Program Interface)\footnote{The MUSES API is defined in the project, so for every application desired to be MUSES Aware, it should be implemented using this.}. On the other hand the \textit{Non MUSES Aware App} is that which MUSES cannot directly interact with. Usually it can be accessed through the operating system (OS). So the type of information to gather from them and also the type of actions to do over them vary depending on the OS. In most of the cases MUSES could just detect/recognize very specific events, and also do very limited actions to prevent or block them (maybe showing a screen on the top until something is accomplished by the user). This is due to the usual forbiddance or limitation of interactions with other applications that the OSs have. %FERGU: forbiddance parece que existe, pero el corrector me dice que no. Prohibition mejor?
 % Yo diría que es forbidding...
 
 % ----------------------------------------------------------
@@ -360,7 +357,7 @@ In addition, there are two types of applications considered in this system: on t
 
 As in the client, there are three main components:
 \begin{itemize}
-	 \item \textit{System Database}: it stores all the information that the system will manage, including authentication data, enterprise security policies, assets' values, user-related information (trust, context), events data, and, of course, security rules to apply (with regard to the security policies).
+	 \item \textit{System Database}: it stores all the information that the system can manage, including authentication data, enterprise security policies, assets' values, user-related information (trust, context), events data, and, of course, security rules to apply (with regard to the security policies).
 
 	 \item \textit{Continuous Real-Time Event Processor (MusCRTEP)}: this component is the core of the MUSES system with respect to the decision making process. It includes an \textit{Event Processor}, the module in charge of performing the event correlation process \cite{deliverable21, deliverable52}. This is done by a so-called `Event correlation engine', which is in charge of taking the user action events that are sent from the device client, and analyse them to look for an existing security rule that could be applied to the situation. The engine discovers that by analysing the context events which are sent with the user action event, so that a complete model of the risks can be built. The output of this module is an `access request' which is sent to the \textit{RT2AE}. It considers the information included in the access request, as well as other information such as trust data and profiles, assets' values, user reputation, or opportunity, to perform a risk and trust analysis task \cite{RT2AE_SOTICS13}. Finally, the RT2AE extracts the set of potential rules to consider in the analysed situation, and these rules are therefore transformed into decisions (or Device Policies) and submitted to those devices to which they apply.
 
@@ -378,13 +375,13 @@ Then, the \textit{User, Context, Event Data Receiver} is devoted to receive data
 
 \subsection{Self-Adaptation in MUSES: The Knowledge Refinement System}
 
-As previously stated, one of the main features of this system will be the self-adaptation (to the user and context), of the set of Corporate Security Rules (specification of the ISPs), that it will be able to perform. 
-To this end, the \textit{MusKRS} module will be run asynchronously in the server (once a day or every X hours) and will be in charge of analysing all the gathered information (events, context, user-related data), and adapting/refining the security rules. The refinement (improvement) will have as aim to better deal with these events, optimizing the current set of rules (removing redundant or non-useful rules, for instance), and even trying to predict future threats due to the user's behaviour.
+As previously stated, one of the main features of this system is the self-adaptation (to the user and context), of the set of Corporate Security Rules (specification of the ISPs), that it is be able to perform. 
+To this end, the \textit{MusKRS} module is run asynchronously in the server (once a day or every X hours) and it is in charge of analysing all the gathered information (events, context, user-related data), and adapting/refining the security rules. The refinement (improvement)  has as aim to better deal with these events, optimizing the current set of rules (removing redundant or non-useful rules, for instance), and even trying to predict future threats due to the user's behaviour.
 
-This procedure will be composed by two main steps: first, a Data Mining (DM) \cite{DataMining_Lee01} + Machine Learning (ML) \cite{MachineLearning_Bishop06} process will be performed (in the \textit{Data Miner} sub-component);  second, a refinement and inference process will be done (in the \textit{Knowledge Compiler} sub-component), considering the data `extracted' in the first step, by means of Computational Intelligence (CI) techniques.
-It should be noticed that part of the refinement (or adaptation) of the security rules will be made using simpler methods, such as generalisation or specialisation of rules, for instance. Then, other parts of the process would be conducted using CI.
+This procedure is be composed by two main steps: first, a Data Mining (DM) \cite{DataMining_Lee01} + Machine Learning (ML) \cite{MachineLearning_Bishop06} process is performed (in the \textit{Data Miner} sub-component);  second, a refinement and inference process  is done (in the \textit{Knowledge Compiler} sub-component), considering the data `extracted' in the first step, by means of Computational Intelligence (CI) techniques.
+It should be noticed that part of the refinement (or adaptation) of the security rules is made using simpler methods, such as generalisation or specialisation of rules, for instance. Then, other parts of the process can be conducted using CI.
 
-Another important fact is that MUSES will count with a human controller, normally the Chief Security Officer (CSO) of the company, who will supervise the system activity by means of logs or feedback messages. Thus, adapted and inferred security rules will not be, in principle, directly added to the current set of rules. Instead, they will be proposed as draft rules to this controller, in order that he/she will accept them if they are interesting and correct. It is planned that the system will be able to `learn' from this decisions, so after a so-called training or `warm up' period, the rules would be directly accepted (included in the set) or rejected autonomously by the MusKRS.
+Another important fact is that MUSES  counts with a human controller, normally the Chief Security Officer (CSO) of the company, who  supervises the system activity by means of logs or feedback messages. Thus, adapted and inferred security rules are not, in principle, directly added to the current set of rules. Instead, they  are proposed as draft rules to this controller, in order that he/she can accept them if they are interesting and correct. The system  is able to `learn' from this decisions, so after a so-called training or `warm up' period, the rules can be directly accepted (included in the set) or rejected autonomously by the MusKRS.
 
 The following sections describe these processes: first focusing on DM techniques to be used both automatically by the MusKRS, and as a kind of decision-aid/monitoring tool for the CSO; second, the CI techniques are explained, mainly focusing in Evolutionary Computation (EC) \cite{EAs_Back96} approaches, since these methods perform very well, and have been widely used in security-based environments for solving security issues, such as the intrusion detection \cite{GA_intrusion-majeed}, the design and evaluation of security protocols \cite{GP_intrusion-lu,GA_networksecurity-zarza}, or the optimisation of different aspects related with security: IT security costs \cite{EAs_securitycosts-kirta}, and cryptographic protocols \cite{GA_cryptographicprotocols-zarza2}, among others.
 
@@ -393,16 +390,16 @@ The following sections describe these processes: first focusing on DM techniques
 \subsubsection{Data Mining + Machine Learning}
 \label{subsubsec:dm_ml}
 
-This task will be performed by the \textit{Data Miner} module. It will take the `raw' data from the database and will process the information, in order to yield a set of relevant data for the Knowledge Compiler module or for the human controller. In the first case, this sub-component will take them as a reference in order to refine or adapt the current set of security rules (for instance, to deal with anomalous situations).
+This task is performed by the \textit{Data Miner} module. It  takes the `raw' data from the database and  process the information, in order to yield a set of relevant data for the Knowledge Compiler module or for the human controller. In the first case, this sub-component  takes them as a reference in order to refine or adapt the current set of security rules (for instance, to deal with anomalous situations).
 
-The process will be mainly non-supervised. Moreover, eventually, the datasets can be huge (depending on the company's data flows), so Big Data processing methods \cite{BigData_11} will be applied.
+The process is be mainly non-supervised. Moreover, eventually, the datasets can be huge (depending on the company's data flows), so Big Data processing methods \cite{BigData_11} can be applied.
 
-The DM/ML techniques will process the so-called patterns, which in this context correspond to events (and their related information) produced by the users' interactions with the system. As stated, these events will be captured from the sensors in the users' devices and transmitted to the server to be processed and stored in the system database. The methods to be applied are:
+The DM/ML techniques process the so-called patterns, which in this context correspond to events (and their related information) produced by the users' interactions with the system. As stated, these events  are captured from the sensors in the users' devices and transmitted to the server to be processed and stored in the system database. The methods to be applied are:
 
 \begin{itemize}
 
 \item \textit{Pattern Mining} \cite{PatternMining_Han07}: 
-This process will try to identify frequent or, on the contrary, anomalous patterns, in order to process them lately. The idea is that non-frequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO or to serve as a reference for the rule-refinement process.
+This process  tries to identify frequent or, on the contrary, anomalous patterns, in order to process them lately. The idea is that non-frequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO or to serve as a reference for the rule-refinement process.
 
 \item \textit{Classification} \cite{classification_67}: 
 This technique tries to train a model (classifier) able to associate every pattern in the dataset to a class, so that the model could be used for assigning a class for further incoming patterns with an unknown category.
@@ -415,7 +412,7 @@ The aim of this method is grouping the patterns considering some similarity crit
 It consists on extract the most important features/variables from the data. This could be useful if we want to discard non-key features, which could be interesting in order to reduce the database weight, for improving the performance of other techniques (such as classification or clustering), and even to improve the performance of the whole system, since less information would be gathered and transmitted.
 
 \item \textit{Data Analysis}: 
-This will provide the CSO with mechanisms to visualise interesting facts about the data, such as more frequent events, dangerous or suspicious users (according to their behaviour), more triggered rules, etc.
+This  provides the CSO with mechanisms to visualise interesting facts about the data, such as more frequent events, dangerous or suspicious users (according to their behaviour), more triggered rules, etc.
 
 \end{itemize}
 
@@ -427,48 +424,48 @@ This will provide the CSO with mechanisms to visualise interesting facts about t
 \label{subsec:ci}
 
 
-MUSES will use different EC approaches, initially, two in the DM/ML part of the process, and three in the rule-refinement/adaptation phase. They are based on Genetic Programming (GP) \cite{GP_Koza92}, and Genetic Algorithms (GAs) \cite{GAs_Goldberg89}.
+MUSES  uses different EC approaches, initially, two in the DM/ML part of the process, and three in the rule-refinement/adaptation phase. They are based on Genetic Programming (GP) \cite{GP_Koza92}, and Genetic Algorithms (GAs) \cite{GAs_Goldberg89}.
 
-The first evolutionary-based approach will be a \textit{GP-based classification} method. This will be useful for two main reasons: first, in order to deal with the data class imbalance \cite{imbalance_techniques_02}, very common in classification problems in real systems (with real data); and second, to better manage categorical (non-numeric) data, since most of the features/variables and information gathered from the events take these kind of values.
+The first evolutionary-based approach is a \textit{GP-based classification} method. This is useful for two main reasons: first, in order to deal with the data class imbalance \cite{imbalance_techniques_02}, very common in classification problems in real systems (with real data); and second, to better manage categorical (non-numeric) data, since most of the features/variables and information gathered from the events take these kind of values.
 
-Thus, this approach will be able to manage unbalanced datasets considering a fitness function in which a cost can be associated with the classifier accuracy at every epoch, having a penalty cost when the classifier makes a false negative (an element from the minority class which is classified as belonging to the majority class) \cite{cost_adjustment_07}.
-Regarding the type of data, since GP algorithms can manage rule- or tree-based models, it will work perfectly with any categorical variable, yielding a good classifier as it has been made in other works (such as the aforementioned \cite{cost_adjustment_07}).
+Thus, this approach is be able to manage unbalanced datasets considering a fitness function in which a cost can be associated with the classifier accuracy at every epoch, having a penalty cost when the classifier makes a false negative (an element from the minority class which is classified as belonging to the majority class) \cite{cost_adjustment_07}.
+Regarding the type of data, since GP algorithms can manage rule- or tree-based models, it  works perfectly with any categorical variable, yielding a good classifier as it has been made in other works (such as the aforementioned \cite{cost_adjustment_07}).
 
-The second approach will be a Feature Selection process, conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features/variables in the classification. Thus, the algorithm can optimize the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method.
+The second approach is a Feature Selection process, conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features/variables in the classification. Thus, the algorithm can optimize the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method.
 
-The second set of EC techniques is, as stated, part of the rule-refinement (or adaptation) process, to be performed by the \textit{Knowledge Compiler} module. These methods will be used for inference and optimisation, and will consider this data as a part of the process:
+The second set of EC techniques is, as stated, part of the rule-refinement (or adaptation) process, to be performed by the \textit{Knowledge Compiler} module. These methods can be used for inference and optimisation, and consider this data as a part of the process:
 
 \begin{itemize}
 
 \item The information extracted from the Data Miner sub-component, mainly concerning the anomalous, unclassified or misclassified patterns. These are those patterns which did not match with any of the existing classes (they are quite different from the patterns belonging to those classes), so they cannot be included in any of the classes and thus they should be taken into account for a potential inference or update in the set of security rules, in order to `cover' them.
 
-\item User-related information corresponding to those anomalous or unlabelled patterns (events). Thus, the user's ID, location and role, for instance, will be considered in order to select the applicable set of rules for that conditions.
+\item User-related information corresponding to those anomalous or unlabelled patterns (events). Thus, the user's ID, location and role, for instance, can be considered in order to select the applicable set of rules for that conditions.
 
 \item Context information for the same patterns, in order to also restrict the applicable set of rules considering this information. 
 
 \end{itemize}
 
-Other useful information to consider in the refinement/ adaptation process will be:
+Other useful information to consider in the refinement/ adaptation process are:
 
 \begin{itemize}
 
-\item Risk information extracted from the user profile (reputation), e.g. ``Did the user received a lot of `denies'/`allows' before?'', i.e. ``Is he/she trustworthy?''. In case the user is not, more restrictive rules would be created for him, otherwise the corresponding rules could be `relaxed' for that user.
+\item Risk information extracted from the user profile (reputation), e.g. ``Did the user received a lot of `denies'/`allows' before?'', i.e. ``Is he/she trustworthy?''. In case the user is not, more restrictive rules can be created for him, otherwise the corresponding rules could be `relaxed' for that user.
 
 \item The information stored in logs along the system, which can, for instance, tell about how the user responds to system messages (either an action or if he gives feedback). This could result in the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignore warning messages.
-Moreover, important log information regarding the parameters used or the decisions made in the different modules will be used for further tests of new inferred rules, as it is explained below.
+Moreover, important log information regarding the parameters used or the decisions made in the different modules can be used for further tests of new inferred rules, as it is explained below.
 
 \end{itemize}
 
-Given this, the approaches that will be implemented are:
+Given this, the approaches that can be implemented are:
 
 \begin{itemize}
 
-\item \textit{GP rule inference} method, which will generate/create new rules in order to `cover' those situations non contemplated in the current set of rules. Thus, for instance, a new rule could be created in order to deal with the patterns to which the classifier could not assign a class.
-The generation will be done considering the so-called \textit{dictionary}, i.e. a set of terms corresponding to all the possible inputs and actions in the system, which will be antecedents (conditions) and consequents in the security rules to be inferred.
-The evaluation of these rules will be done considering the stored log information concerning the parameters along with the actions/decisions made in every component in the system. Thus, it will be possible to `simulate' the whole  system behaviour when the new rule is included and get a value of its performance.
+\item \textit{GP rule inference} method, which generates/creates new rules in order to `cover' those situations non contemplated in the current set of rules. Thus, for instance, a new rule could be created in order to deal with the patterns to which the classifier could not assign a class.
+The generation can be done considering the so-called \textit{dictionary}, i.e. a set of terms corresponding to all the possible inputs and actions in the system, which are antecedents (conditions) and consequents in the security rules to be inferred.
+The evaluation of these rules can be done considering the stored log information concerning the parameters along with the actions/decisions made in every component in the system. Thus, it is possible to `simulate' the whole  system behaviour when the new rule is included and get a value of its performance.
 
-\item \textit{GP rule refinement} approach, which will optimise the current set of rules, adjusting the values in the conditions (antecedents), for instance. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specialisations or generalisations of existing rules which could mean a better performance.
-The evaluation (of the whole set of security rules) will be done considering the number of unlabelled patterns that will be `covered' after the adjustments.
+\item \textit{GP rule refinement} approach, which optimises the current set of rules, adjusting the values in the conditions (antecedents), for instance. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specialisations or generalisations of existing rules which could mean a better performance.
+The evaluation (of the whole set of security rules) is done considering the number of unlabelled patterns that are `covered' after the adjustments.
 
 \item \textit{GA optimisation} algorithm for setting up and adapting the assets' values. These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
 If it is possible to evaluate the partial solutions proposed by the GA, this approach could be very useful for the CSO (who is in charge of assigning and adjusting these values over time).
@@ -485,7 +482,7 @@ The adaptation or adjustment concerns the change in value that an asset could ha
 \label{sec:comparison}
 
 
-MUSES is mainly a free, open-source, platform independent solution, so these set of features make it a very good option in a first comparison against most of the proprietary, close and system-specific tools presented in Section \ref{sec:toolsreview} (all but WSO2). In addition, most of the existing tools take into account only smartphones and tablets, but MUSES also will cover laptops and company PCs too, thus, it is not only for BYOD. Moreover the companies which desire work with those systems need a specific operating system and server (such as Windows Server, for instance), being even more strict in some cases, as in Samsung Knox, in which companies must work with a specific (though they can choose from a list) MDM service of being able of deploy Knox in their environments, or in the use of the Blackphone. MUSES will be a good solution in these cases, since it will be a multiplatform system. 
+MUSES is mainly a free, open-source, platform independent solution, so these set of features make it a very good option in a first comparison against most of the proprietary, close and system-specific tools presented in Section \ref{sec:toolsreview} (all but WSO2). In addition, most of the existing tools take into account only smartphones and tablets, but MUSES also  covers laptops and company PCs too, thus, it is not only for BYOD. Moreover the companies which desire work with those systems need a specific operating system and server (such as Windows Server, for instance), being even more strict in some cases, as in Samsung Knox, in which companies must work with a specific (though they can choose from a list) MDM service of being able of deploy Knox in their environments, or in the use of the Blackphone. MUSES is a good solution in these cases, since it is a multiplatform system. 
 
 Another comparison concerns that the existing products are mostly policy-based, but MUSES makes its decisions not only considering policies, but also based on the terminals/users context (location, connected networks and so on), to really understand the real danger of a specific action, i.e. it adds a Risk Analysis Process (performed in the RT2AE).
 
@@ -495,11 +492,11 @@ Moreover, another clear advantage over the rest is that MUSES can work in two co
 
 Though these are clearly advantages of MUSES over the aforementioned products, they also establish a progress beyond the state of the art with respect to the existing solutions. Other issues that MUSES aims to progress on are related to risk and trust data analysis, human-computer interaction (or HCI), device monitoring, and legal compliance. 
 
-First, as mentioned previously, it will implement a self-adaptive event correlation, including a novel hybrid technique of rule refinement and rule adjustment extracting relevant information from processing huge amounts of data. Then, the project defines a new approach to risk management taking into account threats (with their costs) as well as the innovative concept of opportunity, i.e. the following beneficial outcome from a situation on which, for instance, a user is able to work while waiting at the airport if the risk is low enough. 
+First, as mentioned previously, it  implements a self-adaptive event correlation, including a novel hybrid technique of rule refinement and rule adjustment extracting relevant information from processing huge amounts of data. Then, the project defines a new approach to risk management taking into account threats (with their costs) as well as the innovative concept of opportunity, i.e. the following beneficial outcome from a situation on which, for instance, a user is able to work while waiting at the airport if the risk is low enough. 
 
-About HCI and usability of mobile devices, this will set up a significant advance in the state of the art because of the novelty of the BYOD philosophy, and trying to look for individual differences among the users in susceptibility to persuasive strategies for secure behaviour. Regarding device monitoring, MUSES will also take into account the so-called context observation, by which private or professional scenarios will be detected, or predicted, based on advanced machine learning techniques. Finally, the project is concerned about legal compliance in regards of Information Security Policies, so that it will contribute to the proposal for the EU Data Protection: legal binding force and legal certainty of company policies, and end-user responsibility.
+About HCI and usability of mobile devices, this sets up a significant advance in the state of the art because of the novelty of the BYOD philosophy, and trying to look for individual differences among the users in susceptibility to persuasive strategies for secure behaviour. Regarding device monitoring, MUSES  also take into account the so-called context observation, by which private or professional scenarios can be detected, or predicted, based on advanced machine learning techniques. Finally, the project is concerned about legal compliance in regards of Information Security Policies, so that it  contributes to the proposal for the EU Data Protection: legal binding force and legal certainty of company policies, and end-user responsibility.
 
-With regard to the scientific contribution of the system, one of the main differences with respect to previous works is the consideration of security threats `brought' by the user's behaviour inside the system, i.e. through interaction/events, rather than more general and external threats. Moreover, the techniques to be used in MUSES will work with real data (in a real system), as a difference to several research works (they consider simulated or artificial data).
+With regard to the scientific contribution of the system, one of the main differences with respect to previous works is the consideration of security threats `brought' by the user's behaviour inside the system, i.e. through interaction/events, rather than more general and external threats. Moreover, the techniques to be used in MUSES  works with real data (in a real system), as a difference to several research works (they consider simulated or artificial data).
 
 Data Mining techniques have been used by the authors in some works, but usually aiming for a specific general objective, for instance the detection of threats (botnet) \cite{botnet_detection_clustering_09}, or the recognition of anomalies \cite{feature_selection_anomalies_08}, but they are not linked with a following process to improve the system (the refinement phase in MUSES).
 
@@ -523,7 +520,7 @@ With respect to Genetic Algorithms, they have been extensively used in this scop
 \section{Conclusions}
 \label{sec:conclusions}
 
-This work introduces a self-adaptive user-centric end-to-end system, named MUSES, which is in development (it will be launched next year). The architecture and main features of the system are described, paying special attention to the application of Soft Computing methods in tasks of data analysis, machine learning, and also in the use of evolutionary algorithms to improve the existing set of corporate security rules which leads the system. %Antares - Yo podrían en lugar de ``next year'' el año, porque el artículo puede ser leído en cualquier momento y es mejor emplear referencias absolutas, ¿no creeis?
+This work introduces a self-adaptive user-centric end-to-end system, named MUSES. The architecture and main features of the system are described, paying special attention to the application of Soft Computing methods in tasks of data analysis, machine learning, and also in the use of evolutionary algorithms to improve the existing set of corporate security rules which leads the system. %Antares - Yo podrían en lugar de ``next year'' el año, porque el artículo puede ser leído en cualquier momento y es mejor emplear referencias absolutas, ¿no creeis? FERGU: fuera
 
 MUSES has been compared with other existing solutions/tools with a similar aim: to ensure the protection and privacy of sensitive information in the enterprise when it is accessed by the employees using their own devices (BYOD philosophy).
 The main advantages of MUSES with respect to the other solutions have been discussed, also remarking its advances beyond the state of the art that define these tools.
