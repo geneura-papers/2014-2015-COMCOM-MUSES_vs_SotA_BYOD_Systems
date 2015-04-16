@@ -95,7 +95,7 @@ Some specific examples about the kind of user activity MUSES monitors and the ki
 
 Page 14, line 47 identifies the MusCRTEP as the core of the MUSES system and provides two references. Unfortunately, these references are not the implementation of MusCRTEP but a general definition of what a decision system does. These references are not really needed and a much more detailed description of MusCRTEP would be welcome since even the authors identify this module as the core of the system.
 
->>> ***INCLUIR UNA REFERENCIA MEJOR (¿DELIVERABLE?)***
+>>> The description of the performance of the CRTEP has been extended and improved, with references to two Project Reports which better fit to the contents.
 
 Page 18, lines 20-37 hint about the importance of privacy enhancing technologies in a system that monitors the activity of the user and sends this activity to a centralized server to be "anonymously managed". Further information about how the system manages this information is needed (does private information ever leaves the personal devices? Which activity is monitored and collected?), as well as an explanation about how these data is anonymized. Is it anonymized at the mobile phone? Or in the server's database?
 
