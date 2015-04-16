@@ -435,14 +435,14 @@ Other useful information to consider in the refinement/ adaptation process are:
 
 \begin{itemize}
 
-\item Risk information extracted from the user profile (reputation), e.g. ``Did the user received a lot of `denies'/`allows' before?'', i.e. ``Is he/she trustworthy?''. In case the user is not, more restrictive rules can be created for him, otherwise the corresponding rules could be `relaxed' for that user.
+\item Risk information extracted from the user profile (user trust value), e.g. ``Did the user received a lot of `denies'/`allows' before?'', i.e. ``Is the user trustworthy?''. In case the user is not, more restrictive rules can be created, otherwise the corresponding rules could be `relaxed' for that user.
 
-\item The information stored in logs along the system, which can, for instance, tell about how the user responds to system messages (either an action or if he gives feedback). This could result in the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignore warning messages.
+\item The information stored in logs along the system, which can, for instance, tell about how the user responds to system messages (either an action or if the user gives feedback). This could result in the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignore warning messages.
 Moreover, important log information regarding the parameters used or the decisions made in the different modules can be used for further tests of new inferred rules, as it is explained below.
 
 \end{itemize}
 
-Given this, the approaches that can be implemented are:
+This being said, and because the refinement of rules is considered of the same importance as inferring new ones, the approaches that have been implemented are:
 
 \begin{itemize}
 
