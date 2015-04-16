@@ -99,5 +99,5 @@ Page 14, line 47 identifies the MusCRTEP as the core of the MUSES system and pro
 
 Page 18, lines 20-37 hint about the importance of privacy enhancing technologies in a system that monitors the activity of the user and sends this activity to a centralized server to be "anonymously managed". Further information about how the system manages this information is needed (does private information ever leaves the personal devices? Which activity is monitored and collected?), as well as an explanation about how these data is anonymized. Is it anonymized at the mobile phone? Or in the server's database?
 
->>> ***EXPLICAR TODO ESTO***
+>>> The way user data is anonymised in the system, as long as other legal aspects about the data privacy, have been properly detailed, as well as complemented with a reference.
 
