@@ -42,7 +42,7 @@ in order to adopt it securely. In this paper, a novel system named
 MUSES (Multiplatform Usable Endpoint Security) which should be able 
 to adapt Security Policies to a BYOD environment is introduced. MUSES
 has been designed to cope with security issues regarding the enterprise security policies, but as a user-centric tool, which considers system user's behaviour in order to adapt, improve, or even increase the defined set of security rules. MUSES applies machine learning and computational intelligence techniques in order to do this, and also would be able to predict future security incidences produced by these users.
-This system, still in development, is compared with the most relevant
+This system, which has released its first prototypes this year, is compared with the most relevant
 solutions offered by other companies to deal with the same issues as
 MUSES, remarking the advantages that our system will offer with
 respect to them. % What do we do in this paper? Present the
@@ -96,13 +96,37 @@ In this scenario several solutions have arisen in order to manage the corporate 
 Moreover, it has been demonstrated that people are the main hazard regarding the company security \cite{Adams_Users05}, so in this situation, some monitorization and security-aimed applications are arising, aiming to cope with the concept of seamless working experience on different devices. 
 This concept is a methodology of work which allows users to start/continue a working session over multiple devices and locations without any significant loss of data. This new situation has a big impact from the point of view of the security \cite{Schu_SecPatterns05}, since the company's data borders have changed in the last years, so now the users can access significant data from outside the enterprise, and possibly through a non absolutely secure channel. %Antares - Yo quitaba lo de significant loss of data, ya que significant se repite después.
 
-Thus, this work introduces a novel (still in development) system named MUSES, from Multiplatform Usable Endpoint Security, which is a dev\-ice\--in\-de\-pen\-dent end-to end user-centric tool, based on a set of security rules defined as specifications of the Corporate Security Policies, but with the ability of `learning' from the user's past behaviour and adapt the set of rules, or even inferring new ones, in order to deal with potential future security incidents due to the user's. %FERGU: The user's "algo que falta"? o eso hace referencia a su culpa?
-Then the system will react, in a non-intrusive way, to the potentially dangerous sequence of actions (events) that he or she is conducting at any time.
+Thus, this work introduces a recently released (in alpha) system named
+MUSES, from Multiplatform Usable Endpoint Security, which is a
+dev\-ice\--in\-de\-pen\-dent end-to end user-centric tool, based on a
+set of security rules defined as specifications of the Corporate
+Security Policies, but with the ability of `learning' from the user's
+past behaviour and adapt the set of rules, or even inferring new ones,
+in order to deal with potential future security incidents due to the
+user's. %FERGU: The user's "algo que falta"? o eso hace referencia a
+        %su culpa? 
+%"lo del usuario", literalmente. Pero mejorquitarlo - JJ
+Then the system will react, in a non-intrusive way, to the potentially
+dangerous sequence of actions (events) that he or she is conducting at
+any time. 
 
-To this end MUSES will analyse the users' behaviour by means of Data Mining (DM) techniques \cite{DataMining_Lee01} and Machine Learning (ML) methods \cite{MachineLearning_Bishop06}, extracting a set of patterns which will be later processed by means of Computational Intelligence (CI) algorithms, namely Evolutionary Computation methods \cite{EAs_Back96,GP_Koza92}.
+To this end MUSES analyses the users' behaviour by means of Data
+Mining (DM) techniques \cite{DataMining_Lee01} and Machine Learning
+(ML) methods \cite{MachineLearning_Bishop06}, extracting a set of
+patterns which will be later processed by means of Computational
+Intelligence (CI) algorithms, namely Evolutionary Computation methods
+\cite{EAs_Back96,GP_Koza92}. The general ideas behind MUSES were
+already presented in
+\cite{DBLP:conf/sac/MoraCGZJEBAH14,DBLP:conf/gecco/MoraCGZE14}. However,
+the implementation was in its early stages when those papers were
+submitted. After the release of the first prototypes and additional
+work on the data mining techniques used \cite{mora14:urls} we have a
+clearer idea of MUSES capabilities and, as such, will be presented in
+this paper. 
 
 MUSES will include some important modules in the loop, %FERGU: no habéis hablado de ese loop, decid mejor "core" (no lo cambio yo por si no tiene sentido)
  such as an Event Processor, which performs an event correlation task \cite{SurveyEventCorrelation_Tiffany02}, matching occurred events with rules to deal with them and extracting threads that a Real-Time Risk and Trust Analysis Engine (RT2AE) \cite{RT2AE_SOTICS13} will process (along with other trust data and profiles), to select the best subset.
+
 
 In this paper, the system architecture is presented, in addition to a deep description of the soft computing methods the system will apply.
 
@@ -515,283 +539,7 @@ TIN2011-28627-C04-02
 awarded by the CEI-BioTIC UGR.  
 
 \bibliographystyle{elsarticle-num}
-\bibliography{review_muses} %geneura-latin1
-
-% Antonio - Poner la bibliografía en fichero .bib
-
-%\begin{thebibliography}{00}
-
-%\bibitem{ids13}
-%Sommestad T., Hunstad A.. \emph{Intrusion detection and the role of the system administrator.}, from Swedish Defence Research Agency (FOI), Linköping, Sweden, 2013.
-
-%\bibitem{m2m12}
-%NTT DOCOMO, \emph{DOCOMO to Launch Global M2M Platform}, in M2M Magazine, December 2012.
-%http://www.machinetomachinemagazine.com/2012/12/05/docomo-to-launch-global-m2m-platform/.
-
-%\bibitem{suites12}
-%The Radicati Group Inc., report \emph{Microsoft Office 365 - Analysis and Forecast, 2012-2016}. June 2012. 
-
-%\bibitem{Adams_Users05}
-%Adams, A. and Sasse, A.:
-%\newblock {\em Users are not the enemy}.
-%\newblock Security and Usability: Designing Systems That People Can Use.
-%  O\'Reilly Associations, 2005.
-
-%\bibitem{cost_adjustment_07}
-%Alfaro-Cid, E., Sharman, K. and Esparcia-Alcázar, A.I.:
-%\newblock A genetic programming approach for bankruptcy prediction using a
-%  highly unbalanced database.
-%\newblock In M.~Giacobini, editor, {\em Applications of Evolutionary
-%  Computing}, volume 4448 of {\em Lecture Notes in Computer Science}, pages
-%  169--178. Springer Berlin Heidelberg, 2007.
-
-%\bibitem{AzurriMDM}
-%Azurri Communications.
-%\newblock Icon Mobilise.
-%\newblock \url{http://www.azzurricommunications.com/~/media/Resources/Brochures/Media/icon_mobilise_brochure_online.ashx}
-
-%\bibitem{SecPolComp12}
-%Al-Omari, A., El-Gayar, O., Deokar, A., and Walters, J.: \emph{Security Policy Compliance: User Acceptance Perspective}. 45th Hawaii International
-%Conference on System Sciences (pp. 3317-3326). IEEE, 2012.
-
-%\bibitem{BYOD13}
-%Bacik, S.: \emph{Security Implications of Bring Your Own Device, IT Consumerization, and Managing User Choices}, in Information Security Management Handbook, Sixth Edition, Volume 7, pp. 133-142, 2013.
-
-%\bibitem{EAs_Back96}
-%Back, T.:
-%\newblock {\em Evolutionary algorithms in theory and practice}.
-%\newblock Oxford University Press, 1996.
-
-%\bibitem{MachineLearning_Bishop06}
-%Bishop, C.:
-%\newblock {\em Pattern recognition and Machine Learning}.
-%\newblock Springer, 2006.
-
-%\bibitem{Blackberry_tool}
-%Blackberry.
-%\newblock Blackberry balance.
-%\newblock \url{http://es.blackberry.com/business/software/blackberry-balance.html}
-
-%\bibitem{Blackphone}
-%Blackphone.
-%\newblock \url{https://www.blackphone.ch/}
-
-
-%\bibitem{SecPolComp10}
-%Bulgurcu, B., Cavusoglu, H., and Benbasat, I.: \emph{Information security policy compliance: an empirical study of rationality-based beliefs and information security awareness}. MIS Quarterly, 34(3), 523-548. 2010.
-
-%\bibitem{botnet_detection_clustering_09}
-%Chang, S. and Daniels, T.E.:
-%\newblock P2P botnet detection using behavior clustering \& statistical tests.
-%\newblock In {\em Proceedings of the 2nd ACM Workshop on Security and
-%  Artificial Intelligence}, AISec '09, pages 23--30, New York, NY, USA, 2009.
-%  ACM.
-
-%\bibitem{SecPol09}
-%Cresson Wood, C. and Lineman, D.: \emph{Information Security Policies Made Easy Version 11}. Information Shield, Inc. 2009.
-
-%\bibitem{inferring_policies_socialnetworks_09}
-%Danezis, G.:
-%\newblock Inferring privacy policies for social networking services.
-%\newblock In {\em Proceedings of the 2Nd ACM Workshop on Security and
-%  Artificial Intelligence}, AISec '09, pages 5--10, New York, NY, USA, 2009.
-%  ACM.
-
-%\bibitem{Good_tool}
-%Good's Technology.
-%\newblock BYOD Solution.
-%\newblock
-%  \url{http://www1.good.com/secure-mobility-solution/bring-your-own-device.html}
-
-%\bibitem{GAs_Goldberg89}
-%Goldberg, D.E.:
-%\newblock {\em Genetic Algorithms in search, optimization and machine
-%  learning}.
-%\newblock Addison Wesley, 1989.
-
-%\bibitem{FeatureSelection_Guyon03}
-%Guyon, I.,  and Elisseeff, A.:
-%\newblock An introduction to variable and feature selection.
-%\newblock {\em J. Mach. Learn. Res.}, 3:1157--1182, 2003.
-
-%\bibitem{PatternMining_Han07}
-%Han, J., Cheng, H., Xin, D., and Yan, X.:
-%\newblock Frequent pattern mining: Current status and future directions.
-%\newblock {\em Data Min. Knowl. Discov.}, 15(1):55--86, 2007.
-
-%\bibitem{SecPolPenalty09}
-%Herath, T., and Rao, H.R.: \emph{Protection motivation and deterrence: a framework for security policy compliance in organisations}. European Journal of Information Systems, vol. 18, pp. 106-125, 2009.
-	
-%\bibitem{IBM_tool}
-%IBM.
-%\newblock Hosted mobile device security management.
-%\newblock
-%\url{http://www-935.ibm.com/services/us/en/it-services/managed-security-services-cloud-computing} \url{ -hosted-mobile-device-security-management.html}
-
-%\bibitem{Clustering_Jain99}
-%Jain, A.K., Murty, M.N., and Flynn, P.~J.:
-%\newblock Data clustering: A review.
-%\newblock {\em ACM Comput. Surv.}, 31(3):264--323, Sept. 1999.
-
-%\bibitem{imbalance_techniques_02}
-%Japkowicz, N. and Stephen, S.:
-%\newblock The class imbalance problem: A systematic study.
-%\newblock {\em Intell. Data Anal.}, 6(5):429--449, Oct. 2002.
-
-%\bibitem{ibm11}
-%Kao, I-L.: \emph{IBM Security Services. Securing mobile devices in the business environment}, IBM, 2011.
-
-%\bibitem{feature_selection_anomalies_08}
-%Kloft, M., Brefeld, U., D\"{u}essel, P., Gehl, C. and Laskov, P.:
-%\newblock Automatic feature selection for anomaly detection.
-%\newblock In {\em Proceedings of the 1st ACM Workshop on Workshop on AISec},
-%  AISec '08, pages 71--76, New York, NY, USA, 2008. ACM.
-
-%\bibitem{GP_Koza92}
-%Koza, J.~R.:
-%\newblock {\em Genetic Programming: On the programming of computers by means of
-%  natural selection}.
-%\newblock MIT Press, Cambridge, MA, 1992.
-
-%\bibitem{EAs_securitycosts-kirta} 
-%Kirta, T., and Kivimaab, J.: Optimizing it security costs by evolutionary algorithms. In C. Czosseck and K. Podins, editors, Conference on Cyber Con ict,pages 145-160, CCD COE Publications, 2010.
-
-%\bibitem{DataMining_Lee01}
-%Lee, S.J. and Siau, K.:
-%\newblock A review of data mining techniques.
-%\newblock {\em Industrial Management \& Data Systems}, 101(1):41--46, 2001.
-
-%\bibitem{user_classification_ml_13}
-%Leontjeva, A., Goldszmidt, M., Xie, Y., Yu, F. and Abadi, M.:
-%\newblock Early security classification of skype users via machine learning.
-%\newblock In {\em Proceedings of the 2013 ACM Workshop on Artificial
-%  Intelligence and Security}, AISec '13, pages 35--44, New York, NY, USA, 2013.
-%  ACM.
-
-%\bibitem{sec_policy_evolution_gp_08}
-%Lim, Y.T., Cheng, P.C., Rohatgi, P. and Clark, J.A.:
-%\newblock Mls security policy evolution with genetic programming.
-%\newblock In {\em Proceedings of the 10th Annual Conference on Genetic and
-%  Evolutionary Computation}, GECCO '08, pages 1571--1578, New York, NY, USA,
-%  2008. ACM.
-
-%\bibitem{MIT05}
-%Lippmann, R.P., Ingols, K.W., Scott, C., Piwowarski, K., Kratkiewicz, K.J., Artz, M., and Cunningham, R.K.: \emph{Evaluating and Strengthening Enterprise
-%Network Security Using Attack Graphs}. Project Report IA-2. Lincoln Laboratory, Massachusetts Institute of Technology, October 2005.
-
-%\bibitem{GP_intrusion-lu} Lu, W. and Traore, L.: Detecting new forms of network intrusion using genetic programming. In Proceedings of the 2003 Congress on Evolutionary Computation, pages 2165-2172, 2003.
-
-%\bibitem{EventProcessing_Luckham02}
-%Luckham, D.:
-%\newblock {\em The Power of Events: An Introduction to Complex Event Processing
-%  in Distributed Enterprise Systems}.
-%\newblock Addison-Wesley, MA, USA, 2002.
-
-%\bibitem{classification_67}
-%MacQueen, J.:
-%\newblock Some methods for classification and analysis of multivariate
-%  observations.
-%\newblock In {\em Proceedings of the fifth Berkeley symposium on mathematical
-%  statistics and probability}, volume~1, page~14. California, USA, 1967.
-
-%\bibitem{GA_intrusion-majeed} Majeed, P.G. and Kumar, S. Genetic algorithms in intrusion detection systems: A survey. International Journal of Innovation and Applied Studies, 5(3):233-240, March 2014.
-
-%\bibitem{Opp_Security11}
-%Oppliger, R.:
-%\newblock Security and privacy in an online world.
-%\newblock {\em IEEE Computer}, 44(9):21--22, September 2011.
-
-%\bibitem{android11}
-%Orthacker, C., Teufl, P., Kraxberger, S., Lackner, G., Gissing, M., Marsalek, A., Leibetseder, J., and Prevenhueber, O.: \emph{Android Security Permissions - Can We Trust Them?}. MobiSec Session on Smartphone Security, Aalborg 2011.
-
-%\bibitem{BigData_11}
-%Ratner, B.:
-%\newblock {\em Statistical and Machine-Learning Data Mining: Techniques for
-%  Better Predictive Modeling and Analysis of Big Data, Second Edition}.
-%\newblock CRC Press, Inc., Boca Raton, FL, USA, 2nd edition, 2011.
-
-%\bibitem{policy_generation_clustering_10}
-%Samak, T. and Al-Shaer, E.:
-%\newblock Synthetic security policy generation via network traffic clustering.
-%\newblock In {\em Proceedings of the 3rd ACM Workshop on Artificial
-%  Intelligence and Security}, AISec '10, pages 45--53, New York, NY, USA, 2010.
-%  ACM.
-
-%\bibitem{Samsung_tool}
-%Samsung KNOX.
-%\newblock
-%  \url{https://www.samsungknox.com}
-
-%\bibitem{Schu_SecPatterns05}
-%Schumacher, M., Fernandez-Buglioni, E., Hybertson, D., Buschmann, F., and
-%  Sommerlad, P.:
-%\newblock {\em Security Patterns: Integrating Security and Systems
-%  Engineering}.
-%\newblock John Wiley \& sons, 2005.
-
-%\bibitem{RT2AE_SOTICS13}
-%Seigneur, J.-M., Kölndorfer, P., Busch, M., and Hochleitner, C.:
-%\newblock A survey of trust and risk metrics for a BYOD mobile working world.
-%\newblock In {\em Third International Conference on Social Eco-Informatics
-%  (SOTICS 2013)}, page To Appear. Curran Associates Inc., November 2013.
-
-%\bibitem{SecPolComp09}
-%Shaw, R.S., Chen, C.C., Harris, A.L., and Huang, H.-J.: \emph{The impact of information richness on information security 
-%awareness training effectiveness}. Computers \& Education, vol. 52, pp. 92-100, 2009.
-
-%\bibitem{SecPolComp07}
-%Siponen, M., Pahnila, S., and Mahmood, A.: \emph{Employees' adherence to information security policies: an empirical study}. In IFIP International Federation for Information Processing, Volume 232, New Approaches for Security, Privacy and Trust in Complex Environments pp. 133-144, 2007.
-
-%\bibitem{AAI_book_2009}
-%Solanas, A. and Martínez-bal, A.:
-%\newblock {\em Advances in Artificial Intelligence for Privacy Protection and
-%  Security}.
-%\newblock World Scientific Publishing Co., Inc., River Edge, NJ, USA, 2009.
-
-%\bibitem{Sophos_tool}
-%Sophos.
-%\newblock Mobile control.
-%\newblock \url{http://www.sophos.com/en-us/products/mobile-control.aspx}
-%
-%\bibitem{rule_generation_gp_09}
-%Suarez-Tangil, G., Palomar, E. Fuentes, J., Blasco, J. and Ribagorda, A.:
-%\newblock Automatic rule generation based on genetic programming for event
-%  correlation.
-%\newblock In l.~Herrero, P.~Gastaldo, R.~Zunino, and E.~Corchado, editors, {\em
-%  Computational Intelligence in Security for Information Systems}, volume~63 of
-%  {\em Advances in Intelligent and Soft Computing}, pages 127--134. Springer
-%  Berlin Heidelberg, 2009.
-
-%\bibitem{risk_reduction_ga_12}
-%Tamjidyamcholo, A.:
-%\newblock Genetic algorithm approach for risk reduction of information
-%  security.
-%\newblock {\em International Journal of Cyber-Security and Digital Forensics
-%  (IJCSDF)}, 1(1), 2012.
-
-%\bibitem{SurveyEventCorrelation_Tiffany02}
-%Tiffany, M.:
-%\newblock A survey of event correlation techniques and related topics.
-%\newblock Research paper, Georgia Institute of Technology, 2002.
-
-%\bibitem{WorxSDK}
-%Citrix.
-%\newblock Worx App SDK.
-%\newblock \url{http://www.citrix.es/go/worx-app-sdk.html}
-%
-%\bibitem{WSO2_tool}
-%WSO2.
-%\newblock Enterprise Mobility Manager.
-%\newblock \url{http://wso2.com/products/enterprise-mobility-manager/}
-
-%\bibitem{GA_networksecurity-zarza} 
-%Zarza, L., Forné, J., Pegueroles, J.R., and Soriano, M.: Advances in artificial intelligence for privacy protection and security, chapter Genetic algorithms for designing network security protocols, pages 325-358. World Scientific, 2010.
-%
-%\bibitem{GA_cryptographicprotocols-zarza2} 
-%Zarza, L., Pegueroles, J., Soriano, M., and Martínez, R.: Design of cryptographic protocols by means of genetic algorithms techniques. In M. Malek, E. Fernández-Medina, and J. Hernando, editors, SECRYPT, pages 316-319. INSTICC Press, 2006.
-
-%\end{thebibliography}
-
+\bibliography{review_muses,geneura-latin1}
 
 \end{document}
 %%% Local Variables:
