@@ -101,7 +101,7 @@ already presented in
 the implementation was in its early stages when those papers were
 submitted. Also, an additional work on the data mining techniques was conducted in \cite{mora14:urls}, over a set of data previous to the release and test of the first MUSES prototype. As there was no available test data, a set of URL connection logs were provided by a Spanish company, % [Pedro] quizás decir que es una empresa de seguridad o algo así
 as well as both black and white lists. These lists contained the URLs that were forbidden, or allowed, to be accessed by the employees. 
-By taking the lists as `rules', and the HTTP connections as `events', a previous simulation of the rule generation through classification, and its results, could be presented at \cite{mora14:urls}. 
+By taking the lists as `rules', and the HTTP connections as `events', a previous simulation of the rule generation through classification, and its results, could be presented at \cite{mora14:urls}. % [Pedro] ¿ese "could be" se refiere a verbo en pasado? en ese caso, quizás usar "... was presented at..."
 Now, after the release of the first prototype, along with the first conducted tests, we have a clearer idea of MUSES capabilities and, as such, they will be presented in this paper. % [Pedro] Quizás comenzar la frase con: In this paper, once the first prototipe has been released and the first tests have been conducted, we ...
 
 
@@ -109,7 +109,9 @@ MUSES includes some important modules in its core, %FERGU: no habéis hablado de 
 %cambiado
  such as an Event Processor, which performs an event correlation task \cite{SurveyEventCorrelation_Tiffany02}, matching occurred events with rules to deal with them, and extracting threats that a Real-Time Risk and Trust Analysis Engine (RT2AE) \cite{RT2AE_SOTICS13} will process (along with other trust data and profiles), to select the best subset of policies.
 
-But first, this work presents a brief overview of the main existing solutions in this environment. Then, a comparison between these tools and MUSES is also conducted, focusing on the advances beyond the state of the art that this novel system (being developed inside an European Project\footnote{\url{http://musesproject.eu/}} of the same name) includes . 
+% [Pedro] en este punto se puede comentar lo que se va a presentar en el trabajo introduciendo directamente con "This work presents..." o "This paper presents..." (yo quitaría el "But first,"
+But first, this work presents a brief overview of the main existing solutions in this environment. Then, a comparison between these tools and MUSES is also conducted, focusing on the advances beyond the state of the art that this novel system (being developed inside an European Project\footnote{\url{http://musesproject.eu/}} of the same name) % [Pedro] esa aclaración y demás yo lo podría más arriba, cuando se definen qué son las siglas de MUSES.
+ includes. 
 
 
 The rest of the paper is organized as follows. First, some background situation about enterprise security is presented in Section \ref{sec:preliminaryconcepts}, explaining how BYOD philosophy affects it. Then, the main tools/solutions are detailed in Section \ref{sec:toolsreview}, even if they are still in development.  
