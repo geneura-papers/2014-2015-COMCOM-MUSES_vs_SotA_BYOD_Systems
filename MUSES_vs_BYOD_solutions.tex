@@ -343,8 +343,8 @@ The client is an important part of the a-priori risk treatment, because it both 
 
 \begin{description}
   \item[CONNECTIVITY SENSOR] It gathers all information related to network communications, in addition to security properties like network encryption, or number of neighbours. This allows MUSES actuator to forbid the user for sending important emails, or opening key assets if, for instance, the network encryption is not secure enough. 
-  \item[DEVICE PROTECTION SENSOR] Which scans device security settings, such as the time until the device screen turns off, if the device has the screen protected with a password, or even if the device is rooted \cite{hildenbrand2014}. This sensor %¿cambiarlo por "This security mechanism" ?
-   adds the possibility of detecting security violations event if the user is not doing a specific action.
+  \item[DEVICE PROTECTION SENSOR] Which scans device security settings, such as the time until the device screen turns off, if the device has the screen protected with a password, or if the device is rooted \cite{hildenbrand2014}. This security mechanism %¿cambiarlo por "This security mechanism" ? % Ok, cambiado, creo que está mejor así.
+   adds the possibility of detecting security violations even if the user is not doing a specific action.
   \item[LOCATION SENSOR] User location can be obtained from the device GPS. Although, and to preserve user privacy, a number of `zones' can be defined by the company, so MUSES only checks if the user is inside them and acts in consequence.
   \item[MAIL SENSOR] If the user is going to send an email, MUSES client sensors check also the email attributes. This way, they can detect if the event context is dangerous, according to security policies and the RT2AE, before the mail is sent.
   \item[FILE SENSOR] The type of file, also called \textit{asset}, is also very important for the application of security rules. Thus, this sensor aims to detect is some files might need more strict security policies, also depending on the rest of sensors.
@@ -352,7 +352,8 @@ The client is an important part of the a-priori risk treatment, because it both 
 \end{description}
 
 It is important to note that MUSES does not work as an antivirus itself, but has a sensor which % quizás quitar "has a sensor which" y sólo poner "it"
-checks if the device has already an antivirus, and raises a security violation alert if not. It might happen then that the user ignores this advice and the device becomes compromised. As it would be explained in the next section, the sensors are constantly sending their monitored values, and therefore patterns are created, stored, and processed on the server. In case the device gets infected with rootkit-type malware \cite{bickford2010rootkits}, a sudden change in the values of the sensors will be noticed by the server, which will immediately warn the user, and decrease the devide trust value.
+% Esto ya no sé porque entonces se me repite mucho la palabra "it", serían 2 veces en esta frase y la siguiente que también empieza por "it"...
+checks if the device has already an antivirus, and raises a security violation alert if not. It might happen then that the user ignores this advice and the device becomes compromised. As it would be explained in the next section, the sensors are constantly sending their monitored values, and therefore patterns are created, stored, and processed on the server. In case the device gets infected with rootkit-type malware \cite{bickford2010rootkits}, a sudden change in the values of the sensors will mean a significant change in the patterns. Then, this change in the patterns will be noticed by the server, which will immediately warn the user, and decrease the device trust value.
 % [Pedro] aquí pueden preguntar sobre cómo se lleva a cabo esa detección del cambio en los sensores...
 
 The rest of the components shown in the figure are: the \textit{MUSES User Interface (UI)}, the application through which the user interacts with the system; and the \textit{Connection Manager} which controls the communications between MUSES client and MUSES server. 
