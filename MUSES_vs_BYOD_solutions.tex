@@ -343,7 +343,8 @@ The client is an important part of the a-priori risk treatment, because it both 
 
 \begin{description}
   \item[CONNECTIVITY SENSOR] It gathers all information related to network communications, in addition to security properties like network encryption, or number of neighbours. This allows MUSES actuator to forbid the user for sending important emails, or opening key assets if, for instance, the network encryption is not secure enough. 
-  \item[DEVICE PROTECTION SENSOR] Which scans device security settings, such as the time until the device screen turns off, if the device has the screen protected with a password, or even if the device is rooted \cite{hildenbrand2014}. This sensor adds the possibility of detecting security violations event if the user is not doing a specific action.
+  \item[DEVICE PROTECTION SENSOR] Which scans device security settings, such as the time until the device screen turns off, if the device has the screen protected with a password, or even if the device is rooted \cite{hildenbrand2014}. This sensor %¿cambiarlo por "This security mechanism" ?
+   adds the possibility of detecting security violations event if the user is not doing a specific action.
   \item[LOCATION SENSOR] User location can be obtained from the device GPS. Although, and to preserve user privacy, a number of `zones' can be defined by the company, so MUSES only checks if the user is inside them and acts in consequence.
   \item[MAIL SENSOR] If the user is going to send an email, MUSES client sensors check also the email attributes. This way, they can detect if the event context is dangerous, according to security policies and the RT2AE, before the mail is sent.
   \item[FILE SENSOR] The type of file, also called \textit{asset}, is also very important for the application of security rules. Thus, this sensor aims to detect is some files might need more strict security policies, also depending on the rest of sensors.
