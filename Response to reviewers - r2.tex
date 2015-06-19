@@ -41,7 +41,87 @@ If you decide to revise the work, please submit a list of changes or a rebuttal 
 
 \textit{Include an overview of all changes made in the paper.}
 
-\section{Comments by Reviewer \#1}
+\section{Comments by Reviewer \#2}
 
+\begin{verbatim}
+After reviewing the new version of the document, I admit the authors have  substantially changed section 3 (state of the art) and they have improved and extended the introduction and sections 4 (description of the system) and section 5 (comparison with other systems) I acknowledge the ideas are really interesting and exciting, but I'm still not sure if the authors are providing new results not published in their previous works or just rephrasing their text.
+
+Since there is an obvious over-the-top quality in their work and some good ideas, I'll let the editors decide if the contents are novel enough (compared to other previous works by the same authors) to be published in the journal.
+
+
+\end{verbatim}
+
+\section{Comments by Reviewer \#3}
+
+\begin{verbatim}
+This paper describes MUSES, an adaptable framework for enforcing security policies on mobile devices. This tool relies on Machine Learning and CI techniques to predict policy violations and is self-adaptive on user behaviors.
+The idea seems interesting although several technical concerns arise from the reading of this work:
+1.      The tools aims at enforcing security policies, however the security response occurs only AFTER a particular pattern is recognized to be potentially malicious. From my understandings, there is no a-priori enforcement except for the prediction based on event logs. This could mean that e security violation could in principle happen and only later recognized. This is not so suitable for a corporate environment with strict security requirements. This statement should be discussed and preferably discredited with experimental results.
+2.      A strong limitation is that an effective enforcement is only possible with MUSES Aware Apps. It is unclear the effectiveness of the approach with commercial applications. In page 14 "MUSES could just detect very specific events and also do very limited actions". With those assumptions, it seems unlikely that a company would adopt MUSES since it is not able to offer an adequate level of security. I think that this is very far from being acceptable for a BYOD solution. Also in this respect, experimental results are needed.
+3.      MUSES Sensors are essentially user-space applications that collects logs on specific activities. This aspect really concerns me since a compromised device or compromised sensor apps could vanish all MUSES effort. Authors should deeply discuss this aspect.
+4.      Paper structure is really confusing. Many essential concepts are introduced and explained too late in the paper forcing the reader to go back and forth to understand the architecture (e.g. MUSES aware apps and Data Mining techniques). I suggest authors to deeply revise the presentation of their work.
+5.      A discussion on research activities on BYOD is completely missing. This is unacceptable for a solution that aims at solving BYOD security issues. Just to cite a few:
+a.      Gessner, Dennis, et al. "Towards a User-Friendly Security-Enhancing BYOD Solution." NEC Technical Journal 7.3 (2013): 113.
+b.      Samaras, Vasileios. A BYOD Enterprise Security Architecture for accessing SaaS cloud services. Diss. TU Delft, Delft University of Technology, 2013.
+c.      Armando, Alessandro, et al. "Enabling BYOD through secure meta-market." Proceedings of the 2014 ACM conference on Security and privacy in wireless & mobile networks. ACM, 2014.
+6.      The experimental section is completely missing. Is MUSES able to identify security violations? Which are the computational cost for both the company (server) and users (mobile devices)? Are there any limitations?
+Under such considerations I recommend authors for a *STRONG* major revision to cover the aforementioned points.
+
+
+\end{verbatim}
+
+\section{Comments by Reviewer \#4}
+
+\begin{verbatim}
+In this work authors present state-of-the art in BYOD solutions, and introduce a new solution, MUSES, a result of an EU FP7 project.
+
+General and specific comments:
+
+The abstract of the paper should be improved. Sentence on page 1, lines 23-25 is unclear. It suggests that the BYOD solutions appeared in the market with the purpose to adapt to it in a secure way.
+
+The description of IBM products, in section 3.1, does not provide clear distinction between various service types provided by IBM. It furthermore lacks focused coverage of services relevant for this work.
+
+In analysis of IBM offer, authors refer to general web site for mobile security products and consumer guide/whitepaper that explores the general problem of BYOD. They consider services that are not purely related to BYOD and MUSES. For instance, it is not clear how "Enterprise Wireless Networks" (page 6, lines 21-26) fit into comparison, and how establishment of secure connections can be related to MUSES's adaptability. On the other hand, the products such as MobileFirst and MaaS360 are omitted. The suggestion in this regard is to consider rewriting this part, including updated references and current tools in comparison.
+
+In section 3.3 (p.7, sentence in l.18-19) there is provided a statement about success of two solutions, however without referencing relevant sources or providing details. It is furthermore questionable whether this statement is relevant for the scope of this work at all.
+
+Section 3.6.1 covers WSO2, an open source tool that should be freely available for evaluation and comparison. However, in review, this tool has been only roughly mentioned. The context and relevance to the work are omitted, as well as features and comparison with MUSES. It is not clear therefore how this tool and MUSES differ.
+
+Section 3.6.4 (p10, 44) states "are Worx-enable are capable". The meaning of this part is not clear, nor to which concept Worx refers.
+
+Basically, in section 3 the following possibilities for improvement are identified:
+ 1) Explain why particular solutions are chosen for inclusion in review and what is their relevance? Did authors consider other (possible) solutions relying on DM and CI?
+ 2) Considering variety of BYOD tools and their different features, authors might consider to introduce or reuse a taxonomy or classification of those approaches, and state the place of MUSES there (or define a new subcategory, if deemed necessary)
+ 3) Some presented solutions miss their relationship to MUSES (coverage, features, comparison). This point also refers to inconsistent coverage amongst solutions and weak arguments favouring MUSES. Either coverage should be more consisent by focusing on common (present or missing) aspects, or it should be elaborated why such coverage is missing. Also see the comment for dicussion part bellow.
+
+On p.12, l.9-12 authors state that MUSES can be installed in every mobile or portable device, independently of the operating system and device type. This is also derived from the title "Multiplatform Usable Endpoint Security System".
+The authors however do not provide additional details on how is this achieved in the practice and are there any limitations in regards to that. How they managed to provide the same sistem for Androd, Windows, iOS, PCs, without limitations? How MUSES manage the variety of OS versions and underlying platform features provided to the app? This feature is important differentiator against some other solutions and in opinion of this reviewer should be elaborated in more detail.
+
+When stating (p.13, l.15-24) that MUSES relies on AES based symmetric encryption, does it mean that information flows in MUSES client internally, as well as client-server communication, are encrypted with the same key? Does MUSES uses client specific and/or temporal keys? What measures are taken to protect this key from malicious applications both on client and server side? How and where is this key generated? What is lifetime of the key? In my opinion this part should be reworked, providing more detailed description of security aspects of their approach. Also please see security related comment bellow.
+
+On p.14, l.16-28 authors introduce the concepts of MUSES Aware App and MUSES API. In my opinion they should provide more details on integration options and necessary effort to make an application MUSES Aware. This is a crucial aspect of their approach as this requirement and related complexity might hinder the adoption of the solution.
+
+On p.17, l.7-9 authors state that the data sets can be huge, leading to necessity to apply Big Data processing methods. They however do not provide at least an indication of the data amount/complexity that is gathered and processed by the system, and at what rate it grows. Is it really necessary to employ Big Data processing?
+
+On p.18, for two bullets announced under l.46-47 there is not clear if they are included in the refinement process or not. In the later case, it is suggested to explain why they are not present in the processing. Maybe these bullets could be moved into part relating to further work.
+
+>From the presented concepts behind MUSES and its flows, it is not completely clear how it approaches "newly discovered vulnerabilities or threats" (p.20 l.27-28). It is hence suggested to clarify this statement and provide explanation to which extent is rule refinement and adaptation used to discover and address new vulnerabilities and threats in the software and systems.
+
+Similar applies to human-computer interaction (p.20 l.34). Although some details are provided in l.43-45 on the same page, in opinion of this reviewer, the statement about progress beyond the state of the art should be backed with more (stronger) details and data.
+
+This reviewer would also suggest to provide more details on security aspect of the system. Some hints are provided in previous comments. Additionally, as the client/server interaction is concerned, what measures and aspects have been applied in order to identify and prevent malicious parties to manipulate or inject malicious rules in the system? By injecting such rules, the complete sub-network of clients of the company can be affected. Furthermore, author assumes that the clients are non-rooted devices. What happens, and at which extent can some rooted device affect local application of the system, and also central server and other clients?
+
+For the section 5 and discussion, this reviewer would suggest to consider providing overview in the form of table(s) or figure, comparing different aspects of MUSES and other tools and providing hints/references to further details in this or other works. As there are many features of MUSES and other tools, employed approaches and techniques, different coverages and limitations, such overview could countribute to clarity and position of the proposed solution.
+
+Overall, this reviewer perceives this work as a good contribution in presenting and advancing the state-of-the art. It is however suggested to consider revising this work and take into account provided suggestions.
+
+Specific comments regarding organization and presentation:
+
+1) This work overuses forward slashes in linking words similar in concept or meaning. Although they are necessary in some situations, forward slashes very often link redundant words and reduce flow and readability of the text. They also contribute to the vagueness. I would suggest authors to review the text in this concern.
+
+2) Authors overuse parentheses to explain details. This hinders readability and text flow. The level of details provided and their relevance in the context are only partially consistent. On p.14 users introduce footnotes for additional details. Maybe they should consider applying such approach in other parts of the document as well.
+
+3) The structure and flow of the work can be improved.
+\end{verbatim}
 
 \end{document}
