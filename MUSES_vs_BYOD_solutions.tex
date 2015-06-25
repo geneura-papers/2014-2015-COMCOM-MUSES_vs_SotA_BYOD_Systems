@@ -419,11 +419,11 @@ The following sections describe these processes: first, focusing on DM technique
 \subsubsection{Data Mining + Machine Learning}
 \label{subsubsec:dm_ml}
 
-This task is performed by the \textit{Data Miner} module. It  takes the `raw' data from the database and  process the information, in order to yield a set of relevant data for the Knowledge Compiler module or for the human controller. In the first case, this sub-component  takes them as a reference in order to refine or adapt the current set of security rules (for instance, to deal with anomalous situations).
+This task is performed by the \textit{Data Miner} module. It  takes the `raw' data from the database and processes the information, in order to yield a set of relevant data for the Knowledge Compiler module and for the human controller. In the first case, this Data Miner component takes the set of data as a reference for refining or adapting the current set of security rules, to deal with anomalous situations, for instance.
 
-The process is be mainly non-supervised. Moreover, eventually, the datasets can be huge (depending on the company's data flows), so Big Data processing methods \cite{BigData_11} can be applied.
+The set of data are composed by the so-called patterns, which consist of an event and all the related information to that event. This means that the context in which the event was is translated into a number of \textit{attributes} of the pattern. This process is mainly non-supervised. Moreover, as the datasets are huge, because a lot of attributes are extracted from the events so the more complete information is obtained, MUSES applies Big Data processing methods \cite{BigData_11}. %JUSTIFY (Paloma will do it)
 
-The DM/ML techniques process the so-called patterns, which in this context correspond to events (and their related information) produced by the users' interactions with the system. As stated, these events  are captured from the sensors in the users' devices and transmitted to the server to be processed and stored in the system database. The methods to be applied are:
+The methods that MUSES applies over the data are:
 
 \begin{itemize}
 
