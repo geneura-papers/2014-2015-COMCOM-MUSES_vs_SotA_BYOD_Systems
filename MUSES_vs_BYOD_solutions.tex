@@ -424,20 +424,20 @@ The methods that MUSES applies over the data are:
 \begin{itemize}
 
 \item \textit{Pattern Mining} \cite{PatternMining_Han07}: 
-This process  tries to identify frequent or, on the contrary, anomalous patterns, in order to process them lately. The idea is that non-frequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO or to serve as a reference for the rule-refinement process.
+By this process, the patterns are obtained from the `raw' data, as has been explained. These form what is called a dataset, and from it, the most frequent or anomalous patterns, can be extracted. The idea is that non-frequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO, or to serve as a reference for the rule-refinement process.
 
 \item \textit{Classification} \cite{classification_67}: 
 This technique tries to train a model (classifier) able to associate every pattern in the dataset to a class, so that the model could be used for assigning a class for further incoming patterns with an unknown category.
-For instance, it could look for events (patterns) that had been previously  marked as `allowed' or `denied' (according to the ISPs). When a new event arises, if it has not an assigned decision, the classifier should provide one based on the similarity with previous (and already labelled) patterns.
+Then, the model learns from events that, according to the ISPs, had been previously marked as `allowed' or `denied'. When a new event arrives to the server, if it has not an assigned decision, the classifier should provide one based on the similarity with previous, and already labelled, patterns.
 
 \item \textit{Clustering} \cite{Clustering_Jain99}: 
-The aim of this method is grouping the patterns considering some similarity criteria, in order to manage them as a set. This could be used for providing data visualisation mechanisms, in order to make it easier to interpret the data interaction and the distribution in clusters with respect to the different properties (features) of the patterns.
+The aim of this method is grouping the patterns considering some similarity criteria, in order to manage them as a set. This is used for providing data visualisation mechanisms through a graphical interface. This would make easier to interpret data interaction and the distribution in clusters with respect to the different attributes, or features, of the patterns.
 
 \item \textit{Feature Selection} \cite{FeatureSelection_Guyon03}: 
-It consists on extract the most important features (variables) from the data. This could be useful if we want to discard non-key features, which could be interesting in order to reduce the database weight, for improving the performance of other techniques (such as classification or clustering), and even to improve the performance of the whole system, since less information would be gathered and transmitted.
+It consists of extracting the most important featuresvariables from the data. Feature selection techniques have been proven \cite{liu1998feature} to preserve the performance of a dataset in terms of classification accuracies, while significantly increasing the processing time.
 
 \item \textit{Data Analysis}: 
-This  provides the CSO with mechanisms to visualise interesting facts about the data, such as more frequent events, dangerous or suspicious users (according to their behaviour), more triggered rules, etc.
+This provides the CSO with mechanisms to visualise interesting facts about the data, such as most frequent events, dangerous or suspicious users according to their behaviour, most triggered rules, etc. All this information is shown to the CSO via the mentioned graphical interface, implemented in the server.
 
 \end{itemize}
 
