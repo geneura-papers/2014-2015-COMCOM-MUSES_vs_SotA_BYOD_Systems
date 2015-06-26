@@ -458,26 +458,18 @@ With regard to the type of data, since GP algorithms can manage rule or tree bas
 
 The second approach taken in the Data Miner is the Feature Selection process that was mentioned in the previous section. This process is conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features in the classification. Thus, the GA algorithm can optimise the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method \cite{liu1998feature}.
 
-On the other hand, the refinement or adaptation of the security rules is performed by the \textit{Knowledge Compiler} module, and it uses three EC methods. These methods can be used for inference and optimisation, while considering feedback about the final use of the new rules as a part of the process:
+On the other hand, the refinement or adaptation of the security rules is performed by the \textit{Knowledge Compiler} module, and it uses three EC methods. These methods can be used for inference and optimisation, and they use different data as part of the process, such as:
 
 \begin{itemize}
 
-\item The information extracted from the Data Miner sub-component, mainly concerning the anomalous, unclassified or misclassified patterns. These are those patterns which did not match with any of the existing classes (they are quite different from the patterns belonging to those classes), so they cannot be included in any of the classes and thus they should be taken into account for a potential inference or update in the set of security rules, in order to `cover' them.
+\item The information extracted from the Data Miner sub-component, mainly concerning the anomalous, unclassified or misclassified patterns. These are those patterns which did not match with any of the existing classes, as they are quite different from the patterns belonging to those classes. This way, they cannot be included in any of the classes and thus they should be taken into account for a potential inference or update in the set of security rules, in order to `cover' them.
 
-\item User-related information corresponding to those anomalous or unlabelled patterns (events). Thus, the user's ID, location and role, for instance, can be considered in order to select the applicable set of rules for that conditions.
+\item User-related information, and context information in general, corresponding to those anomalous or unlabelled events. Thus, the user's location zone, role, or device settings, for instance, can be considered in order to select the applicable set of rules for that conditions.
 
-\item Context information for the same patterns, in order to also restrict the applicable set of rules considering this information. 
+\item Risk information extracted from the user profile, e.g. ``Did the user received a lot of `denies' or `allows' before?'', in other words, ``Is the user trustworthy?''. In case the user is not, meaning that the user trust value is low, more restrictive rules can be created, otherwise the corresponding rules could be `softer' for that user.
 
-\end{itemize}
-
-Other useful information to consider in the refinement and adaptation process are:
-
-\begin{itemize}
-
-\item Risk information extracted from the user profile (user trust value), e.g. ``Did the user received a lot of `denies' or `allows' before?'', i.e. ``Is the user trustworthy?''. In case the user is not, more restrictive rules can be created, otherwise the corresponding rules could be `relaxed' for that user.
-
-\item The information stored in logs along the system, which can, for instance, tell about how the user responds to system messages (either an action or if the user gives feedback). This could result in the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignore warning messages.
-Moreover, important log information regarding the parameters used or the decisions made in the different modules can be used for further tests of new inferred rules, as it is explained below.
+\item The information about the user behaviour with respect to system messages, wether the users acts in consequence or against MUSES advice, as well as user feedback. The user feedback has been measured in the MUSES trials by making interviews with the people who have used MUSES, but it can be also measured by pop-up messages, ``has this information been useful?''-type. All this information contribute to the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignored warning messages.
+Moreover, important log information with regard to the parameters used or the decisions made in the different modules can be used for further tests of new inferred rules, as it is explained below.
 
 \end{itemize}
 
