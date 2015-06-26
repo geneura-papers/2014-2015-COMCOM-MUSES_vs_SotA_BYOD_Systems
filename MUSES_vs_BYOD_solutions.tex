@@ -477,16 +477,16 @@ This being said, and because the refinement of rules is considered of the same i
 
 \begin{itemize}
 
-\item \textit{GP rule inference} method, which generates new rules in order to `cover' those situations non contemplated in the current set of rules. Thus, for instance, a new rule could be created in order to deal with the patterns to which the classifier could not assign a class.
-The generation can be done considering the so-called \textit{dictionary}, i.e. a set of terms corresponding to all the possible inputs and actions in the system, which are antecedents (conditions) and consequents in the security rules to be inferred.
-The evaluation of these rules can be done considering the stored log information concerning the parameters along with the actions and decisions made in every component in the system. Thus, it is possible to `simulate' the whole  system behaviour when the new rule is included and get a value of its performance.
+\item A \textit{GP rule inference} method, which generates new rules in order to `cover' those situations that have been not contemplated in the current set of rules. Thus, a new rule would be created for dealing with the patterns to which the classifier could not assign a class.
+The generation can be done considering the so-called \textit{dictionary}, i.e. a set of terms corresponding to all the possible inputs and actions in the system, which are antecedents and consequents \footnote{The antecedents are the conditions of a rule that have to be met to apply the consequents.} in the security rules to be inferred.
+The evaluation of these rules is done by considering the stored log information concerning the parameters along with the actions and decisions made in every component in the system. Thus, it is possible to `simulate' the whole system behaviour when the new rule is included and get a value of its performance.
 
-\item \textit{GP rule refinement} approach, which optimises the current set of rules, adjusting the values in the conditions (antecedents), for instance. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specialisations or generalisations of existing rules which could mean a better performance.
-The evaluation (of the whole set of security rules) is done considering the number of unlabelled patterns that are `covered' after the adjustments.
+\item A \textit{GP rule refinement} approach, which optimises the current set of rules, adjusting the values in the conditions. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specialisations or generalisations of existing rules which could mean a better performance.
+The evaluation of the whole set of security rules is done by considering the number of unlabelled patterns that are `covered' after the adjustments.
 
-\item \textit{GA optimisation} algorithm for setting up and adapting the assets' values. These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
-If it is possible to evaluate the partial solutions proposed by the GA, this approach could be very useful for the CSO (who is in charge of assigning and adjusting these values over time).
-The adaptation or adjustment concerns the change in value that an asset could have due to a loss of importance, once an event has passed (a project presentation, for instance).
+\item A \textit{GA optimisation} algorithm for setting up and adapting the assets' values. These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
+By evaluating the partial solutions proposed by the GA, this approach provides the CSO, who is in charge of assigning and adjusting these values over time, with information about the most dangerous situations for certain assets.
+The adaptation or adjustment concerns the change in value that an asset could have due to a loss of importance, for instance, for being and out-to-date document.
 
 \end{itemize}
 
