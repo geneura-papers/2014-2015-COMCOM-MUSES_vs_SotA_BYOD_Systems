@@ -449,16 +449,16 @@ This provides the CSO with mechanisms to visualise interesting facts about the d
 \label{subsec:ci}
 
 
-MUSES  uses different EC approaches, initially, two in the DM/ML part of the process, and three in the rule-refinement and adaptation phase. They are based on Genetic Programming (GP) \cite{GP_Koza92}, and Genetic Algorithms (GAs) \cite{GAs_Goldberg89}.
+MUSES uses different EC approaches, initially, two in the DM/ML part of the process, and three in the rule-refinement and adaptation phase. They are based on Genetic Programming (GP) \cite{GP_Koza92}, and Genetic Algorithms (GAs) \cite{GAs_Goldberg89}.
 
-The first evolutionary-based approach is a \textit{GP-based classification} method. This is useful for two main reasons: first, in order to deal with the data class imbalance \cite{imbalance_techniques_02}, very common in classification problems in real systems (with real data); and second, to better manage categorical (non-numeric) data, since most of the features (variables) and information gathered from the events take these kind of values.
+The Data Miner module adopts, then, two evolutionary-based approaches. In the first place, a \textit{GP-based classification} method. This is useful for two main reasons: to deal with the data class imbalance \cite{imbalance_techniques_02}, which is very common in classification problems with real systems, gathering real data; and to better manage categorical data, since most of the features and information gathered from the events take these kind of values, and being non-numeric does not allow to measure the distance between them.
 
-Thus, this approach is be able to manage unbalanced datasets considering a fitness function in which a cost can be associated with the classifier accuracy at every epoch, having a penalty cost when the classifier makes a false negative (an element from the minority class which is classified as belonging to the majority class) \cite{cost_adjustment_07}.
-Regarding the type of data, since GP algorithms can manage rule- or tree-based models, it  works perfectly with any categorical variable, yielding a good classifier as it has been made in other works (such as the aforementioned \cite{cost_adjustment_07}).
+Thus, this kind of classification method is able to manage unbalanced datasets, by considering a fitness function in which a cost is associated with the classifier accuracy at every iteration, having a penalty cost when the classifier makes a false negative. A false negative is an element from the minority class which is classified like as belonging to the majority class \cite{cost_adjustment_07}.
+With regard to the type of data, since GP algorithms can manage rule or tree based models, it works perfectly with any categorical feature, yielding a good classifier as it has been demonstrated in \cite{cost_adjustment_07}.
 
-The second approach is a Feature Selection process, conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features (variables) in the classification. Thus, the algorithm can optimize the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method.
+The second approach taken in the Data Miner is the Feature Selection process that was mentioned in the previous section. This process is conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features in the classification. Thus, the GA algorithm can optimise the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method \cite{liu1998feature}.
 
-The second set of EC techniques is, as stated, part of the rule-refinement (or adaptation) process, to be performed by the \textit{Knowledge Compiler} module. These methods can be used for inference and optimisation, and consider this data as a part of the process:
+On the other hand, the refinement or adaptation of the security rules is performed by the \textit{Knowledge Compiler} module, and it uses three EC methods. These methods can be used for inference and optimisation, while considering feedback about the final use of the new rules as a part of the process:
 
 \begin{itemize}
 
