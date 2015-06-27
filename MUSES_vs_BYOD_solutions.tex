@@ -492,20 +492,22 @@ As the rule refinement process is considered of the same importance as inferring
 \begin{itemize}
 
 \item A \textit{GP rule inference} method, which generates new rules in order to `cover' those situations that have been not contemplated in the current set of rules. Thus, a new rule would be created for dealing with the patterns to which the classifier could not assign a class.
-The generation can be done considering the so-called \textit{dictionary}, i.e. a set of terms corresponding to all the possible inputs and actions in the system, which are antecedents and consequents \footnote{The antecedents are the conditions of a rule that have to be met to apply the consequents.} in the security rules to be inferred.
+The generation of new rules is done by considering the so-called \textit{dictionary}, i.e. a set of terms corresponding to all the possible inputs and actions in the system, which are antecedents and consequents \footnote{The antecedents are the conditions of a rule that have to be met to apply the consequents.} in the security rules to be inferred.
 The evaluation of these rules is done by considering the stored log information concerning the parameters along with the actions and decisions made in every component in the system. Thus, it is possible to `simulate' the whole system behaviour when the new rule is included and get a value of its performance.
+Finally, the inferred rules are proposed to the CSO as ``new, but not yet refined'', along with their evaluated performance.
 
-\item A \textit{GP rule refinement} approach, which optimises the current set of rules, adjusting the values in the conditions. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specialisations or generalisations of existing rules which could lead to a better performance. % [Pedro] change "could mean a better" to "could lead to a better"
-The evaluation of the whole set of security rules is done by considering the number of unlabelled patterns that are `covered' after the adjustments.
+\item A \textit{GP rule refinement} approach, which optimises the current set of rules, adjusting the values in the conditions. The set of rules that could be refined is composed by the new rules from the GP-based inference, but also by the original set of rules which was already completed by the Data Miner. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specialisations or generalisations of existing rules which could lead to a better performance. % [Pedro] change "could mean a better" to "could lead to a better"
+The evaluation of the whole set of security rules is done by considering the number of unlabelled patterns that are `covered' after the adjustments. Again, the rules at the end of this step are presented to the CSO as ``refined''. The CSO is the one who decides, according to the preformance simulation results, if an inferred rule, or the refined one, is the rule which is finally included in the system.
 
-\item A \textit{GA optimisation} algorithm for setting up and adapting the assets' values. These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
+\item A \textit{GA optimisation} algorithm for adapting the assets' values. These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
 By evaluating the partial solutions proposed by the GA, this approach provides the CSO, who is in charge of assigning and adjusting these values over time, with information about the most dangerous situations for certain assets.
-The adaptation or adjustment concerns the change in value that an asset could have due to a loss of importance, for instance, for being and out-to-date document.
+The adaptation or adjustment concerns the change in the value that an asset has due to a loss of importance, for instance, for being and out-to-date document.
 
 \end{itemize}
 
 % [Pedro] it is not clear for me whether those 3 methods can be used (are used) independiently or one after the other(s).
 
+As a summary, the Knowledge Compiler module uses two EC-based processes for inferring and refining rules, plus another one for adjusting assets' values. Both the inferred rules and the refined rules are presented to the CSO, who includes them or not in the system, and this acceptance or rejection acts itself as a feedback for future rule inference.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   COMPARISON  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
