@@ -366,14 +366,13 @@ There are three main components in this side:
 %The subcomponents are the \textit{Decision Maker}, which performs the decision process; the \textit{User, Context, Event Handler}, which processes the events and information to be used for making the decision or stored for further submission (depending on the mode and on the gathered data); and the \textit{Security Policy Receiver} that updates the set of decisions (or Device Policies) in the Decision Table with those received from the server side, after an update or decision process.
 \end{itemize}
 
-The client is an important part of the a-priori risk treatment, because it both monitors the whole context and finally acts or warns the user in event of a security violation. Security violations are mainly identified by security rules, 
+The client is an important part of the a-priori risk treatment, because it both monitors the whole context, and finally acts or warns the user in event of a security violation. 
 % Antonio - yo pienso que en este sistema cualquier violación de seguridad que se detecte se hará por medio de las reglas de seguridad. Eso sería lo ideal, pero para ello el CSO debe definir un conjunto que asegure la seguridad del sistema en la mayoría de casos. Luego el KRS podrá proponer nuevas reglas a través de 'predicciones' (inferencias) o refinamiento, pero estas últimas se construirán como reglas optimizadas para tratar con incidentes de seguridad ya detectados. No se pueden crear de la nada reglas para tratar con nuevos incidentes (desconocidos).
-which is why MUSES uses DM and CI techniques to improve or optimize them and enhance the coverage. 
-That is to say, the more sensors are implemented, the more enforced the security in the device is. 
+But security violations are mainly identified by security rules, which is why MUSES needs at least an initial set of rules, defined by the CSO. Then, it makes use of DM and CI techniques to improve or optimise them, enhancing the coverage. 
+That is to say, the more sensors are implemented, the more information related to event context can be extracted. To implement a sensor means to include a programmed method which triggers MUSES to start `listening' to some parts of a device. Then, the initial security rules establish which situations might cause a security violation, and the sensors provide with information which helps the MUSES server to identify events that are alike to the ones that are already known as dangerous.
 % Antonio - esto no lo veo correcto. El meter más sensores no implica que se vayan a mejorar en mayor medida las reglas. Sino que se pueden controlar más formas de actuación de los usuarios.
-% Yo o escribría como algo separado, por ejemplo "A way to enforce the security in these devices is the inclusion of more sensors, which would be able to detect more potentially dangerous behaviours by the users (and thus, security violations)"
-To implement a sensor means to include a programmed method which makes MUSES to start `listening' some parts of a device. 
-MUSES implements the following sensors:
+% Yo o escribría como algo separado, por ejemplo "A way to enforce the security in these devices is the inclusion of more sensors, which would be able to detect more potentially dangerous behaviours by the users (and thus, security violations)" 
+For these reasons, MUSES implements the following sensors:
 % Antonio - yo quitaría el 'for this reason'
 
 \begin{description}
