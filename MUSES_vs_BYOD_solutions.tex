@@ -19,8 +19,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   AUTHORS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\author{P. de las Cuevas, A.M. Mora, J.J. Merelo,\\ P. García-Sánchez, A. Fernández-Ares}
-\ead{\{paloma, amorag, jmerelo, pgarcia, antares\}@geneura.ugr.es}
+\author{P. de las Cuevas, A.M. Mora, J.J. Merelo,\\P. A. Castillo, P. García-Sánchez, A. Fernández-Ares}
+\ead{\{paloma, amorag, jmerelo, pacv, pgarcia, antares\}@geneura.ugr.es}
 \address{Departamento de Arquitectura y Tecnología de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain}
 %\author{A. M. Mora}
 %\ead{amorag@geneura.ugr.es}
@@ -176,6 +176,16 @@ This situation leads to a need of protecting the organisation's side, but also t
 
 Many tools for companies, as well as for devices, which have adopted the BYOD have been released in the past four years. This way, and
 more focused on the enterprise, there are some tools which offer the CSO ways to control the devices which enter into the system, for instance, and also to protect the employees' data by means of data encryption and data protection by requiring the use of strong and secure passwords. Other tools for managing a BYOD situation add to their features guidelines for the CSOs to develop good ISPs. On the other hand, many solutions have been presented which are more focused on the device side, although they implement also the server side. Some of those tools have influenced the development of the MUSES system  itself (Section \ref{sec:muses}), which can complement them, as adds other features that go beyond the state of the art. The present section introduces the most relevant features of these products, as they can be considered related to the MUSES objectives.
+
+As these tools have several access levels, different detection methods, or diverse data control, there exist a number of aspects that the end-users need to take into account to validate if a product fits their needs. Therefore, we propose the next taxonomy in order to classify the BYOD tools described in this paper.
+
+\begin{itemize}
+\item {\em Online or offline threat detection method}. Tools can identify security threats during runtime (online) or before their implantation (offline). For example, using some kind of Data Mining technique, such as classification methods, or merely the system administrator experience, can be used to generate rules before the deployment of the tool (offline) to detect threats in runtime. However, new rules can not be added. On the contrary, a real-time adaptation using actual data sources, that modify the parameters of the detection system, follows an online scheme.
+\item {\em Updatable of fixed information database}. This classification is related to the previous one. The new information gathered by the system during runtime can be stored in a database to generate new rules. If this database is not changed during runtime, as in the offline example explained above, the database is {\em fixed}. An example could be the hand-coded rules of a firewall, such as {\em iptables}, obtained from an offline method. On the other hand, an updatable database, such as the system logs, that can be used to extract new information, may offer more valuable data source for dynamic adaptation mechanisms. However, it is not mandatory for an online threat detection method to use a updatable database, as all the current data may be analysed and deleted once a new rule is created. 
+\item {\em Invasive or non-invasive data access}. A system can be considered {\em invasive} if a user needs to use the tool to perform their job. For example, opening a specific browser provided by the tool, instead of the original device browser, such as Chrome of Safari. Instead, a {\em non-invasive} data access is transparent to the user. An example is a log analyser daemon that updates other programs configuration or sends information to the company server.
+\item {\em Superuser or non-superuser system control}. Using a tool in superuser mode would add more information and control than a non-superuser execution, as it can access to elements of the device usually forbidden for regular applications, such as network, logs or other devices. However using superuser control may lead to a lack of privacy for the user.
+\end{itemize}
+
 
 %----------------------------------------------------------------------------
 
@@ -356,23 +366,25 @@ There are three main components in this side:
 %The subcomponents are the \textit{Decision Maker}, which performs the decision process; the \textit{User, Context, Event Handler}, which processes the events and information to be used for making the decision or stored for further submission (depending on the mode and on the gathered data); and the \textit{Security Policy Receiver} that updates the set of decisions (or Device Policies) in the Decision Table with those received from the server side, after an update or decision process.
 \end{itemize}
 
-The client is an important part of the a-priori risk treatment, because it both monitors the whole context and finally acts or warns the user in event of a security violation. Security violations are mainly identified by security rules, which is why MUSES uses DM and CI techniques to evolve them and enhance the coverage. That is to say, the more sensors are implemented, the more enforced the security in the device is. %Esta última frase revisádmela por favor, e insultadme si es necesario.
- For this reason, MUSES implements the following sensors:
+The client is an important part of the a-priori risk treatment, because it both monitors the whole context, and finally acts or warns the user in event of a security violation. 
+% Antonio - yo pienso que en este sistema cualquier violación de seguridad que se detecte se hará por medio de las reglas de seguridad. Eso sería lo ideal, pero para ello el CSO debe definir un conjunto que asegure la seguridad del sistema en la mayoría de casos. Luego el KRS podrá proponer nuevas reglas a través de 'predicciones' (inferencias) o refinamiento, pero estas últimas se construirán como reglas optimizadas para tratar con incidentes de seguridad ya detectados. No se pueden crear de la nada reglas para tratar con nuevos incidentes (desconocidos).
+But security violations are mainly identified by security rules, which is why MUSES needs at least an initial set of rules, defined by the CSO. Then, it makes use of DM and CI techniques to improve or optimise them, enhancing the coverage. 
+That is to say, the more sensors are implemented, the more information related to event context can be extracted. To implement a sensor means to include a programmed method which triggers MUSES to start `listening' to some parts of a device. Then, the initial security rules establish which situations might cause a security violation, and the sensors provide with information which helps the MUSES server to identify events that are alike to the ones that are already known as dangerous.
+% Antonio - esto no lo veo correcto. El meter más sensores no implica que se vayan a mejorar en mayor medida las reglas. Sino que se pueden controlar más formas de actuación de los usuarios.
+% Yo o escribría como algo separado, por ejemplo "A way to enforce the security in these devices is the inclusion of more sensors, which would be able to detect more potentially dangerous behaviours by the users (and thus, security violations)" 
+For these reasons, MUSES implements the following sensors:
+% Antonio - yo quitaría el 'for this reason'
 
 \begin{description}
   \item[CONNECTIVITY SENSOR] It gathers all information related to network communications, in addition to security properties like network encryption, or number of neighbours. This allows MUSES actuator to forbid the user for sending important emails, or opening key assets if, for instance, the network encryption is not secure enough. 
-  \item[DEVICE PROTECTION SENSOR] Which scans device security settings, such as the time until the device screen turns off, if the device has the screen protected with a password, or if the device is rooted \cite{hildenbrand2014}. This security mechanism %¿cambiarlo por "This security mechanism" ? % Ok, cambiado, creo que está mejor así.
-   adds the possibility of detecting security violations even if the user is not doing a specific action.
+  \item[DEVICE PROTECTION SENSOR] Which scans device security settings, such as the time until the device screen turns off, if the device has the screen protected with a password, or if the device is rooted \cite{hildenbrand2014}. This security mechanism adds the possibility of detecting security violations even if the user is not doing a specific action.
   \item[LOCATION SENSOR] User location can be obtained from the device GPS. Although, and to preserve user privacy, a number of `zones' can be defined by the company, so MUSES only checks if the user is inside them and acts in consequence.
   \item[MAIL SENSOR] If the user is going to send an email, MUSES client sensors check also the email attributes. This way, they can detect if the event context is dangerous, according to security policies and the RT2AE, before the mail is sent.
   \item[FILE SENSOR] The type of file, also called \textit{asset}, is also very important for the application of security rules. Thus, this sensor aims to detect is some files might need more strict security policies, also depending on the rest of sensors.
   \item[APP SENSOR] It is in charge of monitoring the information about the application from which the user is performing the action, but also looks for installed trusted antivirus, and encryption applications. Additionally, this sensor gathers information abaut the applicationes which the user tries to install or uninstall.
 \end{description}
 
-It is important to note that MUSES does not work as an antivirus itself, but has a sensor which % quizás quitar "has a sensor which" y sólo poner "it"
-% Esto ya no sé porque entonces se me repite mucho la palabra "it", serían 2 veces en esta frase y la siguiente que también empieza por "it"...
-checks if the device has already an antivirus, and raises a security violation alert if not. It might happen then that the user ignores this advice and the device becomes compromised. As it would be explained in the next section, the sensors are constantly sending their monitored values, and therefore patterns are created, stored, and processed on the server. In case the device gets infected with rootkit-type malware \cite{bickford2010rootkits}, a sudden change in the values of the sensors will mean a significant change in the patterns. Then, this change in the patterns will be noticed by the server, which will immediately warn the user, and decrease the device trust value.
-% [Pedro] aquí pueden preguntar sobre cómo se lleva a cabo esa detección del cambio en los sensores...
+It is important to note that MUSES does not work as an antivirus itself, but has a sensor which checks if the device has already an antivirus, and raises a security violation alert if not. It might happen then that the user ignores this advice and the device becomes compromised. As it would be explained in the next section, the sensors are constantly sending their monitored values, and therefore patterns are created, stored, and processed on the server. In case the device gets infected with rootkit-type malware \cite{bickford2010rootkits}, a sudden change in the values of the sensors will mean a significant change in the patterns. Then, this change in the patterns will be noticed by the server, which will immediately warn the user, and decrease the device trust value.
 
 The rest of the components shown in the figure are: the \textit{MUSES User Interface (UI)}, the application through which the user interacts with the system; and the \textit{Connection Manager} which controls the communications between MUSES client and MUSES server. 
 In addition, there are two types of applications considered in this system: on the one hand the \textit{MUSES Aware App}, which is an application adapted to MUSES, so the system can directly interact with it (monitoring with the sensors and acting as a consequence of the decisions made by the system). This application must be implemented using the MUSES API (Application Program Interface)\footnote{The MUSES API is defined in the project, so for every application desired to be MUSES Aware, it should be implemented using this.}. 
@@ -404,44 +416,51 @@ Then, the \textit{User, Context, Event Data Receiver} is devoted to receive data
 
 \subsection{Self-Adaptation in MUSES: The Knowledge Refinement System}
 
-As previously stated, one of the main features of this system is the self-adaptation (to the user and context), of the set of Corporate Security Rules (specification of the ISPs), that it is be able to perform. 
-To this end, the \textit{MusKRS} module is run asynchronously in the server (once a day or every X hours) and it is in charge of analysing all the gathered information (events, context, user-related data), and adapting or refining the security rules. The refinement (improvement)  has as aim to better deal with these events, optimizing the current set of rules (removing redundant or non-useful rules, for instance), and even trying to predict future threats due to the user's behaviour.
+The self-adaptation, to the user and context, of the set of Corporate Security Rules is one of the main features of the MUSES system.
+To this end, the \textit{MusKRS} module is in charge of analysing all the gathered events, context, and user-related data. Then it processes the data and adapts or refines the security rules. This refinement is meant as an improvement of the existing security rules, and its aim is to deal with new, possibly insecure, events. As a result, a set of optimisations and additions to the set of security rules are proposed to the Chief Security Officer (CSO) of the company.
 
-This procedure is be composed by two main steps: first, a Data Mining (DM) \cite{DataMining_Lee01} + Machine Learning (ML) \cite{MachineLearning_Bishop06} process is performed (in the \textit{Data Miner} sub-component);  second, a refinement and inference process  is done (in the \textit{Knowledge Compiler} sub-component), considering the data `extracted' in the first step, by means of Computational Intelligence (CI) techniques.
-It should be noticed that part of the refinement (or adaptation) of the security rules is made using simpler methods, such as generalisation or specialisation of rules, for instance. Then, other parts of the process can be conducted using CI.
+This procedure is composed by two main steps: first, a Data Mining (DM) \cite{DataMining_Lee01} + Machine Learning (ML) \cite{MachineLearning_Bishop06} process is performed in the \textit{Data Miner} sub-component; second, a refinement and inference process is done in the \textit{Knowledge Compiler} sub-component, using the data that was extracted in the first step, and by means of Computational Intelligence (CI) techniques.
+The refinement, or adaptation, of the security rules can be made through techniques as simpler as generalisation or specialisation of rules, for instance, or by more complex CI methods such as Evolutionary Algorithms \cite{EAs_Back96}.
 
-Another important fact is that MUSES  counts with a human controller, normally the Chief Security Officer (CSO) of the company, who  supervises the system activity by means of logs or feedback messages. Thus, adapted and inferred security rules are not, in principle, directly added to the current set of rules. Instead, they  are proposed as draft rules to this controller, in order that he/she can accept them if they are interesting and correct. The system  is able to `learn' from this decisions, so after a so-called training or `warm up' period, the rules can be directly accepted (included in the set) or rejected autonomously by the MusKRS.
+Another important fact is that MUSES functionalities are completed by a human controller, normally the CSO, who supervises the system activity by means of a graphic interface the CSO can interact with. Thus, adapted and inferred security rules are not directly added to the current set of rules, but they are proposed instead as draft rules to this human controller, in order that they can be accepted if they are interesting and useful. The system also uses the acceptance or rejection of new rules as `feedback`, learning from this decisions, and refining the rules according to this.
 
-The following sections describe these processes: first focusing on DM techniques to be used both automatically by the MusKRS, and as a kind of decision-aid and monitoring tool for the CSO; second, the CI techniques are explained, mainly focusing in Evolutionary Computation (EC) \cite{EAs_Back96} approaches, since these methods perform very well, and have been widely used in security-based environments for solving security issues, such as the intrusion detection \cite{GA_intrusion-majeed}, the design and evaluation of security protocols \cite{GP_intrusion-lu,GA_networksecurity-zarza}, or the optimisation of different aspects related with security: IT security costs \cite{EAs_securitycosts-kirta}, and cryptographic protocols \cite{GA_cryptographicprotocols-zarza2}, among others.
+The following sections describe these processes: first, focusing on DM techniques to be used both automatically by the MusKRS, and by the mentioned graphic interface for showing useful information to the CSO; second, used CI techniques are explained, mainly focusing in Evolutionary Computation (EC) \cite{EAs_Back96} approaches. EC methods have demonstrated to have a good performance, and have been widely used in security-based environments for solving security issues, such as intrusion detection \cite{GA_intrusion-majeed}, design and evaluation of security protocols \cite{GP_intrusion-lu,GA_networksecurity-zarza}, or for the optimisation of different aspects related with security: IT security costs \cite{EAs_securitycosts-kirta}, and cryptographic protocols \cite{GA_cryptographicprotocols-zarza2}, among others.
 
 % ------------------------------------------------------------------
 %
 \subsubsection{Data Mining + Machine Learning}
 \label{subsubsec:dm_ml}
 
-This task is performed by the \textit{Data Miner} module. It  takes the `raw' data from the database and  process the information, in order to yield a set of relevant data for the Knowledge Compiler module or for the human controller. In the first case, this sub-component  takes them as a reference in order to refine or adapt the current set of security rules (for instance, to deal with anomalous situations).
+This task is performed by the \textit{Data Miner} module. It  takes the `raw' data from the database and processes the information, in order to yield a set of relevant data for the Knowledge Compiler module and for the human controller. In the first case, this Data Miner component takes the set of data as a reference for refining or adapting the current set of security rules, to deal with anomalous situations, for instance.
 
-The process is be mainly non-supervised. Moreover, eventually, the datasets can be huge (depending on the company's data flows), so Big Data processing methods \cite{BigData_11} can be applied.
+The set of data is composed by the so-called patterns, which consist of an occurred event 
+% Antonio - quedaba raro decir que estaba formado por 'un evento' como tal
+and all the related information to that event. This means that the context in which the event was, is translated into a number of \textit{attributes} of the pattern. 
+%This process is mainly non-supervised. 
+% Antonio - Lo que es no supervisado es la clasificación, pero si se está explicando de otra forma ya no tiene sentido decirlo.
+Moreover, a lot of attributes are extracted from the events, for obtaining the mor information as possible. This results in huge datasets, which is why MUSES applies Big Data processing methods \cite{BigData_11}. %JUSTIFY (Paloma will do it)
 
-The DM/ML techniques process the so-called patterns, which in this context correspond to events (and their related information) produced by the users' interactions with the system. As stated, these events  are captured from the sensors in the users' devices and transmitted to the server to be processed and stored in the system database. The methods to be applied are:
+The DM/ML methods that MUSES applies over the data are:
 
 \begin{itemize}
 
 \item \textit{Pattern Mining} \cite{PatternMining_Han07}: 
-This process  tries to identify frequent or, on the contrary, anomalous patterns, in order to process them lately. The idea is that non-frequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO or to serve as a reference for the rule-refinement process.
+From the whole set of patterns which form the built dataset, the most frequent ones, as well as the uncommon, are obtained. The idea is that infrequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO, or to serve as a reference for the rule-refinement process.
 
 \item \textit{Classification} \cite{classification_67}: 
 This technique tries to train a model (classifier) able to associate every pattern in the dataset to a class, so that the model could be used for assigning a class for further incoming patterns with an unknown category.
-For instance, it could look for events (patterns) that had been previously  marked as `allowed' or `denied' (according to the ISPs). When a new event arises, if it has not an assigned decision, the classifier should provide one based on the similarity with previous (and already labelled) patterns.
+Then, the model learns from events that, according to the ISPs, had been previously marked as `allowed' or `denied'. When a new event arrives to the server, if it has not an assigned decision, the classifier should provide one based on the similarity with previous, and already labelled, patterns.
 
 \item \textit{Clustering} \cite{Clustering_Jain99}: 
-The aim of this method is grouping the patterns considering some similarity criteria, in order to manage them as a set. This could be used for providing data visualisation mechanisms, in order to make it easier to interpret the data interaction and the distribution in clusters with respect to the different properties (features) of the patterns.
+The aim of this method is grouping the patterns considering some similarity criteria, in order to manage them as a set. This is used for providing data visualisation mechanisms through a graphical interface. This would make easier to interpret data interaction and the distribution in clusters with respect to the different attributes, or features, of the patterns.
 
 \item \textit{Feature Selection} \cite{FeatureSelection_Guyon03}: 
-It consists on extract the most important features (variables) from the data. This could be useful if we want to discard non-key features, which could be interesting in order to reduce the database weight, for improving the performance of other techniques (such as classification or clustering), and even to improve the performance of the whole system, since less information would be gathered and transmitted.
+It consists of extracting the most important variables from the data. Feature selection techniques have been proven \cite{liu1998feature} to preserve the performance of the original feature set 
+% Antonio - yo pondría 'quality' en lugar de 'performance'. Un dataset no tiene rendimiento, bajo mi punto de vista
+in terms of classification accuracies, while significantly improve the processing time.
 
 \item \textit{Data Analysis}: 
-This  provides the CSO with mechanisms to visualise interesting facts about the data, such as more frequent events, dangerous or suspicious users (according to their behaviour), more triggered rules, etc.
+This provides the CSO with mechanisms to visualise interesting facts about the data, such as most frequent events, dangerous or suspicious users according to their behaviour, most triggered rules, etc. All this information is shown to the CSO via the mentioned graphical interface, implemented in the server.
 
 \end{itemize}
 
@@ -453,55 +472,57 @@ This  provides the CSO with mechanisms to visualise interesting facts about the 
 \label{subsec:ci}
 
 
-MUSES  uses different EC approaches, initially, two in the DM/ML part of the process, and three in the rule-refinement and adaptation phase. They are based on Genetic Programming (GP) \cite{GP_Koza92}, and Genetic Algorithms (GAs) \cite{GAs_Goldberg89}.
+MUSES uses different EC approaches, initially, two in the DM/ML part of the process, and three in the rule-refinement and adaptation phase. They are based on Genetic Programming (GP) \cite{GP_Koza92}, and Genetic Algorithms (GAs) \cite{GAs_Goldberg89}.
 
-The first evolutionary-based approach is a \textit{GP-based classification} method. This is useful for two main reasons: first, in order to deal with the data class imbalance \cite{imbalance_techniques_02}, very common in classification problems in real systems (with real data); and second, to better manage categorical (non-numeric) data, since most of the features (variables) and information gathered from the events take these kind of values.
+The Data Miner module adopts, then, two evolutionary-based approaches. In the first place, a \textit{GP-based classification} method. This is useful for two main reasons: to deal with the data class imbalance \cite{imbalance_techniques_02}, which is very common in classification problems with real systems, gathering real data; and to better manage categorical data, since most of the features and information gathered from the events take these kind of values.
+%, and being non-numeric does not allow to measure the distance between them.
+% Antonio - claro que se puede medir la distancia entre valores no numéricos, lo que pasa es que normalmente, ésta no es representativa. Mejor omitir esto o poner de forma genérica que 'los valores categóricos dificultan el proceso de machine learning'.
 
-Thus, this approach is be able to manage unbalanced datasets considering a fitness function in which a cost can be associated with the classifier accuracy at every epoch, having a penalty cost when the classifier makes a false negative (an element from the minority class which is classified as belonging to the majority class) \cite{cost_adjustment_07}.
-Regarding the type of data, since GP algorithms can manage rule- or tree-based models, it  works perfectly with any categorical variable, yielding a good classifier as it has been made in other works (such as the aforementioned \cite{cost_adjustment_07}).
+Thus, this kind of classification method is able to manage unbalanced datasets, for instance, by considering a fitness function in which a cost is associated with the classifier accuracy at every iteration, having a penalty cost when the classifier makes a false negative. A false negative is an element from the minority class which is classified like as belonging to the majority class \cite{cost_adjustment_07}.
+With regard to the type of data, since GP algorithms can manage rule or tree based models, it works perfectly with any categorical feature, yielding a good classifier as it has been demonstrated in \cite{cost_adjustment_07}.
 
-The second approach is a Feature Selection process, conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features (variables) in the classification. Thus, the algorithm can optimize the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method.
+The second evolutionary approach taken in the Data Miner is the Feature Selection process that was mentioned in the previous section. This process is conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features in the classification. Thus, the GA algorithm can optimise the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method \cite{liu1998feature}.
 
-The second set of EC techniques is, as stated, part of the rule-refinement (or adaptation) process, to be performed by the \textit{Knowledge Compiler} module. These methods can be used for inference and optimisation, and consider this data as a part of the process:
-
-\begin{itemize}
-
-\item The information extracted from the Data Miner sub-component, mainly concerning the anomalous, unclassified or misclassified patterns. These are those patterns which did not match with any of the existing classes (they are quite different from the patterns belonging to those classes), so they cannot be included in any of the classes and thus they should be taken into account for a potential inference or update in the set of security rules, in order to `cover' them.
-
-\item User-related information corresponding to those anomalous or unlabelled patterns (events). Thus, the user's ID, location and role, for instance, can be considered in order to select the applicable set of rules for that conditions.
-
-\item Context information for the same patterns, in order to also restrict the applicable set of rules considering this information. 
-
-\end{itemize}
-
-Other useful information to consider in the refinement and adaptation process are:
+On the other hand, the refinement or adaptation of the security rules is performed by the \textit{Knowledge Compiler} module, and it uses three EC methods. These methods can be used for inference and optimisation, and they use different data as part of the process, such as:
+% [Pedro] maybe we should specify how the following data is used in each one of the 3 EC methods...
 
 \begin{itemize}
 
-\item Risk information extracted from the user profile (user trust value), e.g. ``Did the user received a lot of `denies' or `allows' before?'', i.e. ``Is the user trustworthy?''. In case the user is not, more restrictive rules can be created, otherwise the corresponding rules could be `relaxed' for that user.
+\item The information extracted from the Data Miner sub-component, mainly concerning the anomalous, unclassified or misclassified patterns. These are those patterns which did not match with any of the existing classes, as they are quite different from the patterns belonging to those classes. This way, they cannot be included in any of the classes and thus they should be taken into account for a potential inference or update in the set of security rules, in order to `cover' them.
 
-\item The information stored in logs along the system, which can, for instance, tell about how the user responds to system messages (either an action or if the user gives feedback). This could result in the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignore warning messages.
-Moreover, important log information regarding the parameters used or the decisions made in the different modules can be used for further tests of new inferred rules, as it is explained below.
+\item User-related information, and context information in general, corresponding to those anomalous or unlabelled events. Thus, the user's location zone, role, or device settings, for instance, can be considered in order to select the applicable set of rules for that conditions.
+
+\item Risk information extracted from the user profile, e.g. ``Did the user received a lot of `denies' or `allows' before?'', in other words, ``Is the user trustworthy?''. In case the user is not, meaning that the user trust value is low, more restrictive rules can be created, otherwise the corresponding rules could be `softer' for that user.
+
+\item The information about the user behaviour with respect to system messages, wether the users acts in consequence or against MUSES advice, as well as user feedback. The user feedback has been measured in the MUSES trials by making interviews with the people who have used MUSES, but it can be also measured by pop-up messages, ``has this information been useful?''-type. All this information contribute to the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignored warning messages.
+Moreover, important log information with regard to the parameters used or the decisions made in the different modules can be used for further tests of new inferred rules, as it is explained below.
 
 \end{itemize}
 
-This being said, and because the refinement of rules is considered of the same importance as inferring new ones, the approaches that have been implemented are:
+As the rule refinement process is considered of the same importance as inferring new ones, the following three approaches have been implemented:
+% [Pedro] I'd change this to: "As the rule refinement process is considered of the same importance as inferring new ones, the following three approaches have been implemented:"
+% or even to:
+% "Due to the importance of the refinement process (it is considered of the same importance as inferring new ones) the following three approaches have been implemented:"
 
 \begin{itemize}
 
-\item \textit{GP rule inference} method, which generates new rules in order to `cover' those situations non contemplated in the current set of rules. Thus, for instance, a new rule could be created in order to deal with the patterns to which the classifier could not assign a class.
-The generation can be done considering the so-called \textit{dictionary}, i.e. a set of terms corresponding to all the possible inputs and actions in the system, which are antecedents (conditions) and consequents in the security rules to be inferred.
-The evaluation of these rules can be done considering the stored log information concerning the parameters along with the actions and decisions made in every component in the system. Thus, it is possible to `simulate' the whole  system behaviour when the new rule is included and get a value of its performance.
+\item A \textit{GP rule inference} method, which generates new rules in order to `cover' those situations that have been not contemplated in the current set of rules. Thus, a new rule would be created for dealing with the patterns to which the classifier could not assign a class.
+The generation of new rules is done by considering the so-called \textit{dictionary}, i.e. a set of terms corresponding to all the possible context situations and user actions in the system, which are the antecedents and consequents \footnote{The antecedents are the conditions of a rule that have to be met to apply the consequents.} of the security rules to be inferred.
+The evaluation of these rules is done by considering the information that has been described. Thus, it is possible to `simulate' the whole system behaviour when the new rule is included. Therefore, the system gets a value of its performance in terms of, for instance, how many of the events that were not classified or misclassified, are covered now. As was also mentioned, the user or device trust values have influence in the creation of the rules.
+Finally, the inferred rules are proposed to the CSO as ``new, but not yet refined'', along with their evaluated performance.
 
-\item \textit{GP rule refinement} approach, which optimises the current set of rules, adjusting the values in the conditions (antecedents), for instance. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specialisations or generalisations of existing rules which could mean a better performance.
-The evaluation (of the whole set of security rules) is done considering the number of unlabelled patterns that are `covered' after the adjustments.
+\item A \textit{GP rule refinement} approach, which optimises the current set of rules, adjusting the values in the conditions. The set of rules that could be refined is composed by the new rules from the GP-based inference, but also by the original set of rules which was already completed by the Data Miner. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specialisations or generalisations of existing rules which could lead to a better performance. % [Pedro] change "could mean a better" to "could lead to a better"
+The evaluation of the whole set of security rules is done by considering the number of unlabelled patterns that are `covered' after the adjustments. Again, the rules at the end of this step are presented to the CSO as ``refined''. The CSO is the one who decides, according to the preformance simulation results, if an inferred rule, or the refined one, is the rule which is finally included in the system.
 
-\item \textit{GA optimisation} algorithm for setting up and adapting the assets' values. These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
-If it is possible to evaluate the partial solutions proposed by the GA, this approach could be very useful for the CSO (who is in charge of assigning and adjusting these values over time).
-The adaptation or adjustment concerns the change in value that an asset could have due to a loss of importance, once an event has passed (a project presentation, for instance).
+\item A \textit{GA optimisation} algorithm for adapting the assets' values. These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
+By evaluating the partial solutions proposed by the GA, this approach provides the CSO, who is in charge of assigning and adjusting these values over time, with information about the most dangerous situations for certain assets. The context information that is gathered by the system is very important, then, in this process.
+The adaptation or adjustment concerns the change in the value that an asset has due to a loss of importance, for instance, for being and out-to-date document.
 
 \end{itemize}
 
+% [Pedro] it is not clear for me whether those 3 methods can be used (are used) independiently or one after the other(s).
+
+As a summary, the Knowledge Compiler module uses two EC-based processes for inferring and refining rules, plus another one for adjusting assets' values. Both the inferred rules and the refined rules are presented to the CSO, who includes them or not in the system, and this acceptance or rejection acts itself as a feedback for future rule inference.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   COMPARISON  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
