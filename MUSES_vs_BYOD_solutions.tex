@@ -366,8 +366,15 @@ There are three main components in this side:
 %The subcomponents are the \textit{Decision Maker}, which performs the decision process; the \textit{User, Context, Event Handler}, which processes the events and information to be used for making the decision or stored for further submission (depending on the mode and on the gathered data); and the \textit{Security Policy Receiver} that updates the set of decisions (or Device Policies) in the Decision Table with those received from the server side, after an update or decision process.
 \end{itemize}
 
-The client is an important part of the a-priori risk treatment, because it both monitors the whole context and finally acts or warns the user in event of a security violation. Security violations are mainly identified by security rules, which is why MUSES uses DM and CI techniques to evolve them and enhance the coverage. That is to say, the more sensors are implemented, the more enforced the security in the device is. To implement a sensor means to include a programmed method which makes MUSES to start `listening' some parts of a device. 
-For this reason, MUSES implements the following sensors:
+The client is an important part of the a-priori risk treatment, because it both monitors the whole context and finally acts or warns the user in event of a security violation. Security violations are mainly identified by security rules, 
+% Antonio - yo pienso que en este sistema cualquier violación de seguridad que se detecte se hará por medio de las reglas de seguridad. Eso sería lo ideal, pero para ello el CSO debe definir un conjunto que asegure la seguridad del sistema en la mayoría de casos. Luego el KRS podrá proponer nuevas reglas a través de 'predicciones' (inferencias) o refinamiento, pero estas últimas se construirán como reglas optimizadas para tratar con incidentes de seguridad ya detectados. No se pueden crear de la nada reglas para tratar con nuevos incidentes (desconocidos).
+which is why MUSES uses DM and CI techniques to improve or optimize them and enhance the coverage. 
+That is to say, the more sensors are implemented, the more enforced the security in the device is. 
+% Antonio - esto no lo veo correcto. El meter más sensores no implica que se vayan a mejorar en mayor medida las reglas. Sino que se pueden controlar más formas de actuación de los usuarios.
+% Yo o escribría como algo separado, por ejemplo "A way to enforce the security in these devices is the inclusion of more sensors, which would be able to detect more potentially dangerous behaviours by the users (and thus, security violations)"
+To implement a sensor means to include a programmed method which makes MUSES to start `listening' some parts of a device. 
+MUSES implements the following sensors:
+% Antonio - yo quitaría el 'for this reason'
 
 \begin{description}
   \item[CONNECTIVITY SENSOR] It gathers all information related to network communications, in addition to security properties like network encryption, or number of neighbours. This allows MUSES actuator to forbid the user for sending important emails, or opening key assets if, for instance, the network encryption is not secure enough. 
@@ -410,11 +417,11 @@ Then, the \textit{User, Context, Event Data Receiver} is devoted to receive data
 
 \subsection{Self-Adaptation in MUSES: The Knowledge Refinement System}
 
-The self-adaptation, to the user and context, of the set of Corporate Security Rules is one of the main features of this MUSES system.
-To this end, the \textit{MusKRS} module is in charge of analysing all the gathered events, context, and user-related data. Then it processes the data and adapts or refines the security rules. This refinement is meant as an improvement of the existing security rules, and it aim is to deal with new, possibly insecure, events. As a result, a set of optimisations and additions to the set of security rules are proposed to the Chief Security Officer (CSO) of the company.
+The self-adaptation, to the user and context, of the set of Corporate Security Rules is one of the main features of the MUSES system.
+To this end, the \textit{MusKRS} module is in charge of analysing all the gathered events, context, and user-related data. Then it processes the data and adapts or refines the security rules. This refinement is meant as an improvement of the existing security rules, and its aim is to deal with new, possibly insecure, events. As a result, a set of optimisations and additions to the set of security rules are proposed to the Chief Security Officer (CSO) of the company.
 
 This procedure is composed by two main steps: first, a Data Mining (DM) \cite{DataMining_Lee01} + Machine Learning (ML) \cite{MachineLearning_Bishop06} process is performed in the \textit{Data Miner} sub-component; second, a refinement and inference process is done in the \textit{Knowledge Compiler} sub-component, using the data that was extracted in the first step, and by means of Computational Intelligence (CI) techniques.
-The refinement, or adaptation, of the security rules can be made through techniques as simpler as generalisation or specialisation of rules, for instance, or by more complex CI methods such as Evolutionary Algorithms.
+The refinement, or adaptation, of the security rules can be made through techniques as simpler as generalisation or specialisation of rules, for instance, or by more complex CI methods such as Evolutionary Algorithms \cite{EAs_Back96}.
 
 Another important fact is that MUSES functionalities are completed by a human controller, normally the CSO, who supervises the system activity by means of a graphic interface the CSO can interact with. Thus, adapted and inferred security rules are not directly added to the current set of rules, but they are proposed instead as draft rules to this human controller, in order that they can be accepted if they are interesting and useful. The system also uses the acceptance or rejection of new rules as `feedback`, learning from this decisions, and refining the rules according to this.
 
@@ -427,14 +434,23 @@ The following sections describe these processes: first, focusing on DM technique
 
 This task is performed by the \textit{Data Miner} module. It  takes the `raw' data from the database and processes the information, in order to yield a set of relevant data for the Knowledge Compiler module and for the human controller. In the first case, this Data Miner component takes the set of data as a reference for refining or adapting the current set of security rules, to deal with anomalous situations, for instance.
 
-The set of data are composed by the so-called patterns, which consist of an event and all the related information to that event. This means that the context in which the event was is translated into a number of \textit{attributes} of the pattern. This process is mainly non-supervised. Moreover, as the datasets are huge, because a lot of attributes are extracted from the events so the more complete information is obtained, MUSES applies Big Data processing methods \cite{BigData_11}. %JUSTIFY (Paloma will do it)
+The dataset is composed by the so-called patterns, which consist of the features of an event 
+% Antonio - quedaba raro decir que estaba formado por 'un evento' como tal
+and all the related information to that event. This means that the context in which the event was, is translated into a number of \textit{attributes} of the pattern. 
+%This process is mainly non-supervised. 
+% Antonio - Lo que es no supervisado es la clasificación, pero si se está explicando de otra forma ya no tiene sentido decirlo.
+Moreover, as the datasets are huge, because a lot of attributes are extracted from the events so the 
+% Antonio - este 'the' no sé si sobra
+more complete information is obtained, MUSES applies Big Data processing methods \cite{BigData_11}. %JUSTIFY (Paloma will do it)
 
-The methods that MUSES applies over the data are:
+The DM/ML methods that MUSES applies over the data are:
 
 \begin{itemize}
 
 \item \textit{Pattern Mining} \cite{PatternMining_Han07}: 
-By this process, the patterns are obtained from the `raw' data, as has been explained. These form what is called a dataset, and from it, the most frequent or anomalous patterns, can be extracted. The idea is that non-frequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO, or to serve as a reference for the rule-refinement process.
+By this process, the patterns are obtained from the `raw' data, as has been explained. These form what is called a dataset, and from it, 
+% Antonio - estaba más correcto como estaba antes (aunque estuviese peor redactado). La primera parte no es pattern mining, es la creación de un dataset, que se ha explicado antes. Por otra parte, 'dataset' es un término conocido en este entorno.
+the most frequent or anomalous patterns, can be extracted. The idea is that non-frequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO, or to serve as a reference for the rule-refinement process.
 
 \item \textit{Classification} \cite{classification_67}: 
 This technique tries to train a model (classifier) able to associate every pattern in the dataset to a class, so that the model could be used for assigning a class for further incoming patterns with an unknown category.
@@ -444,7 +460,9 @@ Then, the model learns from events that, according to the ISPs, had been previou
 The aim of this method is grouping the patterns considering some similarity criteria, in order to manage them as a set. This is used for providing data visualisation mechanisms through a graphical interface. This would make easier to interpret data interaction and the distribution in clusters with respect to the different attributes, or features, of the patterns.
 
 \item \textit{Feature Selection} \cite{FeatureSelection_Guyon03}: 
-It consists of extracting the most important featuresvariables from the data. Feature selection techniques have been proven \cite{liu1998feature} to preserve the performance of a dataset in terms of classification accuracies, while significantly increasing the processing time.
+It consists of extracting the most important variables from the data. Feature selection techniques have been proven \cite{liu1998feature} to preserve the performance of a dataset 
+% Antonio - yo pondría 'quality' en lugar de 'performance'. Un dataset no tiene rendimiento, bajo mi punto de vista
+in terms of classification accuracies, while significantly improve the processing time.
 
 \item \textit{Data Analysis}: 
 This provides the CSO with mechanisms to visualise interesting facts about the data, such as most frequent events, dangerous or suspicious users according to their behaviour, most triggered rules, etc. All this information is shown to the CSO via the mentioned graphical interface, implemented in the server.
@@ -461,14 +479,18 @@ This provides the CSO with mechanisms to visualise interesting facts about the d
 
 MUSES uses different EC approaches, initially, two in the DM/ML part of the process, and three in the rule-refinement and adaptation phase. They are based on Genetic Programming (GP) \cite{GP_Koza92}, and Genetic Algorithms (GAs) \cite{GAs_Goldberg89}.
 
-The Data Miner module adopts, then, two evolutionary-based approaches. In the first place, a \textit{GP-based classification} method. This is useful for two main reasons: to deal with the data class imbalance \cite{imbalance_techniques_02}, which is very common in classification problems with real systems, gathering real data; and to better manage categorical data, since most of the features and information gathered from the events take these kind of values, and being non-numeric does not allow to measure the distance between them.
+The Data Miner module adopts, then, two evolutionary-based approaches. In the first place, a \textit{GP-based classification} method. This is useful for two main reasons: to deal with the data class imbalance \cite{imbalance_techniques_02}, which is very common in classification problems with real systems, gathering real data; and to better manage categorical data, since most of the features and information gathered from the events take these kind of values.
+%, and being non-numeric does not allow to measure the distance between them.
+% Antonio - claro que se puede medir la distancia entre valores no numéricos, lo que pasa es que normalmente, ésta no es representativa. Mejor omitir esto o poner de forma genérica que 'los valores categóricos dificultan el proceso de machine learning'.
 
-Thus, this kind of classification method is able to manage unbalanced datasets, by considering a fitness function in which a cost is associated with the classifier accuracy at every iteration, having a penalty cost when the classifier makes a false negative. A false negative is an element from the minority class which is classified like as belonging to the majority class \cite{cost_adjustment_07}.
+Thus, this kind of classification method is able to manage unbalanced datasets, for instance, by considering a fitness function in which a cost is associated with the classifier accuracy at every iteration, having a penalty cost when the classifier makes a false negative (i.e. an element from the minority class which is classified like as belonging to the majority class \cite{cost_adjustment_07}).
 With regard to the type of data, since GP algorithms can manage rule or tree based models, it works perfectly with any categorical feature, yielding a good classifier as it has been demonstrated in \cite{cost_adjustment_07}.
 
-The second approach taken in the Data Miner is the Feature Selection process that was mentioned in the previous section. This process is conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features in the classification. Thus, the GA algorithm can optimise the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method \cite{liu1998feature}.
+The second evolutionary approach taken in the Data Miner is the Feature Selection process that was mentioned in the previous section. This process is conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features in the classification. Thus, the GA algorithm can optimise the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method \cite{liu1998feature}.
 
-On the other hand, the refinement or adaptation of the security rules is performed by the \textit{Knowledge Compiler} module, and it uses three EC methods. These methods can be used for inference and optimisation, and they use different data as part of the process, such as:
+On the other hand, 
+% Antonio - creo que no se debe poner 'on the other hand' sin tener un 'on the one hand', pero no sé si es una regla estricta.
+the refinement or adaptation of the security rules is performed by the \textit{Knowledge Compiler} module, and it uses three EC methods. These methods can be used for inference and optimisation, and they use different data as part of the process, such as:
 % [Pedro] maybe we should specify how the following data is used in each one of the 3 EC methods...
 
 \begin{itemize}
