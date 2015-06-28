@@ -471,7 +471,7 @@ This provides the CSO with mechanisms to visualise interesting facts about the d
 
 MUSES uses different EC approaches, initially, two in the DM/ML part of the process, and three in the rule-refinement and adaptation phase. They are based on Genetic Programming (GP) \cite{GP_Koza92}, and Genetic Algorithms (GAs) \cite{GAs_Goldberg89}.
 
-The Data Miner module adopts, then, two evolutionary-based approaches. In the first place, a \textit{GP-based classification} method. This is useful for two main reasons: to deal with the data class imbalance \cite{imbalance_techniques_02}, which is very common in classification problems with real systems, gathering real data; and to better manage categorical data, since most of the features and information gathered from the events take these kind of values.
+The Data Miner module adopts two evolutionary-based approaches. In the first place, a \textit{GP-based classification} method. This is useful for two main reasons: to deal with the data class imbalance \cite{imbalance_techniques_02}, which is very common in classification problems with real systems, gathering real data; and to better manage categorical data, since most of the features and information gathered from the events take these kind of values.
 %, and being non-numeric does not allow to measure the distance between them.
 % Antonio - claro que se puede medir la distancia entre valores no numéricos, lo que pasa es que normalmente, ésta no es representativa. Mejor omitir esto o poner de forma genérica que 'los valores categóricos dificultan el proceso de machine learning'.
 
@@ -487,11 +487,11 @@ On the other hand, the refinement or adaptation of the security rules is perform
 
 \item The information extracted from the Data Miner sub-component, mainly concerning the anomalous, unclassified or misclassified patterns. These are those patterns which did not match with any of the existing classes, as they are quite different from the patterns belonging to those classes. This way, they cannot be included in any of the classes and thus they should be taken into account for a potential inference or update in the set of security rules, in order to `cover' them.
 
-\item User-related information, and context information in general, corresponding to those anomalous or unlabelled events. Thus, the user's location zone, role, or device settings, for instance, can be considered in order to select the applicable set of rules for that conditions.
+\item User-related information, and context information in general, corresponding to those anomalous or unlabelled events. Thus, the user's location zone, role, or device settings, for instance, can be considered in order to select the applicable set of rules for those conditions.
 
 \item Risk information extracted from the user profile, e.g. ``Did the user received a lot of `denies' or `allows' before?'', in other words, ``Is the user trustworthy?''. In case the user is not, meaning that the user trust value is low, more restrictive rules can be created, otherwise the corresponding rules could be `softer' for that user.
 
-\item The information about the user behaviour with respect to system messages, wether the users acts in consequence or against MUSES advice, as well as user feedback. The user feedback has been measured in the MUSES trials by making interviews with the people who have used MUSES, but it can be also measured by pop-up messages, ``has this information been useful?''-type. All this information contribute to the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignored warning messages.
+\item The information about the user behaviour with respect to system messages, whether the users acts in consequence or against MUSES advice, as well as user feedback. The user feedback has been measured in the MUSES trials by making interviews with the people who have used MUSES, but it can be also measured by pop-up messages, ``has this information been useful?''-type. All this information contributes to the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignored warning messages.
 Moreover, important log information with regard to the parameters used or the decisions made in the different modules can be used for further tests of new inferred rules, as it is explained below.
 
 \end{itemize}
@@ -509,11 +509,12 @@ The evaluation of these rules is done by considering the information that has be
 Finally, the inferred rules are proposed to the CSO as ``new, but not yet refined'', along with their evaluated performance.
 
 \item A \textit{GP rule refinement} approach, which optimises the current set of rules, adjusting the values in the conditions. The set of rules that could be refined is composed by the new rules from the GP-based inference, but also by the original set of rules which was already completed by the Data Miner. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specialisations or generalisations of existing rules which could lead to a better performance. % [Pedro] change "could mean a better" to "could lead to a better"
-The evaluation of the whole set of security rules is done by considering the number of unlabelled patterns that are `covered' after the adjustments. Again, the rules at the end of this step are presented to the CSO as ``refined''. The CSO is the one who decides, according to the preformance simulation results, if an inferred rule, or the refined one, is the rule which is finally included in the system.
+The evaluation of the whole set of security rules is done by considering the number of unlabelled patterns that are `covered' after the adjustments. Again, the rules at the end of this step are presented to the CSO as ``refined''. The CSO is the one who decides, according to the performance simulation results, if an inferred rule, or the refined one, is the rule which is finally included in the system.
 
-\item A \textit{GA optimisation} algorithm for adapting the assets' values. These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
-By evaluating the partial solutions proposed by the GA, this approach provides the CSO, who is in charge of assigning and adjusting these values over time, with information about the most dangerous situations for certain assets. The context information that is gathered by the system is very important, then, in this process.
-The adaptation or adjustment concerns the change in the value that an asset has due to a loss of importance, for instance, for being and out-to-date document.
+\item A \textit{GA optimisation} algorithm for adapting the assets' values. %FERGU: "values of the assets" mejor? Los valores no son "poseidos" por los assets, no? xD (tampoco tengo mucha idea del genitivo sajón, ojo)
+These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
+By evaluating the partial solutions proposed by the GA, this approach provides the CSO, who is in charge of assigning and adjusting these values over time, with information about the most dangerous situations for certain assets. The context information that is gathered by the system is very important, then, in this process. %FERGU: pondría el "in this process" al principio de la frase.
+The adaptation or adjustment concerns the change in the value that an asset has due to a loss of importance, for instance, for being an out-to-date document.
 
 \end{itemize}
 
