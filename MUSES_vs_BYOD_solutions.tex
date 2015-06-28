@@ -433,23 +433,19 @@ The following sections describe these processes: first, focusing on DM technique
 
 This task is performed by the \textit{Data Miner} module. It  takes the `raw' data from the database and processes the information, in order to yield a set of relevant data for the Knowledge Compiler module and for the human controller. In the first case, this Data Miner component takes the set of data as a reference for refining or adapting the current set of security rules, to deal with anomalous situations, for instance.
 
-The dataset is composed by the so-called patterns, which consist of the features of an event 
+The set of data is composed by the so-called patterns, which consist of an occurred event 
 % Antonio - quedaba raro decir que estaba formado por 'un evento' como tal
 and all the related information to that event. This means that the context in which the event was, is translated into a number of \textit{attributes} of the pattern. 
 %This process is mainly non-supervised. 
 % Antonio - Lo que es no supervisado es la clasificación, pero si se está explicando de otra forma ya no tiene sentido decirlo.
-Moreover, as the datasets are huge, because a lot of attributes are extracted from the events so the 
-% Antonio - este 'the' no sé si sobra
-more complete information is obtained, MUSES applies Big Data processing methods \cite{BigData_11}. %JUSTIFY (Paloma will do it)
+Moreover, a lot of attributes are extracted from the events, for obtaining the mor information as possible. This results in huge datasets, which is why MUSES applies Big Data processing methods \cite{BigData_11}. %JUSTIFY (Paloma will do it)
 
 The DM/ML methods that MUSES applies over the data are:
 
 \begin{itemize}
 
 \item \textit{Pattern Mining} \cite{PatternMining_Han07}: 
-By this process, the patterns are obtained from the `raw' data, as has been explained. These form what is called a dataset, and from it, 
-% Antonio - estaba más correcto como estaba antes (aunque estuviese peor redactado). La primera parte no es pattern mining, es la creación de un dataset, que se ha explicado antes. Por otra parte, 'dataset' es un término conocido en este entorno.
-the most frequent or anomalous patterns, can be extracted. The idea is that non-frequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO, or to serve as a reference for the rule-refinement process.
+From the whole set of patterns which form the built dataset, the most frequent ones, as well as the uncommon, are obtained. The idea is that infrequent patterns are potentially suspicious, and thus, could be of interest to be checked by the CSO, or to serve as a reference for the rule-refinement process.
 
 \item \textit{Classification} \cite{classification_67}: 
 This technique tries to train a model (classifier) able to associate every pattern in the dataset to a class, so that the model could be used for assigning a class for further incoming patterns with an unknown category.
@@ -459,7 +455,7 @@ Then, the model learns from events that, according to the ISPs, had been previou
 The aim of this method is grouping the patterns considering some similarity criteria, in order to manage them as a set. This is used for providing data visualisation mechanisms through a graphical interface. This would make easier to interpret data interaction and the distribution in clusters with respect to the different attributes, or features, of the patterns.
 
 \item \textit{Feature Selection} \cite{FeatureSelection_Guyon03}: 
-It consists of extracting the most important variables from the data. Feature selection techniques have been proven \cite{liu1998feature} to preserve the performance of a dataset 
+It consists of extracting the most important variables from the data. Feature selection techniques have been proven \cite{liu1998feature} to preserve the performance of the original feature set 
 % Antonio - yo pondría 'quality' en lugar de 'performance'. Un dataset no tiene rendimiento, bajo mi punto de vista
 in terms of classification accuracies, while significantly improve the processing time.
 
@@ -482,7 +478,7 @@ The Data Miner module adopts, then, two evolutionary-based approaches. In the fi
 %, and being non-numeric does not allow to measure the distance between them.
 % Antonio - claro que se puede medir la distancia entre valores no numéricos, lo que pasa es que normalmente, ésta no es representativa. Mejor omitir esto o poner de forma genérica que 'los valores categóricos dificultan el proceso de machine learning'.
 
-Thus, this kind of classification method is able to manage unbalanced datasets, for instance, by considering a fitness function in which a cost is associated with the classifier accuracy at every iteration, having a penalty cost when the classifier makes a false negative (i.e. an element from the minority class which is classified like as belonging to the majority class \cite{cost_adjustment_07}).
+Thus, this kind of classification method is able to manage unbalanced datasets, for instance, by considering a fitness function in which a cost is associated with the classifier accuracy at every iteration, having a penalty cost when the classifier makes a false negative. A false negative is an element from the minority class which is classified like as belonging to the majority class \cite{cost_adjustment_07}.
 With regard to the type of data, since GP algorithms can manage rule or tree based models, it works perfectly with any categorical feature, yielding a good classifier as it has been demonstrated in \cite{cost_adjustment_07}.
 
 The second evolutionary approach taken in the Data Miner is the Feature Selection process that was mentioned in the previous section. This process is conducted using a GA as a meta-algorithm to test all the possible combinations of pattern features in the classification. Thus, the GA algorithm can optimise the group of features to be considered in the classification task, improving both the computational time of this task and also the obtained accuracy of the method \cite{liu1998feature}.
