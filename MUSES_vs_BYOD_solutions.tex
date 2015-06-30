@@ -20,7 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   AUTHORS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author{P. de las Cuevas, A.M. Mora, J.J. Merelo,\\P. A. Castillo, P. García-Sánchez, A. Fernández-Ares}
-\ead{\{paloma, amorag, jmerelo, pacv, pgarcia, antares\}@geneura.ugr.es}
+\ead{\{paloma, amorag, jmerelo, pedro, pgarcia, antares\}@geneura.ugr.es}
 \address{Departamento de Arquitectura y Tecnología de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain}
 %\author{A. M. Mora}
 %\ead{amorag@geneura.ugr.es}
@@ -51,9 +51,9 @@ defined set of security rules. To do this, the system applies Machine
 Learning and Computational Intelligence techniques, being also able to
 predict future security incidences produced by these users. % <-
                                 % Solution, details. 
-The MUSES framweork, which has released its first prototype in early 2015, is
+The MUSES framework, which has released its first prototype in early 2015, is
 compared with the most relevant 
-solutions offered by other companies to deal with the same issues as, remarking the advantages that our system offers with
+solutions offered by other companies to deal with the same issues, remarking the advantages that our system offers with
 respect to them. % <- we will explain why is better in the work
 \end{abstract}
 
@@ -77,7 +77,7 @@ Corporate mobile security \sep End-to-end security solutions \sep User-centric s
 \label{sec:intro}
 
 The way how users employ their devices has changed in the past few
-years, even the number of different devices per user is increasing
+years; even the number of different devices per user is increasing
 because of the so-called Internet of Things
 \cite{weber2010internet}. Thanks to it, users have more flexibility,
 and also at their works, because now they can use their devices to
@@ -87,7 +87,7 @@ what has been called the Bring Your Own Device (BYOD) philosophy.
 
 Data security and privacy are key factors for a company, and thus, in
 order to protect them, it is usual that the Chief Security Officer (CSO) of a company defines a set of Organisational Security
-Policies \cite{Opp_Security11}. However, allowing a BYOD environment means to take care of the risks that the use of personal smartphones can bring to the company \cite{gangula2013survey}. For instance, the mixture between personal and professional information in these devices would allow the user to navigate inside social networks, where important data could be leaked in the event of a security incident. 
+Policies \cite{Opp_Security11}. However, allowing a BYOD environment means to take care of the risks that the use of personal devices can bring to the company \cite{gangula2013survey}. For instance, the mixture between personal and professional information in these devices would allow the user to navigate inside social networks, where important data could be leaked in the event of a security incident. 
 
 In this scenario several solutions have appeared in order to manage corporate security. Most of the solutions are focused for both smartphones and desktop PCs, although some are implemented for a certain platform. However, almost all of them try to be non-intrusive -with regard to users' personal data-, friendly, and easy to use. 
 
@@ -96,10 +96,10 @@ Moreover, it has been demonstrated that employees who ignore company security po
 
 This work introduces a recently released system named
 MUSES, from Multiplatform Usable Endpoint Security, which is being developed within an European Project\footnote{\url{http://musesproject.eu/}} of the same name. MUSES is a
-dev\-ice\--in\-de\-pen\-dent end-to end user-centric tool, based on a
+dev\-ice\--in\-de\-pen\-dent end-to-end user-centric tool, based on a
 set of security rules defined as specifications of the Corporate
 Security Policies. In addition, it has the ability of `learning' from the user's past behaviour and adapt the set of existing rules, or even inferring new ones,
-in order to deal with potential security incidents that they might cause in the future. 
+in order to deal with potential security incidents that users might cause in the future. 
 Then the system reacts, in a non-intrusive way, to the potentially
 dangerous sequence of actions \footnote{Which are treated as `events' inside the system.} that the employees are conducting at
 any time. The MUSES system has also been tested in an actual company, with satisfactory results. The analysis of all data from these tests, and conclusions, are part of the future work.
@@ -117,22 +117,22 @@ the implementation was in its early stages when those papers were
 submitted. Also, an additional work on the data mining techniques was conducted in \cite{mora14:urls}, over a set of data previous to the release and test of the first MUSES prototype. As there was no available test data, a set of URL connection logs were provided by a Spanish security company, % [Pedro] quizás decir que es una empresa de seguridad o algo así % Añadido, gracias!
 as well as both black and white lists. These lists contained the URLs that were forbidden, or allowed, to be accessed by the employees. 
 By taking the lists as `rules', and the HTTP connections as `events', a previous simulation of the rule generation through classification, and its results, were presented at \cite{mora14:urls}. % [Pedro] ¿ese "could be" se refiere a verbo en pasado? en ese caso, quizás usar "... was presented at..." % Gracias again
-In this paper, once the first MUSES prototype has been released, and the first tests have been conducted, we have a clearer idea of its capabilities, so that we present and compare them. % [Pedro] Quizás comenzar la frase con: In this paper, once the first prototipe has been released and the first tests have been conducted, we ...
+In this paper, once the first MUSES prototype has been released and the first tests have been conducted, we have a clearer idea of its capabilities, so that we present and compare them with other existing tools in the market. % [Pedro] Quizás comenzar la frase con: In this paper, once the first prototipe has been released and the first tests have been conducted, we ...
 
 
 MUSES includes some important modules in its core, %FERGU: no habéis hablado de ese loop, decid mejor "core" (no lo cambio yo por si no tiene sentido)
 %cambiado
- such as an Event Processor, which performs an event correlation task \cite{SurveyEventCorrelation_Tiffany02}, matching occurred events with rules to deal with them, and extracting threats that a Real-Time Risk and Trust Analysis Engine (RT2AE) \cite{RT2AE_SOTICS13} will process (along with other trust data and profiles), to select the best subset of policies.
+ such as an Event Processor, which performs an event correlation task \cite{SurveyEventCorrelation_Tiffany02}, matching occurred events with rules to deal with them, and extracting threats that a Real-Time Risk and Trust Analysis Engine (RT2AE) \cite{RT2AE_SOTICS13} will process (along with other trust data and profiles), to select the best policies subset.
 
 % [Pedro] en este punto se puede comentar lo que se va a presentar en el trabajo introduciendo directamente con "This work presents..." o "This paper presents..." (yo quitaría el "But first,"
 % Totalmente de acuerdo, cambiado.
-This work presents a brief overview of the main existing solutions in this environment. Then, a comparison between these tools and MUSES is also conducted, focusing on the advances beyond the state of the art that this novel system % [Pedro] esa aclaración y demás yo lo podría más arriba, cuando se definen qué son las siglas de MUSES. % Perfecto, cambiado.
+This work presents a brief overview of the main existing solutions in the BYOD environment. Then, a comparison between these tools and MUSES is also conducted, focusing on the advances beyond the state of the art that this novel system % [Pedro] esa aclaración y demás yo lo podría más arriba, cuando se definen qué son las siglas de MUSES. % Perfecto, cambiado.
  includes. 
 
 
-The rest of the paper is organized as follows. First, some background situation about enterprise security is presented in Section \ref{sec:preliminaryconcepts}, explaining how BYOD philosophy affects it. Then, the main solutions or tools are detailed in Section \ref{sec:toolsreview}, even if they are still in development.  
-Then, in Section \ref{sec:muses}, the Multiplatform Usable Endpoint Security System is presented (architecture + soft computing techniques). Its advantages and benefits in comparison with the other solutions are commented in Section \ref{sec:comparison}.
-Finally, the reached conclusions are discussed in Section \ref{sec:conclusions}.
+The rest of the paper is organized as follows. First, some background situation about enterprise security is presented in Section \ref{sec:preliminaryconcepts}, explaining how BYOD philosophy affects it. The main solutions or tools are detailed in Section \ref{sec:toolsreview}, even if they are still in development.  
+Section \ref{sec:muses} presents the Multiplatform Usable Endpoint Security System, with its architecture and the soft computing techniques it makes uses of. Advantages and benefits of the proposed system are compared to other solutions found in bibliography in Section \ref{sec:comparison}.
+Finally, the reached conclusions are discussed in Section \ref{sec:conclusions}, followed by future work.
 
 
 %----------------------------------------------------------------------------
@@ -143,7 +143,7 @@ Finally, the reached conclusions are discussed in Section \ref{sec:conclusions}.
 \section{Preliminary concepts and background about enterprise security}
 \label{sec:preliminaryconcepts}
 
-One of the tasks of a Chief Security Officer (CSO) is to elaborate an efficient set of Information Security Policies (ISPs), for controlling a certain, and already known, structure \cite{Opp_Security11}. This means that, until the appearance of BYOD, enterprises used to follow static security policies devoted to control an environment where the company assets and the devices were purchased and maintained by the company. Now that corporate networks are becoming dynamic for being adapted to this BYOD philosophy, there is an additional risk because the devices that the employees use are not always company-owned. This means that the CSOs have to find the balance between having a fast response to any user action that might cause harm (in terms of money loss because of a security incident), and trying to avoid monitoring the users in a way that is against privacy. A needed security policy, or in this case, an ISP should deal with the way of protecting a certain organization's information against a security breach. Though there are standards, such as the ISO27002 or the Security Forum's Standard of Good Practice\footnote{\url{https://www.securityforum.org}}, and many guidelines \cite{SecPol09}, an ISP should be adapted depending on the characteristics of the community or organisation that they are built for. In this sense, MUSES stands up for a self-adaptation of the security policies of a company.
+One of the tasks of a CSO is to elaborate an efficient set of Information Security Policies (ISPs), for controlling a certain, and already known, structure \cite{Opp_Security11}. This means that, until the appearance of BYOD, enterprises used to follow static security policies devoted to control an environment where the company assets and the devices were purchased and maintained by the company. Now that corporate networks are becoming dynamic for being adapted to this BYOD philosophy, there is an additional risk as employees' devices are not always company-owned. This means that the CSOs have to find the balance between having a fast response to any user action that might cause harm (in terms of money loss because of a security incident), and trying to avoid monitoring the users in a way that is against privacy. A needed security policy, or in this case, an ISP should deal with the way of protecting a certain organization's information against a security breach. Though there are standards, such as the ISO27002 or the Security Forum's Standard of Good Practice\footnote{\url{https://www.securityforum.org}}, and many guidelines \cite{SecPol09}, an ISP should be adapted depending on the characteristics of the community or organisation that they are built for. In this sense, MUSES stands up for a self-adaptation of the security policies of a company.
 
 On the other hand, employee-owned devices like smartphones, can be both used for personal matters at work, and for continuing working outside of the workplace. As the name says, smartphones are more than simple mobile phones, and people who use them in their works have the possibility of maintaining a good balance between work and private life. For this reason, the risk of uncontrolled devices accessing to corporate assets in unsafe conditions, due to the number of new risks which are linked to smartphones \cite{gangula2013survey}, is bigger.
 
