@@ -60,12 +60,21 @@ The idea seems interesting although several technical concerns arise from the re
 2.      A strong limitation is that an effective enforcement is only possible with MUSES Aware Apps. It is unclear the effectiveness of the approach with commercial applications. In page 14 "MUSES could just detect very specific events and also do very limited actions". With those assumptions, it seems unlikely that a company would adopt MUSES since it is not able to offer an adequate level of security. I think that this is very far from being acceptable for a BYOD solution. Also in this respect, experimental results are needed.
 3.      MUSES Sensors are essentially user-space applications that collects logs on specific activities. This aspect really concerns me since a compromised device or compromised sensor apps could vanish all MUSES effort. Authors should deeply discuss this aspect.
 4.      Paper structure is really confusing. Many essential concepts are introduced and explained too late in the paper forcing the reader to go back and forth to understand the architecture (e.g. MUSES aware apps and Data Mining techniques). I suggest authors to deeply revise the presentation of their work.
+\end{verbatim}
+
+\begin{verbatim}
 5.      A discussion on research activities on BYOD is completely missing. This is unacceptable for a solution that aims at solving BYOD security issues. Just to cite a few:
 a.      Gessner, Dennis, et al. "Towards a User-Friendly Security-Enhancing BYOD Solution." NEC Technical Journal 7.3 (2013): 113.
 b.      Samaras, Vasileios. A BYOD Enterprise Security Architecture for accessing SaaS cloud services. Diss. TU Delft, Delft University of Technology, 2013.
 c.      Armando, Alessandro, et al. "Enabling BYOD through secure meta-market." Proceedings of the 2014 ACM conference on Security and privacy in wireless & mobile networks. ACM, 2014.
+\end{verbatim}
+
+Reviewer is right. Although several works have been cited in other sections of the work, a proper discussion on research on BYOD was necessary. Therefore, we have analysed the 3 papers suggested by the reviewer, together with several new relevant ones. These new references also have been used along other sections of the work to justify MUSES features (for example, the set of best practices used) and to propose the new taxonomy, taking into account the works described in the new section. The new references added \cite{Garba15organisational,Scarfo12survey,Gessner13userfriendly,Armando14metamarket,Haejung12Door,Samaras13SaaS,Miller12Privacy,Romer14BestPractices} can be found at the end of this document.
+
+\begin{verbatim}
 6.      The experimental section is completely missing. Is MUSES able to identify security violations? Which are the computational cost for both the company (server) and users (mobile devices)? Are there any limitations?
 Under such considerations I recommend authors for a *STRONG* major revision to cover the aforementioned points.
+\end{verbatim}
 
 
 \end{verbatim}
@@ -133,4 +142,6 @@ Specific comments regarding organization and presentation:
 3) The structure and flow of the work can be improved.
 \end{verbatim}
 
+%FERGU: Añado las nuevas referencias a partir del fichero bibtex, poned las vuestras!
+\bibliography{review_muses}
 \end{document}
