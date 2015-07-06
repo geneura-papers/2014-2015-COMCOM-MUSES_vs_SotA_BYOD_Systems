@@ -41,12 +41,12 @@ Since this BYOD philosophy is being adopted by many companies
 everyday, a number of solutions have appeared in the market so that it
 can be implemented in a secure way and comply with the Security Policies
 mentioned above. In this paper we present an overview of BYOD security
-solutions along a novel, adaptive and open source system named
+solutions along with a novel, adaptive and open source system named
 MUSES (Multiplatform Usable Endpoint Security), able 
 to securely manage BYOD environments. % <- Solution
 MUSES has been developed to cope with security issues with regard to
 enterprise security policies, but as a user-centric tool. It considers
-users' behaviour in order to adapt, improve, or even increase the
+users' behaviour in order to adapt, improve, and even increase the
 defined set of security rules. To do this, the system applies Machine
 Learning and Computational Intelligence techniques, being also able to
 predict future security incidences produced by these users. % <-
@@ -58,6 +58,7 @@ respect to them. % <- we will explain why is better in the work
 \end{abstract}
 
 %FERGU: seguro que ya lo habéis discutido, pero presentar MUSES como algo a hacer en el futuro es un poco... yasabesh xD
+% Antonio - bueno, ya existe. :)
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   KEYWORDS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,33 +103,31 @@ Security Policies. In addition, it has the ability of `learning' from the user's
 in order to deal with potential security incidents that users might cause in the future. 
 Then the system reacts, in a non-intrusive way, to the potentially
 dangerous sequence of actions \footnote{Which are treated as `events' inside the system.} that the employees are conducting at
-any time. The MUSES system has also been tested in an actual company, with satisfactory results. The analysis of all data from these tests, and conclusions, are part of the future work.
-
+any time. 
 
 To this end, MUSES analyses the users' behaviour by means of Data
 Mining (DM) techniques \cite{DataMining_Lee01} and Machine Learning
 (ML) methods \cite{MachineLearning_Bishop06}, extracting a set of
 patterns which is later processed by means of Computational
-Intelligence (CI) algorithms, namely Evolutionary Computation methods
-\cite{EAs_Back96,GP_Koza92}. The general ideas behind MUSES were
-already presented in
-\cite{DBLP:conf/sac/MoraCGZJEBAH14,DBLP:conf/gecco/MoraCGZE14}. However,
-the implementation was in its early stages when those papers were
-submitted. Also, an additional work on the data mining techniques was conducted in \cite{mora14:urls}, over a set of data previous to the release and test of the first MUSES prototype. As there was no available test data, a set of URL connection logs were provided by a Spanish security company, % [Pedro] quizás decir que es una empresa de seguridad o algo así % Añadido, gracias!
-as well as both black and white lists. These lists contained the URLs that were forbidden, or allowed, to be accessed by the employees. 
-By taking the lists as `rules', and the HTTP connections as `events', a previous simulation of the rule generation through classification, and its results, were presented at \cite{mora14:urls}. % [Pedro] ¿ese "could be" se refiere a verbo en pasado? en ese caso, quizás usar "... was presented at..." % Gracias again
-In this paper, once the first MUSES prototype has been released and the first tests have been conducted, we have a clearer idea of its capabilities, so that we present and compare them with other existing tools in the market. % [Pedro] Quizás comenzar la frase con: In this paper, once the first prototipe has been released and the first tests have been conducted, we ...
-
+Intelligence (CI) algorithms, mainly Evolutionary Computation methods
+\cite{EAs_Back96,GP_Koza92}. 
 
 MUSES includes some important modules in its core, %FERGU: no habéis hablado de ese loop, decid mejor "core" (no lo cambio yo por si no tiene sentido)
 %cambiado
  such as an Event Processor, which performs an event correlation task \cite{SurveyEventCorrelation_Tiffany02}, matching occurred events with rules to deal with them, and extracting threats that a Real-Time Risk and Trust Analysis Engine (RT2AE) \cite{RT2AE_SOTICS13} will process (along with other trust data and profiles), to select the best policies subset.
 
-% [Pedro] en este punto se puede comentar lo que se va a presentar en el trabajo introduciendo directamente con "This work presents..." o "This paper presents..." (yo quitaría el "But first,"
-% Totalmente de acuerdo, cambiado.
-This work presents a brief overview of the main existing solutions in the BYOD environment. Then, a comparison between these tools and MUSES is also conducted, focusing on the advances beyond the state of the art that this novel system % [Pedro] esa aclaración y demás yo lo podría más arriba, cuando se definen qué son las siglas de MUSES. % Perfecto, cambiado.
- includes. 
+The general ideas behind MUSES were already presented in
+\cite{DBLP:conf/sac/MoraCGZJEBAH14,DBLP:conf/gecco/MoraCGZE14}. However,
+the implementation was in its early stages when those papers were
+published. Also, an additional work on applying data mining and machine learning techniques was conducted in \cite{mora14:urls}. It presented a study over a dataset similar to those that MUSES will manage, but not the same, since the prototype of MUSES had not still been released.
+Thus, a set of URL connection logs were provided by a Spanish security company, % [Pedro] quizás decir que es una empresa de seguridad o algo así % Añadido, gracias!
+as well as both black and white lists. These lists contained the URLs that were forbidden, or allowed, to be accessed by the employees. 
+By taking the lists as `rules', and the HTTP connections as `events', a previous simulation of the rule generation through classification, and its results, were presented in that work. % [Pedro] ¿ese "could be" se refiere a verbo en pasado? en ese caso, quizás usar "... was presented at..." % Gracias again
 
+% Antonio- muevo esta frase a un sitio más adecuado
+The first prototype of the MUSES system has recently been tested in an actual company, with satisfactory results, so we have now a clearer idea of its capabilities. 
+Thus, in this paper we present an overview of the main existing solutions in the BYOD environment. Then, a comparison between these tools and MUSES is conducted, focusing on the advances beyond the state of the art that this novel system % [Pedro] esa aclaración y demás yo lo podría más arriba, cuando se definen qué son las siglas de MUSES. % Perfecto, cambiado.
+ includes.
 
 The rest of the paper is organized as follows. First, some background situation about enterprise security is presented in Section \ref{sec:preliminaryconcepts}, explaining how BYOD philosophy affects it. The main solutions or tools are detailed in Section \ref{sec:toolsreview}, even if they are still in development.  
 Section \ref{sec:muses} presents the Multiplatform Usable Endpoint Security System, with its architecture and the soft computing techniques it makes uses of. Advantages and benefits of the proposed system are compared to other solutions found in bibliography in Section \ref{sec:comparison}.
@@ -139,7 +138,7 @@ Finally, the reached conclusions are discussed in Section \ref{sec:conclusions},
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   BACKGROUND  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %----------------------------------------------------------------------------
 
-
+% Antonio - Yo separaría esta sección en dos: Preliminary concepts y SOA. Así se suele hacer y así podemos destacar en la respuestas lo de la nueva sección con el SOA. Eso sí, en ese caso debería ser mayor y mejor. ¿Qué opináis?
 \section{Preliminary concepts and background about enterprise security}
 \label{sec:preliminaryconcepts}
 
@@ -610,8 +609,12 @@ MUSES has been compared with other existing solutions with a similar aim: to ens
 The main advantages of MUSES with respect to the other solutions have been discussed, also remarking its advances beyond the state of the art that define these tools.
 
 In addition, a scientific comparison between the techniques used in the presented system and those in the literature, in the same scope, has been done. It has been discussed that MUSES has the advantage of being multiplatform, while most of the reviewed tools are not. In addition, MUSES is able to adapt and evolve the security policies that a company has built, and not only apply them, as the other tools do. Also, it is remarkable that this MUSES tool is not a solution offered by a company, but the result of the aim of going beyond the state of the art in different fields of research.
+
+As stated, MUSES has been recently tested in an actual company with satisfactory results according to the users' and to the evaluators of the trials.
+% Antonio - lo del trabajo futuro mejor decirlo al final. En la intro no se suele poner a no ser que quieras aclarar que este trabajo no va de esto. Pero eso suele verse como algo negativo. Los revisores te pueden decir que por qué no has hecho ese análisis si ya tienes los datos...
+However, the analysis of all data from these tests, and conclusions, will be addressed in future works.
 	
-However, there is room for considering some of the existing researches that could be added as future features for MUSES, such as the analysis of users via social networks \cite{inferring_policies_socialnetworks_09,user_classification_ml_13}, the optimisation of security protocols \cite{GA_networksecurity-zarza}, the implementation of intrusion detection mechanisms \cite{GA_intrusion-majeed}, or the application of novel privacy-related techniques \cite{AAI_book_2009}, which is another feature also considered in MUSES. The second prototype of the system will be also released, as well as the conclusions extracted after the analysis of data from the test of the first prototype.
+There is also room for considering some of the existing researches that could be added as future features for MUSES, such as the analysis of users via social networks \cite{inferring_policies_socialnetworks_09,user_classification_ml_13}, the optimisation of security protocols \cite{GA_networksecurity-zarza}, the implementation of intrusion detection mechanisms \cite{GA_intrusion-majeed}, or the application of novel privacy-related techniques \cite{AAI_book_2009}, which is another feature also considered in MUSES. The second prototype of the system will be also released, as well as the conclusions extracted after the analysis of data from the test of the first prototype.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
