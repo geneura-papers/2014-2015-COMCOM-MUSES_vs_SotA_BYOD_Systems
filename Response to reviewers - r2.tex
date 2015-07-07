@@ -41,26 +41,60 @@ If you decide to revise the work, please submit a list of changes or a rebuttal 
 
 \textit{Include an overview of all changes made in the paper.}
 
+% -----------------------------------------------------------------------------
+
 \section{Comments by Reviewer \#2}
 
-\begin{verbatim}
+% Antonio - Voy a sustituir el Verbatim por un cambio de color en las respuestas porque al compilarlo no hace los saltos de línea si no se los especificas y el texto se sale del margen.
+
+%\begin{quotation}
 After reviewing the new version of the document, I admit the authors have  substantially changed section 3 (state of the art) and they have improved and extended the introduction and sections 4 (description of the system) and section 5 (comparison with other systems) I acknowledge the ideas are really interesting and exciting, but I'm still not sure if the authors are providing new results not published in their previous works or just rephrasing their text.
 
-Since there is an obvious over-the-top quality in their work and some good ideas, I'll let the editors decide if the contents are novel enough (compared to other previous works by the same authors) to be published in the journal.
+Since there is an obvious over-the-top quality in their work and some good ideas, I'll let the editors decide if the contents are novel enough (compared to other previous works by the same authors) to be published in the journal.\\
+%\end{quotation}
 
+\textcolor{blue}{We would like to thank the reviewer for his/her opinion and would lead him/her to have another look at the new version, since it has been highly improved. 
+As a summary:}
+%
+\textcolor{blue}{
+\begin{itemize}
+\item We have described in a more detailed way our previously published papers in this scope, clarifying the differences and contributions of this work with respect to them.
+\item Section 2 has been deeply improved adding a much more complete State of the Art in the scope of this work... 
+% Antonio - TODO: Fergu, completa esto tú que tienes la idea global de lo nuevo en el SotA, por favor.
+The reviewer can see the set of new references added by the end of this response letter.
+\item The description of MUSES system is now much better. Several points have been clarified and better explained in Section 4. Moreover, a prototype of the system has been tested in an actual company with success, according to the obtained results. This is also commented by the end of that section.
+% Antonio - TODO: Revisar que esto se haya dicho/hecho en el paper
+\item Section 3 has been rewritten in a big part, including a new taxonomy for the analyzed systems, along with a better comparison with MUSES in Section 5.
+% Antonio - TODO: extender esto de la sección 3 y 5 un poco más.
+\item A complete proof-editing process has been done, revising the English grammar and rewriting several paragraphs for a better comprehension.
+\end{itemize}}
+% Antonio - TODO: Añadir más cosas (medianamente relevantes) que se hayan hecho
+%
+\textcolor{blue}{These changes are better described in the responses to the others reviewers, so we encourage this reviewer to read them to have a better idea of their impact in the new version of the manuscript.}
 
-\end{verbatim}
+% -----------------------------------------------------------------------------
 
 \section{Comments by Reviewer \#3}
 
-\begin{verbatim}
 This paper describes MUSES, an adaptable framework for enforcing security policies on mobile devices. This tool relies on Machine Learning and CI techniques to predict policy violations and is self-adaptive on user behaviors.
 The idea seems interesting although several technical concerns arise from the reading of this work:
-1.      The tools aims at enforcing security policies, however the security response occurs only AFTER a particular pattern is recognized to be potentially malicious. From my understandings, there is no a-priori enforcement except for the prediction based on event logs. This could mean that e security violation could in principle happen and only later recognized. This is not so suitable for a corporate environment with strict security requirements. This statement should be discussed and preferably discredited with experimental results.
+1.      The tools aims at enforcing security policies, however the security response occurs only AFTER a particular pattern is recognized to be potentially malicious. From my understandings, there is no a-priori enforcement except for the prediction based on event logs. This could mean that a security violation could in principle happen and only later recognized. This is not so suitable for a corporate environment with strict security requirements. This statement should be discussed and preferably discredited with experimental results.
+
+\textcolor{blue}{TODO}
+
 2.      A strong limitation is that an effective enforcement is only possible with MUSES Aware Apps. It is unclear the effectiveness of the approach with commercial applications. In page 14 "MUSES could just detect very specific events and also do very limited actions". With those assumptions, it seems unlikely that a company would adopt MUSES since it is not able to offer an adequate level of security. I think that this is very far from being acceptable for a BYOD solution. Also in this respect, experimental results are needed.
+
+
+
 3.      MUSES Sensors are essentially user-space applications that collects logs on specific activities. This aspect really concerns me since a compromised device or compromised sensor apps could vanish all MUSES effort. Authors should deeply discuss this aspect.
+
+
+
 4.      Paper structure is really confusing. Many essential concepts are introduced and explained too late in the paper forcing the reader to go back and forth to understand the architecture (e.g. MUSES aware apps and Data Mining techniques). I suggest authors to deeply revise the presentation of their work.
-\end{verbatim}
+
+
+
+
 
 \begin{verbatim}
 5.      A discussion on research activities on BYOD is completely missing. This is unacceptable for a solution that aims at solving BYOD security issues. Just to cite a few:
@@ -76,8 +110,7 @@ Reviewer is right. Although several works have been cited in other sections of t
 Under such considerations I recommend authors for a *STRONG* major revision to cover the aforementioned points.
 \end{verbatim}
 
-
-\end{verbatim}
+% -----------------------------------------------------------------------------
 
 \section{Comments by Reviewer \#4}
 
@@ -110,10 +143,10 @@ Section 3.6.4 (p10, 44) states "are Worx-enable are capable". The meaning of thi
 Basically, in section 3 the following possibilities for improvement are identified:
  1) Explain why particular solutions are chosen for inclusion in review and what is their relevance? Did authors consider other (possible) solutions relying on DM and CI?
  2) Considering variety of BYOD tools and their different features, authors might consider to introduce or reuse a taxonomy or classification of those approaches, and state the place of MUSES there (or define a new subcategory, if deemed necessary)
- 3) Some presented solutions miss their relationship to MUSES (coverage, features, comparison). This point also refers to inconsistent coverage amongst solutions and weak arguments favouring MUSES. Either coverage should be more consisent by focusing on common (present or missing) aspects, or it should be elaborated why such coverage is missing. Also see the comment for dicussion part bellow.
+ 3) Some presented solutions miss their relationship to MUSES (coverage, features, comparison). This point also refers to inconsistent coverage amongst solutions and weak arguments favouring MUSES. Either coverage should be more consistent by focusing on common (present or missing) aspects, or it should be elaborated why such coverage is missing. Also see the comment for discussion part bellow.
 
 On p.12, l.9-12 authors state that MUSES can be installed in every mobile or portable device, independently of the operating system and device type. This is also derived from the title "Multiplatform Usable Endpoint Security System".
-The authors however do not provide additional details on how is this achieved in the practice and are there any limitations in regards to that. How they managed to provide the same sistem for Androd, Windows, iOS, PCs, without limitations? How MUSES manage the variety of OS versions and underlying platform features provided to the app? This feature is important differentiator against some other solutions and in opinion of this reviewer should be elaborated in more detail.
+The authors however do not provide additional details on how is this achieved in the practice and are there any limitations in regards to that. How they managed to provide the same system for Android, Windows, iOS, PCs, without limitations? How MUSES manage the variety of OS versions and underlying platform features provided to the app? This feature is important differentiator against some other solutions and in opinion of this reviewer should be elaborated in more detail.
 
 When stating (p.13, l.15-24) that MUSES relies on AES based symmetric encryption, does it mean that information flows in MUSES client internally, as well as client-server communication, are encrypted with the same key? Does MUSES uses client specific and/or temporal keys? What measures are taken to protect this key from malicious applications both on client and server side? How and where is this key generated? What is lifetime of the key? In my opinion this part should be reworked, providing more detailed description of security aspects of their approach. Also please see security related comment bellow.
 
@@ -129,7 +162,7 @@ Similar applies to human-computer interaction (p.20 l.34). Although some details
 
 This reviewer would also suggest to provide more details on security aspect of the system. Some hints are provided in previous comments. Additionally, as the client/server interaction is concerned, what measures and aspects have been applied in order to identify and prevent malicious parties to manipulate or inject malicious rules in the system? By injecting such rules, the complete sub-network of clients of the company can be affected. Furthermore, author assumes that the clients are non-rooted devices. What happens, and at which extent can some rooted device affect local application of the system, and also central server and other clients?
 
-For the section 5 and discussion, this reviewer would suggest to consider providing overview in the form of table(s) or figure, comparing different aspects of MUSES and other tools and providing hints/references to further details in this or other works. As there are many features of MUSES and other tools, employed approaches and techniques, different coverages and limitations, such overview could countribute to clarity and position of the proposed solution.
+For the section 5 and discussion, this reviewer would suggest to consider providing overview in the form of table(s) or figure, comparing different aspects of MUSES and other tools and providing hints/references to further details in this or other works. As there are many features of MUSES and other tools, employed approaches and techniques, different coverages and limitations, such overview could contribute to clarity and position of the proposed solution.
 
 Overall, this reviewer perceives this work as a good contribution in presenting and advancing the state-of-the art. It is however suggested to consider revising this work and take into account provided suggestions.
 
@@ -143,5 +176,6 @@ Specific comments regarding organization and presentation:
 \end{verbatim}
 
 %FERGU: AÃ±ado las nuevas referencias a partir del fichero bibtex, poned las vuestras!
+\bibliographystyle{elsarticle-num}
 \bibliography{review_muses}
 \end{document}
