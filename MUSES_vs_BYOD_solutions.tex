@@ -116,7 +116,7 @@ MUSES includes some important modules in its core, %FERGU: no habéis hablado de 
 The general ideas behind MUSES were already presented in
 \cite{DBLP:conf/sac/MoraCGZJEBAH14,DBLP:conf/gecco/MoraCGZE14}. However,
 the implementation was in its early stages when those papers were
-published. Also, an additional work on applying data mining and machine learning techniques was conducted in \cite{mora14:urls}. It presented a study over a dataset similar to those that MUSES will manage, but not the same, since the prototype of MUSES had not still been released.
+published. Also, an additional work on applying data mining and machine learning techniques was conducted in \cite{mora14:urls}. It presented a study over a dataset similar to those that MUSES manages, but not the same, since the prototype of MUSES had not still been released.
 Thus, a set of URL connection logs were provided by a Spanish security company, % [Pedro] quizás decir que es una empresa de seguridad o algo así % Añadido, gracias!
 as well as both black and white lists. These lists contained the URLs that were forbidden, or allowed, to be accessed by the employees. 
 By taking the lists as `rules', and the HTTP connections as `events', a previous simulation of the rule generation through classification, and its results, were presented in that work. % [Pedro] ¿ese "could be" se refiere a verbo en pasado? en ese caso, quizás usar "... was presented at..." % Gracias again
@@ -221,7 +221,11 @@ The tool manages all employees' smartphones and tablets from a single-based cons
 
 With regard to compliance enforcement, the main goal of this Mobile Control tool is to give more importance to company security, instead of giving more flexibility to the users. But it has been demonstrated by Herath and Rao in \cite{SecPolPenalty09} that this practise can result in bad (even not on purpose) users' behaviour. Thus, the company BYOD initiative should include an acceptable use policy to ensure that the users are aware of the measures that the company would take if a device breaches any ISPs. Sophos aims to reach this by doing three main tasks: First, by allowing setting up user and group-based security policies separately. Secondly, by a risk mitigation in which the actions to perform can be set according to the severity of the breach. For minor cases, the company may want to simply inform to the user, but if sensitive data is at risk, a remote wipe may be the chosen option. Finally, compliance check, by constantly performing scans to detect malware and putting the devices in quarantine when they are found infected.
 
-Thus, given the fact that this tool is more focused on the company than in the user, it is worth to compare it to the MUSES system, as the latter tries to focus on the users, being user-centric. This means that is preferred to let the user know about a risky situation, rather than making them feel ``watched''.
+Thus, given the fact that this tool is more focused on the company
+than in the user, it is worth to compare it to the MUSES system, as
+the latter tries to focus on the users, being user-centric. This means
+that is preferred to let the user know about a risky situation, rather
+than making them feel ``watched''. 
 
 %----------------------------------------------------------------------------
 
@@ -599,7 +603,16 @@ Another comparison would be that the existing products are mostly policy-based, 
 
 Also related to this issue, a very big advantage of the MUSES system that is not present in the other solutions is its self-adaptivity power. The proposed system uses different methods to create new security rules, being their aim to cover new vulnerabilities or threats. Thus, MUSES is able to adapt to changes by applying classification techniques to create new rules, and then refining the whole set of existing policies. Additionally, MUSES is able to discover new threats by a combination of real-time risk and trust analysis plus a classifier trained with all the occurred events in the system.
 
-However, MUSES presents a limitation regarding the enhance of rules, since, in principle, it cannot predict (generate rules for dealing with) unexpected or unknown events which could lead to a security incident. The philosophy is that the initial set of rules, defined by the CSO, should be very restrictive regarding possible unexpected users' behaviours or events, in order to avoid as much security incidents as possible. As the system works, MUSES would be able to define new rules (through refinement) which could get an associated decision after the corresponding events have happened. Thus, this will lead to get eventually an optimal set of security rules.
+However, MUSES presents a limitation regarding the enhance of rules,
+since, in principle, it cannot predict (generate rules for dealing
+with) unexpected or unknown events which could lead to a security
+incident. The philosophy is that the initial set of rules, defined by
+the CSO, should be very restrictive regarding possible unexpected
+users' behaviours or events, in order to avoid as much security
+incidents as possible. As the system works, MUSES would be able to
+define new rules (through refinement) which could get an associated
+decision after the corresponding events have happened. Thus, this will
+lead to obtaining an optimal set of security rules.
 
 In addition, MUSES can also infer or create new rules using computational intelligence techniques. These rules could deal with unexpected situations (not previously happened), but must be previously approved by the CSO. Of course, everything is constrained by the available set of sensors which, in turn, define the possible information that MUSES will analyze and use in the refinement and inference processes.
 
