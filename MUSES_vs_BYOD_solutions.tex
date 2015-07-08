@@ -3,7 +3,7 @@
 \usepackage[latin1]{inputenc}
 %\usepackage[T1]{fontenc}
 %\usepackage{textcomp}
-\usepackage{graphicx}
+\usepackage{array,booktabs,graphicx}
 \usepackage{color}
 %\usepackage{setspace}
 \usepackage{url}
@@ -216,7 +216,7 @@ Main services offered by IBM can be divided into three categories:
 
 %FERGU: HABLANDO DE LOS PRODUCTOS
 {\em MobileFirst} \footnote{\url{http://www.ibm.com/mobilefirst}} is a set of mobile applications and services, based in big data analytics and cloud computing. It includes several products, such as a framework for app development (MobileFirst Platform), a Platform as a Service (BlueMix) or a threat detection system (Trusteer Rapport). %FERGU: sí, es rApport, no rEpport, no lo cambiéis :P
- However, the most interesting one with respect to this work scope, is {\em MobileFirst Protect}. This product, formerly known as {\em MaaS360}) \footonote{\url{http://www.maas360.com/}}, is a MDM (Mobile Device Management) software to securize, monitor and manage mobile devices.  It uses a web portal in order to centralize the security and control policies. This allows the deployment of applications or backups, among other possibilities.
+ However, the most interesting one with respect to this work scope, is {\em MobileFirst Protect}. This product, formerly known as {\em MaaS360} \footnote{\url{http://www.maas360.com/}}, is a MDM (Mobile Device Management) software to securize, monitor and manage mobile devices.  It uses a web portal in order to centralize the security and control policies. This allows the deployment of applications or backups, among other possibilities.
 %----------------------------------------------------------------------------
 
 \subsection{Sophos Mobile Control}
@@ -284,13 +284,13 @@ There exist other corporate security-aimed tools inside the BYOD philosophy, suc
 \subsubsection{WSO2 - Enterprise Mobility Manager}
 
 WSO2 Enterprise Mobility Manager (WSO2 EMM) \cite{WSO2_tool} is an open source platform that also works with the BYOD program. Some of this WSO2 EMM key features are:
-
-\begin{description}
-  \item[Mobile Device Management,] which is used to manage both user and corporate owned devices, providing support for Android and iOS at the moment. It should be noted that this tool allows tracking every enrolled device, as well as obtaining reports and analytics of their use.
-  \item[Mobile Application Management:] With regard to the software, this platform is able to allow or deny the use of applications on enrolled devices based on the role of the user or policies, thus restricting the use of some apps to certain users.
-  \item[Enterprise App Store:] This store provides users with both enterprise and public applications approved by the company.
-  \item[Mobile Data Security:] WSO2 also allows the user's data to be encrypted via password.
-\end{description}
+% Antonio - cambio esto porque las negritas no se suelen usar apenas y para mantener la concordancia en formato con el resto de listas
+\begin{itemize}
+  \item \textit{Mobile Device Management}: Which is used to manage both user and corporate owned devices, providing support for Android and iOS at the moment. It should be noted that this tool allows tracking every enrolled device, as well as obtaining reports and analytics of their use.
+  \item \textit{Mobile Application Management}: With regard to the software, this platform is able to allow or deny the use of applications on enrolled devices based on the role of the user or policies, thus restricting the use of some apps to certain users.
+  \item \textit{Enterprise App Store}: This store provides users with both enterprise and public applications approved by the company.
+  \item \textit{Mobile Data Security}: WSO2 also allows the user's data to be encrypted via password.
+\end{itemize}
 
 \subsubsection{Good's Bring Your Own Device solution}
 
@@ -448,7 +448,7 @@ To this end, the \textit{MusKRS} module is in charge of analysing all the gather
 This procedure is composed by two main steps: first, a DM \cite{DataMining_Lee01} + ML \cite{MachineLearning_Bishop06} process is performed in the \textit{Data Miner} sub-component; second, a refinement and inference process is done in the \textit{Knowledge Compiler} sub-component, using the data that was extracted in the first step, and by means of CI techniques.
 The refinement or adaptation of the security rules can be made through techniques as simpler as generalisation or specialisation of rules, for instance, or by more complex CI methods such as Evolutionary Algorithms \cite{EAs_Back96}.
 
-Another important fact is that MUSES functionalities are completed by a human controller, normally the CSO, who supervises the system activity by means of a graphic interface the CSO can interact with. Thus, adapted and inferred security rules are not directly added to the current set of rules, but they are proposed instead as draft rules to this human controller, in order to be accepted if they are interesting and useful. The system also uses the acceptance or rejection of new rules as `feedback`, learning from these decisions, and refining the rules according to this.
+Another important fact is that MUSES functionalities are completed by a human controller, normally the CSO, who supervises the system activity by means of a graphic interface he/she can interact with. Thus, adapted and inferred security rules are not directly added to the current set of rules, but they are proposed instead as draft rules to this human controller, in order to be accepted if they are interesting and useful. The system also uses the acceptance or rejection of new rules as `feedback`, learning from these decisions, and refining the rules according to this.
 
 The following sections describe these processes: first, focusing on DM techniques to be used both automatically by the MusKRS, and by the mentioned graphic interface for showing useful information to the CSO; second, used CI techniques are explained, mainly focusing in Evolutionary Computation (EC) \cite{EAs_Back96} approaches. EC methods have demonstrated to have a good performance, and have been widely used in security-based environments for solving security issues, such as intrusion detection \cite{GA_intrusion-majeed}, design and evaluation of security protocols \cite{GP_intrusion-lu,GA_networksecurity-zarza}, or for the optimisation of different aspects related with security: IT security costs \cite{EAs_securitycosts-kirta}, and cryptographic protocols \cite{GA_cryptographicprotocols-zarza2}, among others.
 
@@ -520,7 +520,9 @@ On the other hand, the refinement or adaptation of the security rules is perform
 
 \item Risk information extracted from the user profile, e.g. ``Did the user received a lot of `denies' or `allows' before?'', in other words, ``Is the user trustworthy?''. In case the user is not, meaning that the user trust value is low, more restrictive rules can be created, otherwise the corresponding rules could be `softer' for that user.
 
-\item The information about the user behaviour with respect to system messages, whether the users acts in consequence or against MUSES advice, as well as user feedback. The user feedback has been measured in the MUSES trials by making interviews with the people who have used MUSES, but it can also be measured by pop-up messages, ``has this information been useful?''-type. All this information contributes to the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignored warning messages.
+\item The information about the user behaviour with respect to system messages, whether the users acts in consequence or against MUSES advice, as well as user feedback. The user feedback has been measured in the MUSES trials by making interviews with the people who have used MUSES, but it can also be measured by pop-up messages, such as ``has this information been useful?''. 
+% Antonio - quito el guión porque un revisor dice que se usan demasiados y que hacen el texto menos fluído y legible.
+All this information contributes to the inference of new rules or in adaptation, in order to deal with, for instance, users that repeatedly ignored warning messages.
 Moreover, important log information with regard to the parameters used or the decisions made in the different modules can be used for further tests of new inferred rules, as it is explained below.
 
 \end{itemize}
@@ -563,7 +565,34 @@ As a summary, the Knowledge Compiler module uses two EC-based processes for infe
 
 
 MUSES is mainly a free, open-source, platform independent solution, and adopts the recommended best practices by Romer \cite{Romer14BestPractices}. %Está bien aquí Fergu?
- These features make it a good alternative to most of the proprietary, close and system-specific tools presented in Section \ref{sec:toolsreview} (all but WSO2). In addition, most of the existing tools take into account only smartphones and tablets, but MUSES also covers laptops and company PCs, thus, it is not only for BYOD. Moreover, the companies which might want to work with one of the reviewed systems need a specific operating system in the server (such as Windows Server, for instance), being even more restrictive in some cases. This is specially remarkable in the case of the Blackphone, forcing the companies and the employees to purchase a specific device. MUSES is a good solution towards these cases, since it is a multiplatform system in both the client and the server. 
+These features make it a good alternative to most of the proprietary, close and system-specific tools presented in Section \ref{sec:toolsreview} (all but WSO2). In addition, most of the existing tools take into account only smartphones and tablets, but MUSES also covers laptops and company PCs, thus, it is not only for BYOD. Moreover, the companies which might want to work with one of the reviewed systems need a specific operating system in the server (such as Windows Server, for instance), being even more restrictive in some cases. This is specially remarkable in the case of the Blackphone, forcing the companies and the employees to purchase a specific device. MUSES is a good solution towards these cases, since it is a multiplatform system in both the client and the server. 
+Table \ref{tab:comparison} summarizes the features of the main analyzed tools, regarding these facts.
+% Antonio - Antares, ¿podrías incluir en la comparativa las otras herramientas que se han analizado? Las de Citrix, WSO2, Azzurri, Good...
+
+\begin{table}[ht]
+
+  \centering
+  \renewcommand{\arraystretch}{1.5}% Spread rows out...
+%  \resizebox{8cm}{!}{
+  \begin{tabular}{>{\centering\bfseries}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering\arraybackslash}m{1in}}
+    \toprule
+      & \textbf{License} & \textbf{Devices} & \textbf{Price} \\
+    \midrule
+    MUSES & Open Source & IOS, Android, Windows Phone & Free  \\
+    IBM Mobile Security & Proprietary &  &  \\
+    Sophos Mobile Control & Proprietary & IOS, Android, Windows Phone  &  By Request\\
+    Samsung Knox and Blackbery Balance & Proprietary & IOS, Android, Samsung Devices & 12\$ per year/device \\
+    Blackphone & Proprietary & Own device & 120\$ per year \\
+    Android for Work & Proprietary & Android and devices with Chrome Browser &  12\$ per month/user\\
+    \bottomrule
+  \end{tabular}
+%  }
+  \caption{Features of the analyzed products considering licenses, type of devices and price. \label{tab:comparison}}
+\end{table}
+% Antonio - Antares, ¿no había más tablas?
+% Por favor, que alguien rellene los datos de la solución de IBM. ¿Fergu?¿Antares?
+% Quizá habría que indicar que MUSES se puede instalar en PC también en la tabla. ¿Sabéis si los demás se puede o son sólo para smartphones/tablets?
+
 
 Another comparison would be that the existing products are mostly policy-based, while MUSES makes its decisions not only considering policies, but also based on the terminals and users context (connection properties, or trust value of the device, for instance), to really understand the real risk that comes with a specific action.
 
@@ -627,7 +656,10 @@ This work introduces a self-adaptive user-centric end-to-end system, named MUSES
 MUSES has been compared to other existing solutions with a similar aim: enduring the protection and privacy of sensitive information in the enterprise when it is accessed by the employees using their own devices (BYOD philosophy).
 Main advantages of MUSES with respect to the other solutions have been discussed, remarking its advances beyond the state of the art that define these tools.
 
-In addition, a scientific comparison between the techniques used in the proposed system and those in the literature, in the same scope, has been done. It has been discussed that MUSES has the advantage of being multiplatform, while most of the reviewed tools are not. In addition, MUSES is able to adapt and evolve the security policies that a company has built, and not only apply them, as the other tools do. Also, it is remarkable that this MUSES tool is not a solution offered by a company, but the result of the effort of going beyond the state of the art in different fields of research.
+In addition, a comparison between the techniques used in the proposed system and those in the literature, in the same scope, has been done. It has been concluded that the biggest advantage of MUSES with respect to the rest is its ability to adapt and evolve the security policies (security rules) that a company has built, and not only apply them, as the other tools do. 
+% Antonio - pongo primero la adaptabilidad del sistema porque es la característica más relevante y más 'científica'
+Moreover it has the advantage of being multiplatform, while most of the reviewed tools are not.
+Also, it is remarkable that this MUSES tool is not a solution offered by a company, but the result of the effort of going beyond the state of the art in different fields of research in corporate security, such as risk and trust analysis or event correlation.
 
 As stated, MUSES has been recently tested in an actual company with satisfactory results according to the users' and to the evaluators of the trials.
 % Antonio - lo del trabajo futuro mejor decirlo al final. En la intro no se suele poner a no ser que quieras aclarar que este trabajo no va de esto. Pero eso suele verse como algo negativo. Los revisores te pueden decir que por qué no has hecho ese análisis si ya tienes los datos...
@@ -641,9 +673,7 @@ There is also room for considering some future improvements to MUSES, such as th
 \section{Acknowledgements}
 This paper has been funded in part by European project MUSES
 (FP7-318508), along with Spanish National projects
-TIN2011-28627-C04-02
-(ANYSELF) and TIN2014-56494-C4-3-P (EphemeCH), and GENIL PYR-2014-17,
-awarded by the CEI-BioTIC UGR.  
+TIN2011-28627-C04-02 (ANYSELF) and TIN2014-56494-C4-3-P (EphemeCH), along with GENIL PYR-2014-17, awarded by the CEI-BioTIC UGR.  
 
 \bibliographystyle{elsarticle-num}
 \bibliography{review_muses,geneura-latin1}
