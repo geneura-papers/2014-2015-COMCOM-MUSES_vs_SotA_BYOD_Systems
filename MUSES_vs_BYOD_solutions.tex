@@ -127,7 +127,7 @@ as well as both black and white lists. These lists contained the URLs that were 
 By taking the lists as `rules', and the HTTP connections as `events', a previous simulation of the rule generation through classification, and its results, were presented in that work. % [Pedro] ¿ese "could be" se refiere a verbo en pasado? en ese caso, quizás usar "... was presented at..." % Gracias again
 
 % Antonio- muevo esta frase a un sitio más adecuado
-The first prototype of the MUSES system has recently been tested in an actual company, with satisfactory results, so we have now a clearer idea of its capabilities. 
+The first prototype of the MUSES system has recently been tested in an actual company, with satisfactory results, so we now have a clearer idea of its capabilities. Actually, the first trials of the system were performed with an Android prototype, and in two phases: \textit{silent} and \textit{verbose}, 1 month duration each. During the \textit{silent} phase, MUSES was able to gather data, but without warning the users when a security incident was happening. A total of 23358 security violations were detected. In the \textit{verbose}, MUSES started to show warning pop-ups to the users, every time a security incident happened. Not only the number of security violations were reduced by half in the first two weeks (10977), but the number went on decreasing until it was 0 before the trials period finished. This has proven MUSES to be an effective tool.
 Thus, in this paper we present an overview of the main existing solutions in the BYOD environment. Then, a comparison between these tools and MUSES is conducted, focusing on the advances beyond the state of the art that this novel system % [Pedro] esa aclaración y demás yo lo podría más arriba, cuando se definen qué son las siglas de MUSES. % Perfecto, cambiado.
  includes.
 
@@ -365,8 +365,8 @@ The use of a server is mainly based on the need of a powerful machine, able to w
 Moreover, part of the high computational cost methods to apply needs to be derived to this high-performance server, as the mobile devices do not count with enough computational power. These methods include DM \cite{DataMining_Lee01} and ML \cite{MachineLearning_Bishop06} techniques, which have been proved to be computationally expensive \cite{Cios07DataMining}. This server is also devoted to centralize the data gathering from all the devices in the company, composing a big database to which the commented techniques can be applied.
 
 The system considers two working modes for every device: online and offline. In the \textit{online} mode the device can connect with the MUSES server, so that it can request the server to make a decision. On the other hand, in \textit{offline} mode the server cannot be reached by the device because there is not an available connection between them, so all the decisions are made locally.
-This is done using an up-to-date copy on the Decision Table inside the Local database, which contains decisions for any type of detected event, along with the default actions to be performed if no rule is met. Anyway, in this mode, the gathered information by the sensors in the device is stored for later submission to the server side (when a connection is available), in order to be processed in the knowledge refinement process.
-Moreover, when switching from offline to online mode, the device  receives an updated copy of the Decision Rules, the so-called Device Policies, as a kind of antivirus database, in order to work again perfectly in offline mode if the connection is lost.
+This is done using an up-to-date copy on the Decision Table inside the Local database, which contains decisions for any type of detected event, along with the default actions to be performed if no rule is met. In this mode, the gathered information by the sensors in the device is stored for later submission to the server side when a connection is available, in order to be processed in the knowledge refinement process.
+Moreover, when switching from offline to online mode, the device receives an updated copy of the Decision Rules, the so-called Device Policies, as a kind of antivirus database, in order to work again perfectly in offline mode if the connection is lost.
 
 All flows of information in MUSES are encrypted using AES with 128-bit key in GCM mode \cite{viega2005use}, following the recommendations of the Fact Sheet on Suite B Cryptography \cite{salter2012suite}. Also, the MUSES server authenticates to the MUSES client by means of a self-signed certificate. The authentication of the users is based on Spring Security, which is a Java EE framework that provides authentication, authorization and other security features for enterprise applications. And finally, MUSES makes use of the fact that current OS for mobile devices provide encrypted data containers by default, like the feature used in Android Work. 
 
@@ -577,7 +577,7 @@ As a summary, the Knowledge Compiler module uses two EC-based processes for infe
 
 MUSES is mainly a free, open-source, platform independent solution, and adopts the recommended best practices by Romer \cite{Romer14BestPractices}. %Está bien aquí Fergu?
 These features make it a good alternative to most of the proprietary, close and system-specific tools presented in Section \ref{sec:toolsreview} (all but WSO2). In addition, most of the existing tools take into account only smartphones and tablets, but MUSES also covers laptops and company PCs, thus, it is not only for BYOD. Moreover, the companies which might want to work with one of the reviewed systems need a specific operating system in the server, being even more restrictive in some cases. This is specially remarkable in the case of the Blackphone, forcing the companies and the employees to purchase a specific device. MUSES is a good solution towards these cases, since it is a multi-platform system in both the client and the server. 
-Table \ref{tab:taxonomy} summarizes the features of the main analyzed tools, regarding the proposed taxonomy of Section \ref{sec:toolsreview}. Also, Table \ref{tab:features} shows the features of the analyzed products considering licenses, type of devices and price.
+Table \ref{tab:taxonomy} summarizes the features of the main analyzed tools, with respect to the proposed taxonomy in Section \ref{sec:toolsreview}. Also, Table \ref{tab:features} shows the features of the analyzed products considering licenses, type of supported devices, and price.
 % Antonio - Antares, ¿podrías incluir en la comparativa las otras herramientas que se han analizado? Las de Citrix, WSO2, Azzurri, Good...
 
 \begin{table}[ht]
@@ -620,7 +620,7 @@ Table \ref{tab:taxonomy} summarizes the features of the main analyzed tools, reg
        \midrule
     MUSES & OpenSource &  & Free*  \\
        \arrayrulecolor[gray]{0.8}\hline
-    IBM Mobile Security & Proprietary &  &  \\
+    IBM Mobile Security & Proprietary & IOS, Android, Windows Phone, Blackberry  &  By Request\\\\
         \arrayrulecolor[gray]{0.8}\hline
     Sophos Mobile Control & Proprietary & IOS, Android, Windows Phone  &  By Request\\
         \arrayrulecolor[gray]{0.8}\hline
