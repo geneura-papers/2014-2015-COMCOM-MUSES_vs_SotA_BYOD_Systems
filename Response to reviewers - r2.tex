@@ -93,7 +93,7 @@ The idea seems interesting although several technical concerns arise from the re
 \textcolor{blue}{MUSES starts from a defined set of security rules that the CSO must define. Ideally, these rules should deal, in principle, all the potential security incidents that the company aims to detect. MUSES would be able to define new rules (by means of refinement) which could be labelled (i.e. assigned a decision) after the corresponding events have happened. However, it can also infer or create new rules, which the CSO must approve, using computational intelligence techniques. These rules could deal with unexpected situations (not previously happened).
 Anyway, the idea is to define a set of `restrictive' rules at the very beginning, able to ensure the system safety in a big amount of situations. Then, MUSES will refine or improve this set, making more specific and optimal rules.}
 
-\textcolor{blue}{Moreover, MUSES offers visual analysis tools to the CSOs, which can aid (or guide) they to detect suspicious or anomalous patterns, and to study how to avoid these patterns become malicious to the company.}
+\textcolor{blue}{Moreover, MUSES offers visual analysis tools to the CSOs, which can aid (or guide) they to detect suspicious or anomalous patterns, and to study how to avoid these patterns becoming malicious to the company.}
 
 \textcolor{blue}{In order to clarify this we have rewritten and completed the second paragraph in section 4.1 (page XX). It is now:}
 
@@ -103,7 +103,7 @@ That is to say, the more sensors are implemented, the more information related t
 
 We have also improved this clarification in section 5 (page XX), adding the text:
 
-\textcolor{blue}{\textit{However, MUSES presents a limitation regarding the enhance of rules, since, in principle, it cannot predict (generate rules for dealing with) unexpected or unknown events which could lead to a security incident. The philosophy is that the initial set of rules, defined by the CSO, should be very restrictive regarding possible unexpected users' behaviours or events, in order to avoid as much security incidents as possible. As the system works, MUSES would be able to define new rules (through refinement) which could get an associated decision after the corresponding events have happened. Thus, this will lead to get eventually an optimal set of security rules.}}
+\textcolor{blue}{\textit{However, MUSES presents a limitation regarding the enhancement of rules, since, in principle, it cannot predict (generate rules for dealing with) unexpected or unknown events which could lead to a security incident. The philosophy is that the initial set of rules, defined by the CSO, should be very restrictive regarding possible unexpected users' behaviours or events, in order to avoid as much security incidents as possible. As the system works, MUSES would be able to define new rules (through refinement) which could get an associated decision after the corresponding events have happened. Thus, this will lead to get eventually an optimal set of security rules.}}
 
 \textcolor{blue}{\textit{In addition, MUSES can also infer or create new rules using computational intelligence techniques. These rules could deal with unexpected situations (not previously happened), but must be previously approved by the CSO. Of course, everything is constrained by the available set of sensors which, in turn, define the possible information that MUSES will analyze and use in the refinement and inference processes.}}
 
@@ -113,7 +113,9 @@ We have also improved this clarification in section 5 (page XX), adding the text
 
 3.      MUSES Sensors are essentially user-space applications that collects logs on specific activities. This aspect really concerns me since a compromised device or compromised sensor apps could vanish all MUSES effort. Authors should deeply discuss this aspect.
 
-\textcolor{blue}{TODO}
+\textcolor{blue}{A more detailed definition and description of the sensors has been included. In addition, a discussion on how the case the reviewer mentions could affect the system has been added, as:}
+
+\textcolor{blue}{It is important to note that MUSES does not work as an antivirus itself, but has a sensor which checks if the device has already an antivirus, and raises a security violation alert if not. It might happen then that the user ignores this advice and the device becomes compromised. As it would be explained in the next section, the sensors are constantly sending their monitored values, and therefore patterns are created, stored, and processed on the server. In case the device gets infected with rootkit-type malware \cite{bickford2010rootkits}, a sudden change in the values of the sensors will mean a significant change in the patterns. Then, this change in the patterns will be noticed by the server, which will immediately warn the user, and decrease the device trust value.}
 
 4.      Paper structure is really confusing. Many essential concepts are introduced and explained too late in the paper forcing the reader to go back and forth to understand the architecture (e.g. MUSES aware apps and Data Mining techniques). I suggest authors to deeply revise the presentation of their work.
 
@@ -131,7 +133,7 @@ c.      Armando, Alessandro, et al. "Enabling BYOD through secure meta-market." 
 6.      The experimental section is completely missing. Is MUSES able to identify security violations? Which are the computational cost for both the company (server) and users (mobile devices)? Are there any limitations?
 
 
-\textcolor{blue}{TODO}
+\textcolor{blue}{We agree with what the reviwer remarks, and so we have included, at the end of the Introductiono section, the ratio of security violations detected by the system in a prototype trials period. Also, a little description of the conditions of the trials has been included, for we consider that a deep description of these trials is not in the scope of the paper.}
 
 Under such considerations I recommend authors for a *STRONG* major revision to cover the aforementioned points.
 
