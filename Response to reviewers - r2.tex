@@ -80,7 +80,20 @@ This paper describes MUSES, an adaptable framework for enforcing security polici
 The idea seems interesting although several technical concerns arise from the reading of this work:
 1.      The tools aims at enforcing security policies, however the security response occurs only AFTER a particular pattern is recognized to be potentially malicious. From my understandings, there is no a-priori enforcement except for the prediction based on event logs. This could mean that a security violation could in principle happen and only later recognized. This is not so suitable for a corporate environment with strict security requirements. This statement should be discussed and preferably discredited with experimental results.
 
-\textcolor{blue}{TODO}
+\textcolor{blue}{MUSES starts from a defined set of security rules that the CSO must define. Ideally, these rules should deal, in principle, all the potential security incidents that the company aims to detect. MUSES would be able to define new rules (by means of refinement) which could be labelled (i.e. assigned a decision) after the corresponding events have happened. However, it can also infer or create new rules, which the CSO must approve, using computational intelligence techniques. These rules could deal with expected situations (not previously happened).
+Anyway, the idea is to define a set of `restrictive' rules at the very beginning, able to ensure the system safety in a big amount of situations. Then, MUSES will refine or improve this set, making more specific and optimal rules.}
+
+\textcolor{blue}{Moreover, MUSES offers visual analysis tools to the CSOs, which can aid (or guide) they to detect suspicious or anomalous patterns, and to study how to avoid these patterns become malicious to the company.}
+
+\textcolor{blue}{In order to clarify this we have rewritten and completed the second paragraph in section 4.1 (page XX). It is now:}
+
+% Antonio - yo pienso que en este sistema cualquier violación de seguridad que se detecte se hará por medio de las reglas de seguridad. Eso sería lo ideal, pero para ello el CSO debe definir un conjunto que asegure la seguridad del sistema en la mayoría de casos. Luego el KRS podrá proponer nuevas reglas a través de 'predicciones' (inferencias) o refinamiento, pero estas últimas se construirán como reglas optimizadas para tratar con incidentes de seguridad ya detectados. No se pueden crear de la nada reglas para tratar con nuevos incidentes (desconocidos).
+
+\textcolor{blue}{\textit{The client is an important part of the a-priori risk treatment, because it both monitors the whole context, and finally acts or warns the user in event of a security violation. 
+But security violations are mainly identified by security rules, which is why MUSES needs at least an initial set of rules, defined by the CSO. Then, it makes use of DM and CI techniques to improve or optimise them, enhancing the coverage. 
+That is to say, the more sensors are implemented, the more information related to event context can be extracted. Implementing a sensor means to include a programmed method which triggers MUSES to start `listening' to some parts of a device. Then, the initial security rules establish which situations might cause a security violation, and the sensors provide with information which helps the MUSES server to identify events that are alike to the ones that are already known as dangerous.}}
+
+% Antonio - TODO: aclarar lo otro que comento en la respuesta (la idea de empezar con reglas restrictivas e irlas refinando) en el texto.
 
 2.      A strong limitation is that an effective enforcement is only possible with MUSES Aware Apps. It is unclear the effectiveness of the approach with commercial applications. In page 14 "MUSES could just detect very specific events and also do very limited actions". With those assumptions, it seems unlikely that a company would adopt MUSES since it is not able to offer an adequate level of security. I think that this is very far from being acceptable for a BYOD solution. Also in this respect, experimental results are needed.
 
@@ -163,13 +176,21 @@ The authors however do not provide additional details on how is this achieved in
 
 When stating (p.13, l.15-24) that MUSES relies on AES based symmetric encryption, does it mean that information flows in MUSES client internally, as well as client-server communication, are encrypted with the same key? Does MUSES uses client specific and/or temporal keys? What measures are taken to protect this key from malicious applications both on client and server side? How and where is this key generated? What is lifetime of the key? In my opinion this part should be reworked, providing more detailed description of security aspects of their approach. Also please see security related comment bellow.
 
+
+
 On p.14, l.16-28 authors introduce the concepts of MUSES Aware App and MUSES API. In my opinion they should provide more details on integration options and necessary effort to make an application MUSES Aware. This is a crucial aspect of their approach as this requirement and related complexity might hinder the adoption of the solution.
+
+% Antonio - TODO
 
 On p.17, l.7-9 authors state that the data sets can be huge, leading to necessity to apply Big Data processing methods. They however do not provide at least an indication of the data amount/complexity that is gathered and processed by the system, and at what rate it grows. Is it really necessary to employ Big Data processing?
 
+% Antonio - TODO: Incluir justificación de Big Data Processing considerando el número de eventos generados en las Trials y extrapolándolo a muchos meses (al menos los 6 del hard limit).
+
 On p.18, for two bullets announced under l.46-47 there is not clear if they are included in the refinement process or not. In the later case, it is suggested to explain why they are not present in the processing. Maybe these bullets could be moved into part relating to further work.
 
->From the presented concepts behind MUSES and its flows, it is not completely clear how it approaches "newly discovered vulnerabilities or threats" (p.20 l.27-28). It is hence suggested to clarify this statement and provide explanation to which extent is rule refinement and adaptation used to discover and address new vulnerabilities and threats in the software and systems.
+% Antonio - no sé a qué 'bullets' se refiere
+
+From the presented concepts behind MUSES and its flows, it is not completely clear how it approaches "newly discovered vulnerabilities or threats" (p.20 l.27-28). It is hence suggested to clarify this statement and provide explanation to which extent is rule refinement and adaptation used to discover and address new vulnerabilities and threats in the software and systems.
 
 Similar applies to human-computer interaction (p.20 l.34). Although some details are provided in l.43-45 on the same page, in opinion of this reviewer, the statement about progress beyond the state of the art should be backed with more (stronger) details and data.
 
@@ -177,22 +198,32 @@ This reviewer would also suggest to provide more details on security aspect of t
 
 For the section 5 and discussion, this reviewer would suggest to consider providing overview in the form of table(s) or figure, comparing different aspects of MUSES and other tools and providing hints/references to further details in this or other works. As there are many features of MUSES and other tools, employed approaches and techniques, different coverages and limitations, such overview could contribute to clarity and position of the proposed solution.
 
-\textcolor{blue}{TODO: Tabla comparativa - ¿se va a meter, Antares?}
+\textcolor{blue}{We agree with the reviewer. A comparative table has been included in the section 5 (Table 1 - Page XX), summarizing some of the features of the presented systems and those of MUSES system.}
+
+% Antonio - TODO: Más Tablas comparativas. ¿Antares, puedes hacerlas?
+% Antonio - ¿quizá una tabla con lo de la taxonomía y en qué categoría entra cada sistema?
 
 Overall, this reviewer perceives this work as a good contribution in presenting and advancing the state-of-the art. It is however suggested to consider revising this work and take into account provided suggestions.
+
+\textcolor{blue}{We have addressed all the suggestions by the reviewer so we hope the work has been improved enough.}
 
 Specific comments regarding organization and presentation:
 
 1) This work overuses forward slashes in linking words similar in concept or meaning. Although they are necessary in some situations, forward slashes very often link redundant words and reduce flow and readability of the text. They also contribute to the vagueness. I would suggest authors to review the text in this concern.
 
-\textcolor{blue}{The reviewer is right. We have fixed this in the text.}
+\textcolor{blue}{The reviewer is right. We have fixed this in the text omitting their use in those cases.}
 
 2) Authors overuse parentheses to explain details. This hinders readability and text flow. The level of details provided and their relevance in the context are only partially consistent. On p.14 users introduce footnotes for additional details. Maybe they should consider applying such approach in other parts of the document as well.
 
 \textcolor{blue}{Following reviewer's suggestion we have rewritten the majority of the phrases where parentheses were used, avoiding them for the sake of a better text flow and reading.}
 
 3) The structure and flow of the work can be improved.
-\end{verbatim}
+
+\textcolor{blue}{We have rewritten several parts of the paper and included new sections, subsections, tables and lists in order to improve the structure, contents and fluency of the text.}
+% Antonio - Por favor, completad esta justificación mejor.
+
+
+\textcolor{blue}{We think that the work has been highly improved following the reviewer's suggestions, and would like to thank you for your careful revision and useful comments.}
 
 %FERGU: AÃ±ado las nuevas referencias a partir del fichero bibtex, poned las vuestras!
 \bibliographystyle{elsarticle-num}
