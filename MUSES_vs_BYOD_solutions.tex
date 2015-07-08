@@ -8,6 +8,11 @@
 %\usepackage{setspace}
 \usepackage{url}
 \usepackage[english]{babel}
+\usepackage{colortbl, pifont}% http://ctan.org/pkg/{array,booktabs}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\nmark}{\scalebox{1.25}{\textbf{-}} }
 
 \begin{document}
 
@@ -572,28 +577,63 @@ As a summary, the Knowledge Compiler module uses two EC-based processes for infe
 
 MUSES is mainly a free, open-source, platform independent solution, and adopts the recommended best practices by Romer \cite{Romer14BestPractices}. %Está bien aquí Fergu?
 These features make it a good alternative to most of the proprietary, close and system-specific tools presented in Section \ref{sec:toolsreview} (all but WSO2). In addition, most of the existing tools take into account only smartphones and tablets, but MUSES also covers laptops and company PCs, thus, it is not only for BYOD. Moreover, the companies which might want to work with one of the reviewed systems need a specific operating system in the server, being even more restrictive in some cases. This is specially remarkable in the case of the Blackphone, forcing the companies and the employees to purchase a specific device. MUSES is a good solution towards these cases, since it is a multi-platform system in both the client and the server. 
-Table \ref{tab:comparison} summarizes the features of the main analyzed tools, regarding these facts.
+Table \ref{tab:taxonomy} summarizes the features of the main analyzed tools, regarding the proposed taxonomy of Section \ref{sec:toolsreview}. Also, Table \ref{tab:features} shows the features of the analyzed products considering licenses, type of devices and price.
 % Antonio - Antares, ¿podrías incluir en la comparativa las otras herramientas que se han analizado? Las de Citrix, WSO2, Azzurri, Good...
 
 \begin{table}[ht]
 
   \centering
-  \renewcommand{\arraystretch}{1.5}% Spread rows out...
-%  \resizebox{8cm}{!}{
-  \begin{tabular}{>{\centering\bfseries}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering\arraybackslash}m{1in}}
+  \renewcommand{\arraystretch}{1.8}% Spread rows out...
+  \resizebox{12cm}{!}{
+  \begin{tabular}{>{\centering\bfseries}m{0.8in} >{\centering}m{0.8in} >{\centering}m{0.8in} >{\centering}m{0.8in} >{\centering}m{0.8in} >{\centering\arraybackslash}m{0.8in}}
     \toprule
-      & \textbf{License} & \textbf{Devices} & \textbf{Price} \\
+      & \textbf{Offline threat detection method} & \textbf{Updatable database} & \textbf{Standalone} & \textbf{Non-invasive data access} & \textbf{Superuser system control} \\
     \midrule
-    MUSES & Free software & IOS, Android, Windows Phone & Free  \\
-    IBM Mobile Security & Proprietary &  &  \\
-    Sophos Mobile Control & Proprietary & IOS, Android, Windows Phone  &  By Request\\
-    Samsung Knox and Blackberry Balance & Proprietary & IOS, Android, Samsung Devices & 12\$ per year/device \\
-    Blackphone & Proprietary & Own device & 120\$ per year \\
-    Android for Work & Proprietary & Android and devices with Chrome Browser &  12\$ per month/user\\
+    MUSES & \cmark & \cmark & \cmark & \cmark & \cmark  \\
+     \arrayrulecolor[gray]{0.8}\hline
+    IBM Mobile Security & \xmark & \xmark & \cmark & \xmark & \xmark  \\
+     \arrayrulecolor[gray]{0.8}\hline
+    Sophos Mobile Control & \cmark & \xmark & \cmark & \xmark & \xmark \\
+     \arrayrulecolor[gray]{0.8}\hline
+    Samsung Knox & \cmark & \nmark & \cmark & \nmark & \cmark\\
+     \arrayrulecolor[gray]{0.8}\hline
+     Blackbery Balance & \nmark & \nmark & \cmark & \nmark & \cmark\\
+     \arrayrulecolor[gray]{0.8}\hline
+    Blackphone & \nmark & \nmark & \cmark & \cmark & \nmark\\
+     \arrayrulecolor[gray]{0.8}\hline
+    Android for Work & \xmark & \xmark & \cmark & \xmark & \cmark\\
     \bottomrule
   \end{tabular}
+  }
+  \caption{Proposed taxonomy to classify the BYOD tools described in this paper.}
+  \label{tab:taxonomy}
+\end{table}
+
+\begin{table}[ht]
+
+  \centering
+  \renewcommand{\arraystretch}{1.8}% Spread rows out...
+%  \resizebox{8cm}{!}{
+  \begin{tabular}{>{\centering\bfseries}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering\arraybackslash}m{1in}}
+       \toprule
+      & \textbf{License} & \textbf{Devices} & \textbf{Price} \\
+       \midrule
+    MUSES & OpenSource &  & Free*  \\
+       \arrayrulecolor[gray]{0.8}\hline
+    IBM Mobile Security & Proprietary &  &  \\
+        \arrayrulecolor[gray]{0.8}\hline
+    Sophos Mobile Control & Proprietary & IOS, Android, Windows Phone  &  By Request\\
+        \arrayrulecolor[gray]{0.8}\hline
+    Samsung Knox and Blackbery Balance & Proprietary & Android Samsung Devices and IOS & 12\$ per year/device \\
+        \arrayrulecolor[gray]{0.8}\hline
+    Blackphone & Proprietary & Own device & 120\$ per year \\
+        \arrayrulecolor[gray]{0.8}\hline
+    Android for Work & Proprietary & Android and devices with Chrome Browser &  12\$ per month/user\\
+       \bottomrule
+  \end{tabular}
 %  }
-  \caption{Features of the analyzed products considering licenses, type of devices and price. \label{tab:comparison}}
+  \caption{Features of the analyzed products considering licenses, type of devices and price.}
+  \label{tab:features}
 \end{table}
 % Antonio - Antares, ¿no había más tablas?
 % Por favor, que alguien rellene los datos de la solución de IBM. ¿Fergu?¿Antares?
