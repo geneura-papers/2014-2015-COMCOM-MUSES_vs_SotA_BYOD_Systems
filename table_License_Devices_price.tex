@@ -1,12 +1,15 @@
 \documentclass{article}
-\usepackage{array,booktabs,graphicx,colortbl}% http://ctan.org/pkg/{array,booktabs}
+\usepackage{array,booktabs,graphicx,colortbl,pifont}% http://ctan.org/pkg/{array,booktabs}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
 \begin{document}
 
 \begin{table}[ht]
 
   \centering
-  \renewcommand{\arraystretch}{1.5}% Spread rows out...
+  \renewcommand{\arraystretch}{1.8}% Spread rows out...
 %  \resizebox{8cm}{!}{
   \begin{tabular}{>{\centering\bfseries}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering\arraybackslash}m{1in}}
        \toprule
