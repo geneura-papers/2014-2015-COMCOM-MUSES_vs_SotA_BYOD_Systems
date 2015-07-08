@@ -3,33 +3,34 @@
 
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
+\newcommand{\nmark}{\scalebox{1.25}{\textbf{-}} }
 
 \begin{document}
 
 \begin{table}[ht]
 
   \centering
-%  \renewcommand{\arraystretch}{1.2}% Spread rows out...
-  \resizebox{14cm}{!}{
-  \begin{tabular}{>{\centering\bfseries}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering\arraybackslash}m{1in}}
+  \renewcommand{\arraystretch}{1.8}% Spread rows out...
+%  \resizebox{14cm}{!}{
+  \begin{tabular}{>{\centering\bfseries}m{0.8in} >{\centering}m{0.8in} >{\centering}m{0.8in} >{\centering}m{0.8in} >{\centering}m{0.8in} >{\centering\arraybackslash}m{0.8in}}
     \toprule
-      & \textbf{Online threat detection method} & \textbf{Updatable database information} & \textbf{Standalone} & \textbf{Non-invasive data access} & \textbf{Superuser system control} \\
+      & \textbf{Offline threat detection method} & \textbf{Updatable database} & \textbf{Standalone} & \textbf{Non-invasive data access} & \textbf{Superuser system control} \\
     \midrule
-    MUSES & \cmark & \xmark & & &  \\
+    MUSES & \cmark & \cmark & \cmark & \cmark & \cmark  \\
      \arrayrulecolor[gray]{0.8}\hline
-    IBM Mobile Security & & & & &  \\
+    IBM Mobile Security & \xmark & \xmark & \cmark & \xmark & \xmark  \\
      \arrayrulecolor[gray]{0.8}\hline
-    Sophos Mobile Control & & & & &\\
+    Sophos Mobile Control & \xmark & \xmark & \cmark & \nmark & \nmark \\
      \arrayrulecolor[gray]{0.8}\hline
-    Samsung Knox and Blackbery Balance & & & & &\\
+    Samsung Knox and Blackbery Balance & \nmark & \nmark & \cmark & \nmark & \nmark\\
      \arrayrulecolor[gray]{0.8}\hline
-    Blackphone & & & & &\\
+    Blackphone & \nmark & \nmark & \cmark & \nmark & \nmark\\
      \arrayrulecolor[gray]{0.8}\hline
-    Android for Work & & & & &\\
+    Android for Work & \nmark & \nmark & \cmark & \nmark & \nmark\\
     \bottomrule
   \end{tabular}
-  }
-  \caption{Features of the analyzed products considering licenses, type of devices and price.}
+%  }
+  \caption{Proposed taxonomy to classify the BYOD tools described in this paper.}
 \end{table}
 
 
