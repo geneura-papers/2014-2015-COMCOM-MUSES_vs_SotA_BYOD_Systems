@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{array,booktabs,graphicx,colortbl, pifont}% http://ctan.org/pkg/{array,booktabs}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\begin{document}
+
+\begin{table}[ht]
+
+  \centering
+%  \renewcommand{\arraystretch}{1.2}% Spread rows out...
+  \resizebox{14cm}{!}{
+  \begin{tabular}{>{\centering\bfseries}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering\arraybackslash}m{1in}}
+    \toprule
+      & \textbf{Online threat detection method} & \textbf{Updatable database information} & \textbf{Standalone} & \textbf{Non-invasive data access} & \textbf{Superuser system control} \\
+    \midrule
+    MUSES & \cmark & \xmark & & &  \\
+     \arrayrulecolor[gray]{0.8}\hline
+    IBM Mobile Security & & & & &  \\
+     \arrayrulecolor[gray]{0.8}\hline
+    Sophos Mobile Control & & & & &\\
+     \arrayrulecolor[gray]{0.8}\hline
+    Samsung Knox and Blackbery Balance & & & & &\\
+     \arrayrulecolor[gray]{0.8}\hline
+    Blackphone & & & & &\\
+     \arrayrulecolor[gray]{0.8}\hline
+    Android for Work & & & & &\\
+    \bottomrule
+  \end{tabular}
+  }
+  \caption{Features of the analyzed products considering licenses, type of devices and price.}
+\end{table}
+
+
+
+
+\end{document}
