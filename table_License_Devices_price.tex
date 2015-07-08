@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{array,booktabs,graphicx}% http://ctan.org/pkg/{array,booktabs}
+\usepackage{array,booktabs,graphicx,colortbl}% http://ctan.org/pkg/{array,booktabs}
 
 \begin{document}
 
@@ -9,16 +9,21 @@
   \renewcommand{\arraystretch}{1.5}% Spread rows out...
 %  \resizebox{8cm}{!}{
   \begin{tabular}{>{\centering\bfseries}m{1in} >{\centering}m{1in} >{\centering}m{1in} >{\centering\arraybackslash}m{1in}}
-    \toprule
+       \toprule
       & \textbf{License} & \textbf{Devices} & \textbf{Price} \\
-    \midrule
+       \midrule
     MUSES & OpenSource &  & Free*  \\
+       \arrayrulecolor[gray]{0.8}\hline
     IBM Mobile Security & Proprietary &  &  \\
+        \arrayrulecolor[gray]{0.8}\hline
     Sophos Mobile Control & Proprietary & IOS, Android, Windows Phone  &  By Request\\
+        \arrayrulecolor[gray]{0.8}\hline
     Samsung Knox and Blackbery Balance & Proprietary & Android Samsung Devices and IOS & 12\$ per year/device \\
+        \arrayrulecolor[gray]{0.8}\hline
     Blackphone & Proprietary & Own device & 120\$ per year \\
+        \arrayrulecolor[gray]{0.8}\hline
     Android for Work & Proprietary & Android and devices with Chrome Browser &  12\$ per month/user\\
-    \bottomrule
+       \bottomrule
   \end{tabular}
 %  }
   \caption{Features of the analyzed products considering licenses, type of devices and price.}
