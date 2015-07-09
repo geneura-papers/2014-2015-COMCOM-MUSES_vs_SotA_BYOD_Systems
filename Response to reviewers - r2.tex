@@ -84,14 +84,14 @@ As a summary:
 %
 \begin{itemize}
 \item We have described in a more detailed way our previously published papers in this scope (in Section 1), clarifying the differences and contributions of this work with respect to them.
-\item Section 2 has been deeply improved adding a much more complete state of the art in the scope of this work. To this end, several research works have been read and commented in that section and along the text. This has helped us to better compare our system against the other products available in the market. Also, an analysis of the best practices for BYOD have been applied for each product and our system.
+\item Section 2 has been deeply improved adding a much more complete state of the art in the scope of this work. To this end, several research works have been read and commented in that section and along the text. This has helped us to better compare our system with other products available in the market. Also, an analysis of the best practices for BYOD security have been conducted considering every analyzed tool and our system.
 % Antonio - TODO: Fergu, completa esto tú que tienes la idea global de lo nuevo en el SotA, por favor. FERGU: Hecho. Metido también lo de las best practices
 New references added after the review can be found at the end of this letter.
 
-\item Section 3 has been rewritten in a big part, including a new taxonomy for the analyzed systems at the beginning of the section. This taxonomy has been created taking into account the expertise extracted from the new references of the state of the art, such as the best practices by Romer \cite{Romer14BestPractices} or the hands-off/hands-on classification by Scarfo et al. \cite{Scarfo12survey}, among others. Furthermore, some new tools have been added, and all the products have been better classified considering the defined taxonomy.
+\item Section 3 has been rewritten in a big part, including a new taxonomy for the analyzed systems at the beginning of the section. This taxonomy has been created taking into account the expertise extracted from the new references of the state of the art, such as the commented best practices by Romer \cite{Romer14BestPractices} or the hands-off/hands-on classification by Scarfo et al. \cite{Scarfo12survey}, among others. Furthermore, some new tools have been added, and all the products have been better classified considering the defined taxonomy.
 % Antonio - TODO: extender esto de la sección 3 y 5 un poco más. FERGU: Done
 
-\item The description of MUSES system has been also improved. Several points have been clarified and better explained in Section 4. Moreover, a prototype of the system has been tested in an actual company with success, according to the obtained results. This is explained in the new Section 4.4 (page XX), where the results of some trials are presented.
+\item The description of MUSES system has been also improved. Several points have been clarified and better explained in Section 4. Moreover, a prototype of the system has been tested in an actual company with success, according to the obtained results. This is explained in the new Section 4.4 (page 25), where the results of some trials are presented.
 
 \item Section 5 has been also completed and enhanced with respect to previous version. It includes a better comparison between MUSES and the rest of tools. Two new tables (1 and 2) have been added summarizing the main features of the systems, for the sake of clarity.
 
@@ -141,13 +141,13 @@ aid or guide them to detect suspicious or anomalous patterns, and to
 study how to avoid these patterns becoming malicious to the company. 
 
 In order to clarify this we have rewritten and completed the second
-paragraph in section 4.1 (page XX). It is now: 
+paragraph in section 4.1 (page 17). It is now: 
 
 \textit{The client is an important part of the a-priori risk treatment, because it both monitors the whole context, and finally acts or warns the user in event of a security violation. 
 But security violations are mainly identified by security rules, which is why MUSES needs at least an initial set of rules, defined by the CSO. Then, it makes use of DM and CI techniques to improve or optimize them, enhancing the coverage. 
-That is to say, the more sensors are implemented, the more information related to event context can be extracted. Implementing a sensor means to include a programmed method which triggers MUSES to start `listening' to some parts of a device. Then, the initial security rules establish which situations might cause a security violation, and the sensors provide with information which helps the MUSES server to identify events that are alike to the ones that are already known as dangerous.}
+That is to say, the more sensors are implemented, the more information related to event context can be extracted. Implementing a sensor means to include a programmed method which triggers MUSES to start `listening' to some parts of a device. Then, the initial security rules establish which situations might cause a security violation, and the sensors provide with information which helps the MUSES server to identify events that are alike to the ones that are already known as dangerous.}\\
 
-We have also improved this clarification in section 5 (page XX), adding the text:
+We have also improved this clarification in Section 5 (page 26), adding the text:
 
 \textit{However, MUSES presents a limitation regarding the enhancement of rules, since, in principle, it cannot predict (generate rules for dealing with) unexpected or unknown events which could lead to a security incident. The philosophy is that the initial set of rules, defined by the CSO, should be very restrictive regarding possible unexpected users' behaviors or events, in order to avoid as much security incidents as possible. As the system works, MUSES would be able to define new rules (through refinement) which could get an associated decision after the corresponding events have happened. Thus, this will lead to get eventually an optimal set of security rules.}
 
@@ -166,9 +166,12 @@ BYOD solution. Also in this respect, experimental results are needed.
 
 % [Pedro] traducido e incluido a continuación => \textcolor{blue}{TODO - Justificar su valía. Las empresas querrán MUSES y querrán que sus empleados utilicen MUSES-Aware Apps porque les garantizarán un control sobre lo que se hace en la empresa y los posibles incidentes de seguridad.}
 
-Due to its functionality, proposed system might be of interest for many companies as using MUSES-aware Apps they could control any operation that a person can do with their mobile or desktop devices.
+The idea is that MUSES goes beyond a simple application or security system. The aim is to create a set of applications (MUSES Aware) which the companies can trust and which the users should install (according to company's requirements) when they want to use their own devices for working purposes.
+Moreover, the number of sensors will be increased in time, in order to have a wider number of inputs to improve the security level.
 
-With respect to the experimental results, a new section (4.4, in page XX) has been included describing some trials conducted in an actual company, using a prototype of MUSES on Android devices. The results show the effectiveness of this system, which has roughly reduced from 23000 security violations in the first stages to 0 in a few weeks.
+We think that due to its functionality, the proposed system might be of interest for many companies, since the use of MUSES Aware Apps will provide them a `control' on the employees actions on their devices when dealing with important or restricted information, for instance. 
+
+With respect to the experimental results, a new section (4.4, in page 25) has been included, describing some trials conducted in an actual company, using a prototype of MUSES on Android devices. The results show the effectiveness of this system, which has roughly reduced from 23000 security violations in the first stages to 0 in a few weeks.
 
 % Antonio - completar algo más, si alguien quiere
 
@@ -180,7 +183,7 @@ me since a compromised device or compromised sensor apps could vanish
 all MUSES effort. Authors should deeply discuss this aspect.
 \end{verbatim}
 
-To clarify this point, a more detailed definition and description of the sensors has been included in Section 4.1 (page XX). In addition, a discussion on how the case the reviewer mentions could affect the system has been added just below the list of sensors, as:
+To clarify this point, a more detailed definition and description of the sensors has been included in Section 4.1 (page 17). In addition, a discussion on how the case the reviewer mentions could affect the system has been added just below the list of sensors, as:
 
 \textit{It is important to note that MUSES does not work as an antivirus itself, but has a sensor which checks if the device has already an antivirus, and raises a security violation alert if not. It might happen then that the user ignores this advice and the device becomes compromised. As it would be explained in the next section, the sensors are constantly sending their monitored values, and therefore patterns are created, stored, and processed on the server. In case the device gets infected with rootkit-type malware (53), a sudden change in the values of the sensors will mean a significant change in the patterns. Then, this change in the patterns will be noticed by the server, which will immediately warn the user, and decrease the device trust value.}
 
@@ -194,7 +197,7 @@ the presentation of their work.
 
 Following the reviewer's suggestion, the paper structure has been redefined, with an introduction that presents the work, a section that introduces preliminary concepts followed by the state of the art in corporate mobile security and, eventually, the description of the framework that is the main point of the paper. Changes have been too extensive to include here, but great
 care has been taken to talk about concepts only when defined
-previously. For instance, the concept of MUSES-Aware apps is now
+previously. For instance, the concept of MUSES Aware apps is now
 introduced in the context of the API in Section 3.5 and only used
 later on, from Section 3.6.4, in the context of other tool. The
 concept of data mining is presented along with machine learning in section 4.3.1. 
@@ -217,9 +220,10 @@ meta-market." Proceedings of the 2014 ACM conference on Security
 and privacy in wireless and mobile networks. ACM, 2014.
 \end{verbatim}
 
-The reviewer is right. Although several works have been cited in other sections of the work, a proper discussion on research on BYOD was necessary. Therefore, we have analysed the papers suggested by the reviewer, along with several new relevant ones in Section 2 (page XX). These new references have been also cited in other sections of the work in order to justify MUSES features; for example, the set of best practices for BYOD security proposed by H. Romer. 
+The reviewer is right. Although several works have been cited in other sections of the work, a proper discussion on research on BYOD was necessary. Therefore, we have analysed the papers suggested by the reviewer, along with several new relevant ones in Section 2 (pages 3-6). These new references have been also cited in other sections of the work in order to justify MUSES features; for example, the set of best practices for BYOD security proposed by H. Romer. 
+These references are \cite{Garba15organisational,Scarfo12survey,Gessner13userfriendly,Armando14metamarket,Haejung12Door,Samaras13SaaS,Miller12Privacy,Romer14BestPractices}, and can be found at the end of this document.
 
-These works have been also considered to propose the new taxonomy included in the paper (beginning of Section 3, page XX). These references are \cite{Garba15organisational,Scarfo12survey,Gessner13userfriendly,Armando14metamarket,Haejung12Door,Samaras13SaaS,Miller12Privacy,Romer14BestPractices}, and can be found at the end of this document.
+These works have been also considered to propose the new taxonomy included in the paper (Section 3, page 7). 
 
 \begin{verbatim}
 6.      The experimental section is completely missing. Is MUSES 
@@ -228,7 +232,7 @@ cost for both the company (server) and users (mobile devices)? Are
 there any limitations?
 \end{verbatim}
 
-We agree with what the reviewer remarks, and so we have created a new Section (4.4, in page XX), describing the trials that have been conducted with the first prototype of MUSES. In that section there are commented the ratio of security violations detected and how the system has influenced in the complete reduction of this number to 0.
+We agree with what the reviewer remarks, and so we have created a new Section (4.4, in page 25), describing the trials that have been conducted with the first prototype of MUSES. In that section there are commented the ratio of security violations detected (more than 23000) and how the system has influenced in the complete reduction of this number to 0.
 This has been also commented in the Introduction of the paper. 
 
 The main limitation of MUSES, also commented in Section 4.4, is the need of an initial set of defined security rules to start working. The other limitation comes from the set of deployed sensors, which are the only input of data in the system, so it cannot manage security violations happened by different ways.
