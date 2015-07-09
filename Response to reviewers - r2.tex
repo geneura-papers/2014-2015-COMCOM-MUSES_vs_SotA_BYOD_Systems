@@ -384,7 +384,9 @@ description of security aspects of their approach. Also please
 see security related comment bellow.
 \end{verbatim}
 
-\textcolor{blue}{TODO}
+\textcolor{blue}{We agree with the reviewer about this paragraph not being clear, which is why it has been rewritten and clarified. At the end of the introduction of Section 4 (page XX) we have improved the explanation about MUSES data security and authentication.}
+
+\textcolor{blue}{The MUSES system also performs an authentication process when the user logs in. The MUSES server authenticates to the MUSES client by means of a self-signed certificate. The authentication of the users is based on Spring Security, which is a Java EE framework that provides authentication, authorization and other security features for enterprise applications. When the user connects to the MUSES server for the first time, the MUSES client asks the server for the cerfiticate, wich is sent and installed in the client local database if the user credentials are right. As the user credentials are also stored in the MUSES client local database, the user can also log in to MUSES, and it therefore can apply the Device Policies. With regard to internal data security, MUSES makes use of the advantages that the OSs themselves offer to developers. More concretely, the first prototype for Android includes functionalities provided by the Android Application Sandbox \cite{blasing2010android}. This means that other applications cannot access MUSES data, nor even other developers. The only way to do this is by rooting the device, which is a state that MUSES can detect, and therefore warn about its implications. With regard to the encryption of the rest of the device data, MUSES stands for having a security policy which advices about the installation of existing open source tools \footnote{For instance, \url{https://github.com/neurodroid/cryptonite/blob/master/README.md}}, instead of having an own implementation.}
 
 \begin{verbatim}
 On p.14, l.16-28 authors introduce the concepts of MUSES Aware 
