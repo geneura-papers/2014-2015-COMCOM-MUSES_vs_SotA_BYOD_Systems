@@ -293,7 +293,7 @@ As a summary, Blackberry Balance has little opportunity if Blackberry sales cont
 \label{subsec:blackphone}
 
 On the device side, one of the most powerful solutions found in the BYOD state of the art is, apparently, to directly use a phone which has been developed with data security in mind such as the BlackPhone \cite{Blackphone}. It has its own Android-based operating system, called \textit{PrivatOS} \cite{Blackphone}, which includes a privacy-focused application store, called \textit{Silent Store}, that takes care of the problem of applications which ask for certain permissions that can lead, for instance, to personal data leakage \cite{gangula2013survey}. BlackPhone also allows a remote wiping of the data if the device is lost or stolen. The main disadvantage of this solution is either the enterprise having to make an investment and buy these smartphones to the employees or to make employees buy them, so they cannot use the device they already have. Both options are against the BYOD philosophy. On the contrary, the MUSES system proposed in this work is designed as device-independent.
-Furthermore, the lack of information about this system makes difficult to determine its real qualities.
+Furthermore, the lack of information about this system makes it difficult to determine its real qualities.
 
 %----------------------------------------------------------------------------
 
@@ -430,15 +430,16 @@ For these reasons, MUSES implements the following sensors:
 % Para Pedro -> El caso es que "sensors" es su nombre dentro del sistema. ¿Estaría mejor su pusiésemos "monitoring sensors"?
 % Antonio - yo quitaría el 'for this reason'
 
-\begin{description}
-  \item[Connectivity sensor:] It gathers all information related to network communications, in addition to security properties like network encryption, or number of neighbours. This allows MUSES actuator to forbid the user for sending important emails, or opening key assets if, for instance, the network encryption is not secure enough. 
-  \item[Device protection sensor:] Which scans device security settings, such as the time until the device screen turns off, if the device has the screen protected with a password, or if the device is rooted \cite{hildenbrand2014}. This security mechanism adds the possibility of detecting security violations even if the user is not doing a specific action.
-  \item[Location sensor:] User location can be obtained using the device GPS. Although, this might be taken against the preservation of user privacy. This is why MUSES allows the definition of a number of `zones', and therefore it only checks if the user is inside them or not, acting in consequence.
-  \item[Mail sensor:] If the user is writing an email, MUSES client sensor can also check the email attributes. Thus, it can detect if the event context is dangerous, according to security policies and the RT2AE, before the mail is sent.
+% Antonio - pongo esto como lista de items, ya que era la única lista diferente
+\begin{itemize}
+  \item \textit{Connectivity sensor:} It gathers all information related to network communications, in addition to security properties like network encryption, or number of neighbours. This allows MUSES actuator to forbid the user for sending important emails, or opening key assets if, for instance, the network encryption is not secure enough. 
+  \item \textit{Device protection sensor:} Which scans device security settings, such as the time until the device screen turns off, if the device has the screen protected with a password, or if the device is rooted \cite{hildenbrand2014}. This security mechanism adds the possibility of detecting security violations even if the user is not doing a specific action.
+  \item \textit{Location sensor:} User location can be obtained using the device GPS. Although, this might be taken against the preservation of user privacy. This is why MUSES allows the definition of a number of `zones', and therefore it only checks if the user is inside them or not, acting in consequence.
+  \item \textit{Mail sensor:} If the user is writing an email, MUSES client sensor can also check the email attributes. Thus, it can detect if the event context is dangerous, according to security policies and the RT2AE, before the mail is sent.
   % (Paloma) Pedro, aquí he cambiado el "is going to send" a "is writing" en vez de "is sending" porque en realidad lo que queremos es que se le avise antes de mandarlo, no cuando lo está mandando o lo ha mandado. Se explica después. ¿Cómo lo veis?
-  \item[File sensor:] The type of file, also called \textit{asset}, is also very important for the application of security rules. Thus, this sensor aims to detect if some files might need more strict security policies, also depending on the rest of sensors.
-  \item[App sensor:] It is in charge of monitoring the information about the application from which the user is performing the action, but also looks for installed trusted antivirus, and encryption applications. Additionally, this sensor gathers information about the applications which the user tries to install or uninstall.
-\end{description}
+  \item \textit{File sensor:} The type of file, also called \textit{asset}, is also very important for the application of security rules. Thus, this sensor aims to detect if some files might need more strict security policies, also depending on the rest of sensors.
+  \item \textit{App sensor:} It is in charge of monitoring the information about the application from which the user is performing the action, but also looks for installed trusted antivirus, and encryption applications. Additionally, this sensor gathers information about the applications which the user tries to install or uninstall.
+\end{itemize}
 
 It is important to note that MUSES does not work as an antivirus itself, but has a sensor which checks if the device has already an antivirus, and raises a security violation alert if not. It might happen then that the user ignores this advice and the device becomes compromised. As it would be explained in the next section, the sensors are constantly sending their monitored values, and therefore patterns are created, stored, and processed on the server. In case the device gets infected with rootkit-type malware \cite{bickford2010rootkits}, a sudden change in the values of the sensors will mean a significant change in the patterns. Then, this change in the patterns will be noticed by the server, which will immediately warn the user, and decrease the device trust value.
 
@@ -614,7 +615,7 @@ A MUSES first prototype, implemented for Android devices, has been recently test
 % He quitado "(a partner in the European Project where the system is being developed)" porque creo que es irrelevante, y si no se puede redactar de manera que esté fuera de los paréntesis, no debería estar.
 The trials were divided in two phases: \textit{silent} and \textit{verbose}, 1 month duration each. During the \textit{silent} phase, MUSES was able to gather data, but without warning the users when a security incident was happening. A total of 23358 security violations were detected. In the \textit{verbose} stage, MUSES started to show warning pop-ups to the users, every time a security incident happened. 
 
-As results, not only the number of security violations were reduced by half in the first two weeks (10977), but the number went on decreasing until it was 0 even before the trials period finished. Thus, we can assume that MUSES is an effective tool, even though it has the aforementioned limitation of needing an initial set of defined rules to start working. For this, MUSES also includes a set of guidelines for the companies to build adequate security policies. For instance, the set of initially defined rules used for the trial included a blacklist of forbidden applications, a whitelist of allowed ones, and requirement of antivirus, among others.
+As results, not only the number of security violations were reduced by half in the first two weeks (10977), but the number went on decreasing until it was 0 even before the trials period finished. Thus, we can assume that MUSES is an effective tool, even though it has the aforementioned limitation of needing an initial set of defined security rules to start working. For this, MUSES also includes a set of guidelines for the companies to build adequate security policies. For instance, the set of initially defined rules used for the trial included a blacklist of forbidden applications, a whitelist of allowed ones, and requirement of antivirus, among others.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   COMPARISON  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -670,11 +671,11 @@ Table \ref{tab:taxonomy} summarizes the features of the main analyzed tools, wit
        \midrule
     MUSES & OpenSource & Android, Windows 8.1, Windows Phone, iOS & Free  \\
        \arrayrulecolor[gray]{0.8}\hline
-    IBM Mobile Security & Proprietary & IOS, Android, Windows Phone, Blackberry  &  By Request\\\\
+    IBM Mobile Security & Proprietary & iOS, Android, Windows Phone, Blackberry  &  By Request\\\\
         \arrayrulecolor[gray]{0.8}\hline
-    Sophos Mobile Control & Proprietary & IOS, Android, Windows Phone  &  By Request\\
+    Sophos Mobile Control & Proprietary & iOS, Android, Windows Phone  &  By Request\\
         \arrayrulecolor[gray]{0.8}\hline
-    Samsung Knox and Blackbery Balance & Proprietary & Android Samsung Devices and IOS & 12\$ per year/device \\
+    Samsung Knox and Blackbery Balance & Proprietary & Android Samsung Devices and iOS & 12\$ per year/device \\
         \arrayrulecolor[gray]{0.8}\hline
     Blackphone & Proprietary & Own device & 120\$ per year \\
         \arrayrulecolor[gray]{0.8}\hline

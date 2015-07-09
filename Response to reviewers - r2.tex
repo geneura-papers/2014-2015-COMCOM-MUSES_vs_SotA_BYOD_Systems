@@ -184,17 +184,18 @@ apps and Data Mining techniques). I suggest authors to deeply revise
 the presentation of their work.
 \end{verbatim}
 
-The paper structure has been completely redefined, with an introducion
+The paper structure has been completely redefined, with an introduction
 that presents the work, a section that introduces preliminary concepts
 followed by the state of the art in corporate mobile security and,
 eventually, the description of the framework that is the main point of
 the paper. Changes have been too extensive to include here, but great
 care has been taken to talk about concepts only when defined
 previously. For instance, the concept of MUSES-Aware apps is now
-introduced in the context of the API in section 3.5 and only used
+introduced in the context of the API in Section 3.5 and only used
 later on, from Section 3.6.4, in the context of other tool. The
-concept of data
-mining is presented along with machine learning in section 4.3.1. 
+concept of data mining is presented along with machine learning in section 4.3.1. 
+We have also added some tables (in Section 5) as an additional summary of information, for the sake of clarity. 
+
 
 \begin{verbatim}
 5.      A discussion on research activities on BYOD is completely 
@@ -220,7 +221,14 @@ cost for both the company (server) and users (mobile devices)? Are
 there any limitations?
 \end{verbatim}
 
-We agree with what the reviewer remarks, and so we have included, at the end of the Introduction section, the ratio of security violations detected by the system in a prototype trials period. Also, a little description of the conditions of the trials has been included, for we consider that a deep description of these trials is not in the scope of the paper.
+We agree with what the reviewer remarks, and so we have created a new Section (4.4, in page XX), describing the trials that have been conducted with the first prototype of MUSES. In that section there are commented the ratio of security violations detected and how the system has influenced in the complete reduction of this number to 0.
+This has been also commented in the Introduction of the paper. 
+
+The main limitation of MUSES, also commented in Section 4.4, is the need of an initial set of defined security rules to start working. The other limitation comes from the set of deployed sensors, which are the only source of data for the system, so it cannot manage security violations happened by different ways.
+
+To avoid this in part, there is a set of guidelines for the companies to build adequate security policies. For instance, the set of initially defined rules used for the trial included a blacklist of forbidden applications, a whitelist of allowed ones, and requirement of antivirus, among others.
+
+\textcolor{blue}{TODO - computational costs? Al menos en el cliente, y la correlación + risk and trust en el servidor, ya que no se ha llegado a aplicar lo del KRS. Aunque sea muy aproximado (segundos, milisegundos)}
 
 \begin{verbatim}
 Under such considerations I recommend authors for a *STRONG* major 
@@ -320,7 +328,7 @@ classification of those approaches, and state the place of MUSES
 there (or define a new subcategory, if deemed necessary)
 \end{verbatim}
 
-Following the reviewer's suggestion we have introduced a taxonomy for the analyzed systems, according to the works that we have revised in the state of the art section. This taxonomy is described at the beginning of Section 3 (second paragraph, page XX).
+Following the reviewer's suggestion we have introduced a taxonomy for the analyzed systems, according to the works that we have revised in the state of the art (Section 2). This taxonomy is described at the beginning of Section 3 (second paragraph, page XX). All the tools have been included in the types defined by the taxonomy.
 % Antonio - completar con el número de página final
 % Antonio - TODO: decir si MUSES y el resto de sistemas se han encuadrado dentro de esa taxonomía
 
