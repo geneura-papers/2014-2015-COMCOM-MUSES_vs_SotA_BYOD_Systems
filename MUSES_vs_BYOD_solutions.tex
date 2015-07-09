@@ -127,7 +127,8 @@ as well as both black and white lists. These lists contained the URLs that were 
 By taking the lists as `rules', and the HTTP connections as `events', a previous simulation of the rule generation through classification, and its results, were presented in that work. % [Pedro] ¿ese "could be" se refiere a verbo en pasado? en ese caso, quizás usar "... was presented at..." % Gracias again
 
 % Antonio- muevo esta frase a un sitio más adecuado
-The first prototype of the MUSES system has recently been tested in an actual company, with satisfactory results, so we now have a clearer idea of its capabilities. Actually, the first trials of the system were performed with an Android prototype, and in two phases: \textit{silent} and \textit{verbose}, 1 month duration each. During the \textit{silent} phase, MUSES was able to gather data, but without warning the users when a security incident was happening. A total of 23358 security violations were detected. In the \textit{verbose}, MUSES started to show warning pop-ups to the users, every time a security incident happened. Not only the number of security violations were reduced by half in the first two weeks (10977), but the number went on decreasing until it was 0 before the trials period finished. This has proven MUSES to be an effective tool.
+% Antonio - pongo aquí una frase resumida y el grueso de los experimentos (trials) en una sección aparte.
+The first prototype of the MUSES system has recently been tested in an actual company, with satisfactory results: the security incidents have been reduced exponentially from 23000 to 0 in just one month. So we now have a clear idea of its capabilities. 
 Thus, in this paper we present an overview of the main existing solutions in the BYOD environment. Then, a comparison between these tools and MUSES is conducted, focusing on the advances beyond the state of the art that this novel system % [Pedro] esa aclaración y demás yo lo podría más arriba, cuando se definen qué son las siglas de MUSES. % Perfecto, cambiado.
  includes.
 
@@ -566,6 +567,15 @@ The adaptation or adjustment concerns the change in the value that an asset has 
 As a summary, the Knowledge Compiler module uses two EC-based processes for inferring and refining rules, plus another one for adjusting values of the assets.
 % Antonio - "values of the assets"
  Both the inferred rules and the refined rules are presented to the CSO, who includes them or not in the system, and this acceptance or rejection acts itself as a feedback for future rule inference.
+
+
+% Antonio - pongo esto en una sección nueva para que destaque más. Es muy importante para los revisores. Por favor Paloma, revisa si lo que he puesto es correcto (número de usuarios y demás).
+\subsubsection{Trials and tests of MUSES}
+
+A MUSES first prototype, implemented on Android devices, has been tested recently. These trials have been conducted in an actual Spanish company (a partner in the European Project where the system is being developed), with 50 employees using the system on their own devices.
+The trials were divided in two phases: \textit{silent} and \textit{verbose}, 1 month duration each. During the \textit{silent} phase, MUSES was able to gather data, but without warning the users when a security incident was happening. A total of 23358 security violations were detected. In the \textit{verbose} stage, MUSES started to show warning pop-ups to the users, every time a security incident happened. 
+
+As a results, not only the number of security violations were reduced by half in the first two weeks (10977), but the number went on decreasing until it was 0 before the trials period finished. Thus, we can assume that MUSES is an effective tool.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   COMPARISON  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
