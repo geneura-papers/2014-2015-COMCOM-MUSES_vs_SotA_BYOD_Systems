@@ -179,8 +179,8 @@ With respect to the experimental results, a new section (4.4, in page 25) has be
 \begin{verbatim}
 3.      MUSES Sensors are essentially user-space applications that 
 collects logs on specific activities. This aspect really concerns 
-me since a compromised device or compromised sensor apps could vanish 
-all MUSES effort. Authors should deeply discuss this aspect.
+me since a compromised device or compromised sensor apps could 
+vanish all MUSES effort. Authors should deeply discuss this aspect.
 \end{verbatim}
 
 To clarify this point, a more detailed definition and description of the sensors has been included in Section 4.1 (page 17). In addition, a discussion on how the case the reviewer mentions could affect the system has been added just below the list of sensors, as:
@@ -290,10 +290,7 @@ to consider rewriting this part, including updated references and
 current tools in comparison. 
 \end{verbatim}
 
-Following reviewer's suggestions, this section has been rewritten, and
-the references mentioned by the referee, including new products, have
-been considered in the study. The different IBM tools and services have been described 
-(end of Section 3.1, in page XX), and compared to MUSES in Section 5.
+Following reviewer's suggestions, this section has been rewritten and deeply completed. Thus, the references mentioned by the referee, including new products, have been considered in the study. The different IBM tools and services have been described (Section 3.1, page 8), and compared to MUSES in Section 5.
 %FERGU: PONED ESTO MÃS BONICO!
 % Antonio - ahora está un poco mejor, pero no sé si más bonico. Fergu debes justificar el por qué se han puesto los tres servicios de IBM, ya que el revisor dice que algunos no están relacionados con el tema del trabajo... tú que sabes de esto de IBM. ;D
 % Fergu, también falta la comparativa con MUSES de esas herramientas (Sección 5)...
@@ -307,12 +304,12 @@ relevant sources or providing details. It is furthermore questionable
 whether this statement is relevant for the scope of this work at all.
 \end{verbatim}
 
-We agree with the reviewer and we have re-formulated this statement, as what actually happened was that these two tools had many problems. We explained why in the previous version of this work. Also, we have included new aspects of these tools, in order to classify them in the newly added taxonomy in section 3. Therefore:
+We agree with the reviewer and we have re-formulated this statement, as what actually happened was that these two tools had many problems. We explained why in the previous version of this work. Also, we have included new aspects of these tools, in order to classify them in the newly added taxonomy in Section 3 (page 7). Therefore (in Section 3.3, page 9):
 
-Even though these two tools are provided by two different manufacturers, Samsung and Blackberry, they both have in common their situation, as they found problems in the market in spite of their features. On the one hand, Blackberry sales have been decreasing since 2010 \cite{Blackberry_sales}.
-On the other hand, Samsung revealed at the Barcelona Mobile World Congress 2013 the KNOX application \cite{Samsung_mwc13}, which was expected to be available for its last Galaxy smartphone generation. Then, it was delayed and again presented in the same congress in 2014 \cite{Samsung_mwc14}, but still remained delayed until it was apparently found insecure \cite{Samsung_insecure}. Finally, Samsung decided to collaborate with Google in Android Work \cite{Samsung_android}, as mentioned in Section \ref{subsec:androidwork}.
+\textit{Even though these two tools are provided by two different manufacturers, Samsung and Blackberry, they both have in common their situation, as they found problems in the market in spite of their features. On the one hand, Blackberry sales have been decreasing since 2010 \cite{Blackberry_sales}.
+On the other hand, Samsung revealed at the Barcelona Mobile World Congress 2013 the KNOX application \cite{Samsung_mwc13}, which was expected to be available for its last Galaxy smartphone generation. Then, it was delayed and again presented in the same congress in 2014 \cite{Samsung_mwc14}, but still remained delayed until it was apparently found insecure \cite{Samsung_insecure}. Finally, Samsung decided to collaborate with Google in Android Work \cite{Samsung_android}, as mentioned in Section 3.5}.
 
-With regard to their features, Samsung KNOX, as well as Blackberry Balance, are more focused on the device side, while the solutions mentioned in previous subsections were more centered in being tools for CSOs. This also means that they are not device-independent, as KNOX is only for Samsung devices and Balance is integrated in BlackBerry 10 \cite{Blackberry_tool}. Looking at their situation and problems, it could be thought that making a BYOD solution platform-dependent is counteractive, which is why MUSES is independent of the device platform.
+\textit{With regard to their features, Samsung KNOX, as well as Blackberry Balance, are more focused on the device side, while the solutions mentioned in previous subsections were more centered in being tools for CSOs. This also means that they are not device-independent, as KNOX is only for Samsung devices and Balance is integrated in BlackBerry 10 \cite{Blackberry_tool}. Looking at their situation and problems, it could be thought that making a BYOD solution platform-dependent is counteractive, which is why MUSES is independent of the device platform.}
 
 \begin{verbatim}
 Section 3.6.1 covers WSO2, an open source tool that should be freely
@@ -322,31 +319,33 @@ are omitted, as well as features and comparison with MUSES. It is not
 clear therefore how this tool and MUSES differ. 
 \end{verbatim}
 
-The reviewer is right and it is true that WSO2 is a better competitor for MUSES than other tools, as is open source and multiplatform. However, it does not include offline working mode neither is able to refine policies. We have explained this in its section:
+The reviewer is right and it is true that WSO2 is a better competitor for MUSES than other tools, as is open source and multiplatform. However, it does not include offline working mode neither is able to refine policies. We have explained this in Section 3.6.1 (page 12):
 
-Although this tool also includes features such as device location, remote wipe, or encrypt storage, its main disadvantage is that it does not work in offline mode. In the documentation \footnote{\url{https://docs.wso2.com/display/EMM200/Working+with+Policies}}, it is clearly stated that the policy compliance can be monitored while the devices are connected to the WSO2 EMM server.
+\textit{Although this tool also includes features such as device location, remote wipe, or encrypt storage, its main disadvantage is that it does not work in offline mode. In the documentation \footnote{\url{https://docs.wso2.com/display/EMM200/Working+with+Policies}}, it is clearly stated that the policy compliance can be monitored while the devices are connected to the WSO2 EMM server.}
 
 \begin{verbatim}
 Section 3.6.4 (p10, 44) states "are Worx-enable are capable". The 
 meaning of this part is not clear, nor to which concept Worx refers.
 \end{verbatim}
 
-We have made clear that Worx is an SDK, which is a development environment, and also completed the explanation of ``Worx-enable application'' by comparing it with the concept of MUSES Aware applications.
+We have rewritten and completed the text in order to make clear that Worx is an SDK, which is a development environment, and also completed the explanation of ``Worx-enable application'' by comparing it with the concept of MUSES Aware applications.
+Thus, in Section 3.6.4 (page 13), we have written:
 
-XenMobile with the development environment called Worx App SDK, made by Citrix Systems, provides BYOD security services to companies using fine-grained policies to prevent users from performing unallowed actions \cite{WorxSDK}. For example using the mobile phone camera, GPS, or microphone. These policies can be turned on or off using its own GUI. Citrix is framework-enabled, and it is aware of the apps installed on the device. All the apps that are Worx-enabled are capable of interacting, and thus offering the user a better experience. This concept is similar to the `MUSES Aware' one, which was mentioned earlier in this section, and consists of adapting the applications to allow communications with the BYOD tools.
+\textit{XenMobile with the development environment called Worx App SDK, made by Citrix Systems, provides BYOD security services to companies using fine-grained policies to prevent users from performing unallowed actions \cite{WorxSDK}. For example using the mobile phone camera, GPS, or microphone. These policies can be turned on or off using its own GUI. Citrix is framework-enabled, and it is aware of the apps installed on the device. All the apps that are Worx-enabled are capable of interacting, and thus offering the user a better experience. This concept is similar to the `MUSES Aware' one, which was mentioned earlier in this section, and consists of adapting the applications to allow communications with the BYOD tools.}
 
 \begin{verbatim}
 Basically, in section 3 the following possibilities for improvement 
 are identified:
 
-1) Explain why particular solutions are chosen for inclusion in review 
-and what is their relevance? Did authors consider other (possible) 
-solutions relying on DM and CI?
+1) Explain why particular solutions are chosen for inclusion in 
+review and what is their relevance? Did authors consider other 
+(possible) solutions relying on DM and CI?
 \end{verbatim}
 
-We understand that this might needed some clarification, so we included two references to web articles. First, to a top 10 of BYOD applications, the most recent we have found, and yet it is from 2013. As consequence, we found that some of the reviewed tools in the website ceased to exist or were acquired by other companies. As the other tools concern, we considered the most important manufacturers, companies, OSs, and devices, with regard to their sales.
+We understand that this might need some clarification, so we have included in the paper two references to web articles. First, to a top 10 of BYOD applications, the most recent we have found, and yet it is from 2013. As a consequence, we found that some of the reviewed tools in the website ceased to exist or were acquired by other companies. As the other tools concern, we considered the most important manufacturers, companies, OSs, and devices, with regard to their sales.
+This has been commented in the manuscript (Section 3, page 6) as:
 
-The products that have been reviewed were chosen either because they have appeared in top-10 web articles \footnote{\url{http://www.networkworld.com/article/2357899/data-center/108866-10-Mobile-Device-Management-Leaders-That-Help-IT-Control-BYOD.html#slide11}}, or they have been developed for the main smartphone platforms \footnote{\url{http://www.idc.com/prodserv/smartphone-os-market-share.jsp}}. Actually, the selection process have been difficult, as some of the initially found tools or companies in the web were bought by others that we do review here. Also, because this market is still growing, there are not many solutions to review, and here we display the ones more alike to MUSES. This section introduces the most relevant features of these products, as they can be considered related to the MUSES objectives.
+\textit{The products that have been reviewed were chosen either because they have appeared in top-10 web articles} \footnote{\url{http://www.networkworld.com/article/2357899/data-center/108866-10-Mobile-Device-Management-Leaders-That-Help-IT-Control-BYOD.html#slide11}}, \textit{or they have been developed for the main smartphone platforms} \footnote{\url{http://www.idc.com/prodserv/smartphone-os-market-share.jsp}}. \textit{Actually, the selection process have been difficult, as some of the initially found tools or companies in the web were bought by others that we do review here. Also, because this market is still growing, there are not many solutions to review, and here we display the ones more alike to MUSES. This section introduces the most relevant features of these products, as they can be considered related to the MUSES objectives.}
 
 \begin{verbatim}
  2) Considering variety of BYOD tools and their different features, 
@@ -355,10 +354,11 @@ classification of those approaches, and state the place of MUSES
 there (or define a new subcategory, if deemed necessary)
 \end{verbatim}
 
-Following the reviewer's suggestion we have introduced a taxonomy for BYOD, according to the works that we have revised in the state of the art (Section 2). Different concepts mentioned in this improved state of the art, such as the hands-off/hand-off differentiation or BYOD best practices, have been taken into account to justify the proposed taxonomy. This taxonomy is described at the beginning of Section 3 (second paragraph, page XX). Then, all the tools, including MUSES, have been classified in the types defined by the taxonomy, and summarized in Table 1.
+Following the reviewer's suggestion we have introduced a taxonomy for BYOD, according to the works that we have revised in the state of the art (Section 2). Different concepts mentioned in this improved state of the art, such as the hands-off/hand-off differentiation or BYOD best practices, have been taken into account to justify the proposed taxonomy. This taxonomy is described at Section 3 (page 7). Then, all the tools, including MUSES, have been classified in the types defined by the taxonomy (along Section 3), and summarized in Table 1.
 % Antonio - completar con el número de página final
 % Antonio - TODO: decir si MUSES y el resto de sistemas se han encuadrado dentro de esa taxonomía
 % FERGU: completado lo de la taxonomia (falta lo de los números de página aún!) TODO
+% Antonio - Al final no se ha dicho dónde se han comentado las propiedades de cada sistema y de MUSES respecto a la texonomía...
 
 \begin{verbatim}
  3) Some presented solutions miss their relationship to MUSES 
@@ -372,7 +372,10 @@ for discussion part bellow.
 
 % [Pedro] traducido e incluido =>  \textcolor{blue}{TODO - justificar que todos los sistemas no tienen las mismas propiedades, pero sí la misma filosofía}
 
-Although not every available system offer the same functionality, and even not all are free, they follow the same philosophy.
+The reviewer is right, but what we have aimed is to compare our tool with the main existing ones with similar purposes.
+We have tried to do a fair comparison, so an improved description of every system, based in a proposed taxonomy, has been done along Section 3. In addition, a much clearer and complete comparison analysis has been conducted in Section 5. We have also included in that section two tables in order to better show the features of every system.
+
+% Antonio - Esta respuesta está regular, pero no se me ocure nada mejor
 
 \begin{verbatim}
 On p.12, l.9-12 authors state that MUSES can be installed in every 
@@ -388,10 +391,13 @@ feature is important differentiator against some other solutions and
 in opinion of this reviewer should be elaborated in more detail.
 \end{verbatim}
 
-We agree and therefore we have included in section 4 that MUSES has been developed for Android, Windows PCs and phones, and that an iOS client is being developed. The same sensors are available in Android and Windows, but there is a strong limitation with monitoring iOS devices if they were not been \textit{jailbroken}. This means that if an iOS device has not been rooted, MUSES could not monitor every proccess in the device, and also it would have access only to some sensors. However, to be rooted is one of the situations that MUSES tries to avoid, which is why it depends on MUSES Aware apps. Thus:
+We agree with the reviewer and therefore we have commented in Section 4 (page 15) that MUSES has been developed for Android, Windows PCs and phones, and that an iOS client is being developed. The same sensors are available in Android and Windows, but there is a strong limitation with monitoring iOS devices if they were not been \textit{jailbroken}. This means that if an iOS device has not been rooted, MUSES could not monitor every process in the device, and also it would have access only to some sensors. However, to be rooted is one of the situations that MUSES tries to avoid, which is why it depends on MUSES Aware apps. 
 
-MUSES client is available up to date to be used in Android devices as well as in Windows mobile devices and PCs; the iOS client is under development. The same sensors are available in Android and Windows, but there is a strong limitation with monitoring iOS devices if they were not been \textit{jailbroken}. This means that if an iOS device has not been rooted, MUSES could not monitor every proccess in the device, and also it would have access only to some sensors. However, to be rooted is one of the situations that MUSES tries to avoid, which is why it depends on MUSES Aware apps. As far as the server is concerned, it has been developed using Java to be installed with an Apache Tomcat in the corporate
-server, independently of its OS. Both sides are connected through a secure channel using HTTPS over the Internet.
+%MUSES client is available up to date to be used in Android devices as well as in Windows mobile devices and PCs; the iOS client is under development. The same sensors are available in Android and Windows, but there is a strong limitation with monitoring iOS devices if they were not been \textit{jailbroken}. This means that if an iOS device has not been rooted, MUSES could not monitor every process in the device, and also it would have access only to some sensors. However, to be rooted is one of the situations that MUSES tries to avoid, which is why it depends on MUSES Aware apps. As far as the server is concerned, it has been developed using Java to be installed with an Apache Tomcat in the corporate
+%server, independently of its OS. Both sides are connected through a secure channel using HTTPS over the Internet.
+
+% Antonio - el texto es lo mismo que se ha puesto en la respuesta.
+% Esperemos que el revisor se conforme, porque no le hemos respondido a sus preguntas completamente...
 
 \begin{verbatim}
 When stating (p.13, l.15-24) that MUSES relies on AES based 
@@ -406,9 +412,9 @@ description of security aspects of their approach. Also please
 see security related comment bellow.
 \end{verbatim}
 
-We agree with the reviewer about this paragraph not being clear, which is why it has been rewritten and clarified. At the end of the introduction of Section 4 (page XX) we have improved the explanation about MUSES data security and authentication, and added a new reference \cite{blasing2010android}.
+We agree with the reviewer about this paragraph not being clear, which is why it has been rewritten and clarified. In the last paragraph of the introduction of Section 4 (page 16) we have improved the explanation about MUSES data security and authentication, and added a new reference \cite{blasing2010android}. The text is:
 
-The MUSES system also performs an authentication process when the user logs in. The MUSES server authenticates to the MUSES client by means of a self-signed certificate. The authentication of the users is based on Spring Security, which is a Java EE framework that provides authentication, authorization and other security features for enterprise applications. When the user connects to the MUSES server for the first time, the MUSES client asks the server for the cerfiticate, wich is sent and installed in the client local database if the user credentials are right. As the user credentials are also stored in the MUSES client local database, the user can also log in to MUSES, and it therefore can apply the Device Policies. With regard to internal data security, MUSES makes use of the advantages that the OSs themselves offer to developers. More concretely, the first prototype for Android includes functionalities provided by the Android Application Sandbox (51). This means that other applications cannot access MUSES data, nor even other developers. The only way to do this is by rooting the device, which is a state that MUSES can detect, and therefore warn about its implications. With regard to the encryption of the rest of the device data, MUSES stands for having a security policy which advices about the installation of existing open source tools \footnote{For instance, \url{https://github.com/neurodroid/cryptonite/blob/master/README.md}}, instead of having an own implementation.
+\textit{The MUSES system also performs an authentication process when the user logs in. The MUSES server authenticates to the MUSES client by means of a self-signed certificate. The authentication of the users is based on Spring Security, which is a Java EE framework that provides authentication, authorization and other security features for enterprise applications. When the user connects to the MUSES server for the first time, the MUSES client asks the server for the certificate, which is sent and installed in the client local database if the user credentials are right. As the user credentials are also stored in the MUSES client local database, the user can also log in to MUSES, and it therefore can apply the Device Policies. With regard to internal data security, MUSES makes use of the advantages that the OSs themselves offer to developers. More concretely, the first prototype for Android includes functionalities provided by the Android Application Sandbox (51). This means that other applications cannot access MUSES data, nor even other developers. The only way to do this is by rooting the device, which is a state that MUSES can detect, and therefore warn about its implications. With regard to the encryption of the rest of the device data, MUSES stands for having a security policy which advices about the installation of existing open source tools \footnote{For instance, \url{https://github.com/neurodroid/cryptonite/blob/master/README.md}}, instead of having an own implementation.}
 
 \begin{verbatim}
 On p.14, l.16-28 authors introduce the concepts of MUSES Aware 
@@ -419,10 +425,10 @@ requirement and related complexity might hinder the adoption of
 the solution.
 \end{verbatim}
 
-We strongly agree and therefore we extended the explanation of the particular concept of MUSES API, in Section 4.1. We agree that this was necessary because the MUSES API is not a typical API which is used for developing part of third party applications. Instead, the MUSES API provides the necessary resources to make those third party applications able to communicate and deeply interact with MUSES. Then:
+The reviewer is right, so we have extended the explanation of the particular concept of MUSES API, in Section 4.1 (page 18). We agree that this was necessary because the MUSES API is not a typical API which is used for developing part of third party applications. Instead, the MUSES API provides the necessary resources to make those third party applications able to communicate and deeply interact with MUSES. Then:
 
-On the one hand, the \textit{MUSES Aware App} is an application adapted to MUSES, so the system can directly interact with it. This application must be implemented using the MUSES API (Application Program Interface). It should be noted that MUSES is an application that is running in the background, and third party apps can communicate with MUSES and ask for a response. Then, the MUSES API is not a normal API for building the third party application, but a collection of methods to allow this communication\footnote{The MUSES API is defined in the project, so for every application desired to be MUSES Aware, it should be implemented using this.}.
-The main advantage of having MUSES Aware applications, is because actuator is able to actually forbid the users for doing something, if it implies a big risk for the company.
+\textit{On the one hand, the \textit{MUSES Aware App} is an application adapted to MUSES, so the system can directly interact with it. This application must be implemented using the MUSES API (Application Program Interface). It should be noted that MUSES is an application that is running in the background, and third party apps can communicate with MUSES and ask for a response. Then, the MUSES API is not a normal API for building the third party application, but a collection of methods to allow this communication\footnote{The MUSES API is defined in the project, so for every application desired to be MUSES Aware, it should be implemented using this.}.}
+\textit{The main advantage of having MUSES Aware applications, is because actuator is able to actually forbid the users for doing something, if it implies a big risk for the company.}
 
 \begin{verbatim}
 On p.17, l.7-9 authors state that the data sets can be huge, 
@@ -433,10 +439,10 @@ and at what rate it grows. Is it really necessary to employ
 Big Data processing?
 \end{verbatim}
 
-The justification for using Big Data techniques has been completed in section 4.3.1 with results of the first MUSES prototype trials. Then, these results have been extrapolated to an example case of a medium sized company, and by considering 6 months as the maximum period for storing the data. This way:
+The justification for using Big Data techniques has been completed in section 4.3.1 (page 21) with results of the first MUSES prototype trials. Then, these results have been extrapolated to an example case of a medium sized company, and by considering 6 months as the maximum period for storing the data. This way:
 
-The set of data is composed by the so-called patterns, which consist of an occurred event and all the related information to that event. This means that the context in which the event was, is translated into a number of \textit{attributes} of the pattern. Moreover, a lot of attributes are extracted from the events, for obtaining the more information as possible. 
-During the first trials, a mean of 201 events per day and user was observed. By considering just a medium size company, of 250 employees, that would make an average of 50300 events per day, of which a high number of features are extracted. Furthermore, if for instance 6 months are considered for the `hard limit' (see previous section), the amount of events to be processed would exponentially grow, until reaching the 9 millon events. For even bigger companies, this all result in huge datasets, so that MUSES makes use of several Big Data processing methods (48), such as: [...]
+\textit{The set of data is composed by the so-called patterns, which consist of an occurred event and all the related information to that event. This means that the context in which the event was, is translated into a number of \textit{attributes} of the pattern. Moreover, a lot of attributes are extracted from the events, for obtaining the more information as possible. 
+During the first trials, a mean of 201 events per day and user was observed. By considering just a medium size company, of 250 employees, that would make an average of 50300 events per day, of which a high number of features are extracted. Furthermore, if for instance 6 months are considered for the `hard limit' (see previous section), the amount of events to be processed would exponentially grow, until reaching the 9 million events. For even bigger companies, this all result in huge datasets, so that MUSES makes use of several Big Data processing methods (48), such as: [...]}
 
 \begin{verbatim}
 On p.18, for two bullets announced under l.46-47 there is not 
@@ -446,31 +452,16 @@ present in the processing. Maybe these bullets could be moved
 into part relating to further work.
 \end{verbatim}
 
-Agreeing with the reviewer, the refinement process inside MUSES has been explained with more detail in Section 4.3. Also, it has been included how the three Evolutionary Computation techniques depend, or not, one from each other. We agree that this is mandatory because is one of the most important features of the system and should be completely clear for the readers. Additionally, the concept of ``server graphical interface'' has been introduced and explained, as it is a tool for the CSO to interact with the system, define rules, consult the system status, and control the rule refinement, among other useful features. Thus:
+Agreeing with the reviewer, the refinement process inside MUSES has been explained with more detail in Section 4.3 (page 20). Also, it has been included (Section 4.3.2, in pages 23-24) how the three Evolutionary Computation techniques depend, or not, one from each other. We agree that this is mandatory because is one of the most important features of the system and should be completely clear for the readers. 
 
-Another important fact is that MUSES functionalities are completed by a human controller, normally the CSO, who supervises the system activity by means of a graphic interface they can interact with. Thus, adapted and inferred security rules are not directly added to the current set of rules, but they are proposed instead as draft rules to this human controller, in order to be accepted if they are interesting and useful. The system also uses the acceptance or rejection of new rules as `feedback`, learning from these decisions, and refining the rules according to this.
+Additionally, the concept of ``server graphical interface'' has been introduced and explained in Section (4.3, page 21), as it is a tool for the CSO to interact with the system, define rules, consult the system status, and control the rule refinement, among other useful features. Thus:
 
-In addition, we added how every information that the Knowledge Refinement System module manages is used by every technique:
+\textit{Another important fact is that MUSES functionalities are completed by a human controller, normally the CSO, who supervises the system activity by means of a graphic interface they can interact with. Thus, adapted and inferred security rules are not directly added to the current set of rules, but they are proposed instead as draft rules to this human controller, in order to be accepted if they are interesting and useful. The system also uses the acceptance or rejection of new rules as `feedback`, learning from these decisions, and refining the rules according to this.}
 
-As the rule refinement process is considered of the same importance as inferring new ones, the following three approaches have been implemented:
+In addition, we clarified how every information that the Knowledge Refinement System module manages is used by every technique in page 24.
 
-\begin{itemize}
+% Antonio - este texto es demasiado largo para que se lo mira aquí,mejor dirigirlo al artículo.
 
-\item A \textit{GP rule inference} method, which generates new rules in order to `cover' those situations that have been not contemplated in the current set of rules. Thus, a new rule would be created for dealing with the patterns to which the classifier could not assign a class.
-The generation of new rules is done by considering the so-called \textit{dictionary}, i.e. a set of terms corresponding to all the possible context situations and user actions in the system, which are the antecedents and consequents \footnote{The antecedents are the conditions of a rule that have to be met to apply the consequents.} of the security rules to be inferred.
-The evaluation of these rules is done by considering the information that has been described. Thus, it is possible to `simulate' the whole system behavior when the new rule is included. Therefore, the system gets a value of its performance in terms of, for instance, how many of the events that were not classified or misclassified, are covered now. As was also mentioned, the user or device trust values influence the creation of the rules.
-Finally, the inferred rules are proposed to the CSO as ``new, but not yet refined'', along with their evaluated performance.
-
-\item A \textit{GP rule refinement} approach, which optimizes the current set of rules, adjusting the values in the conditions. The set of rules that could be refined is composed by the new rules from the GP-based inference, but also by the original set of rules which was already completed by the Data Miner. Thus, some superfluous parts of the rules and even complete rules could be removed or improved, obtaining for instance specializations or generalizations of existing rules which could lead to a better performance.
-The evaluation of the whole set of security rules is done by considering the number of unlabelled patterns that are `covered' after the adjustments. Again, the rules at the end of this step are presented to the CSO as ``refined''. The CSO is the one who decides, according to the performance simulation results, if an inferred rule, or the refined one, is the rule which is finally included in the system.
-
-\item A \textit{GA optimization} algorithm for adapting the values of the assets. These are numerical representations of the importance of the corporate assets, and are considered in the Real-Time Risk and Trust Analysis process, in order to assign a risk value to every potential decision that can be made by the system.
-By evaluating the partial solutions proposed by the GA, this approach provides the CSO, who is in charge of assigning and adjusting these values over time, with information about the most dangerous situations for certain assets. In this process, then, the context information that is gathered by the system is very important.
-The adaptation or adjustment concerns the change in the value that an asset has due to a loss of importance, for instance, for being an out-to-date document.
-
-\end{itemize}
-
-As a summary, the Knowledge Compiler module uses two EC-based processes for inferring and refining rules, plus another one for adjusting values of the assets. Both the inferred rules and the refined rules are presented to the CSO, who includes them or not in the system, and this acceptance or rejection acts itself as a feedback for future rule inference.
 
 \begin{verbatim}
 From the presented concepts behind MUSES and its flows, it
@@ -482,9 +473,11 @@ discover and address new vulnerabilities and threats in the
 software and systems.
 \end{verbatim}
 
-We agree with this, so the way MUSES creates new rules through classification and also refinement, has been better explained in Section 4.3. Also, in section 5 this has been remarked, as well as completed by explaining that the rule creation process is aimed by a risk and trust analysis in real-time. The reviewer can consult the test in the response to the previous statement. Also, of Section 5:
+We agree with this, so the way MUSES creates new rules through classification and also refinement, has been better explained in Section 4.3. Also, in Section 5 this has been remarked, as well as completed by explaining that the rule creation process is aimed by a risk and trust analysis in real-time. The reviewer can consult the test in the response to the previous statement. Also, of Section 5:
 
-Also related to this issue, a very big advantage of the MUSES system that is not present in the other solutions is its self-adaptivity power. The proposed system uses different methods to create new security rules, being their aim to cover new vulnerabilities or threats. Thus, MUSES is able to adapt to changes by applying classification techniques to create new rules, and then refining the whole set of existing policies. Additionally, MUSES is able to discover new threats by a combination of real-time risk and trust analysis plus a classifier trained with all the occurred events in the system.
+\textit{Also related to this issue, a very big advantage of the MUSES system that is not present in the other solutions is its self-adaptivity power. The proposed system uses different methods to create new security rules, being their aim to cover new vulnerabilities or threats. Thus, MUSES is able to adapt to changes by applying classification techniques to create new rules, and then refining the whole set of existing policies. Additionally, MUSES is able to discover new threats by a combination of real-time risk and trust analysis plus a classifier trained with all the occurred events in the system.}
+
+% Antonio - Tampoco sé si le convencerá esta respuesta...
 
 \begin{verbatim}
 Similar applies to human-computer interaction (p.20 l.34). 
@@ -494,10 +487,10 @@ the state of the art should be backed with more (stronger) details
 and data.
 \end{verbatim}
 
-We agree that it was not clear how MUSES contributes to the State of The Art about HCI. Therefore, it has been explained in section 5 how MUSES tries to have an influence in the user bevahiour through the warnings, as long as securing by adaptation of the security rules. Then:
+Following the reviewer's suggestion concerning how MUSES contributes to the State of The Art about HCI, it has been explained in Section 5 (page 28) how MUSES tries to have an influence in the user behavior through the warnings, as long as securing by adaptation of the security rules. Then:
 
-As far as the HCI is concerned, in Section 2 we talked about how it has been demonstrated by Shaw et al. (21) and Herath et al. (22) that the compliance of the employees of a company, with respect to the security policies, increases by educating them and decreases by punishing them. Therefore, the fact that MUSES is focused in avoiding security incidents due to users' unawareness of the ISPs, it sets up a significant advance in the state of the art. This is because not only the incident is avoided, but the user is educated, which at the same time avoids future risky situations.
-With regard to device monitoring, MUSES  also take into account the so-called context observation, by which private or professional scenarios can be detected, or predicted, based on advanced machine learning techniques. Finally, the project is concerned about legal compliance in regards of Information Security Policies, so that it  contributes to the proposal for the EU Data Protection: legal binding force and legal certainty of company policies, and end-user responsibility.
+\textit{As far as the HCI is concerned, in Section 2 we talked about how it has been demonstrated by Shaw et al. (21) and Herath et al. (22) that the compliance of the employees of a company, with respect to the security policies, increases by educating them and decreases by punishing them. Therefore, the fact that MUSES is focused in avoiding security incidents due to users' unawareness of the ISPs, it sets up a significant advance in the state of the art. This is because not only the incident is avoided, but the user is educated, which at the same time avoids future risky situations.
+With regard to device monitoring, MUSES  also take into account the so-called context observation, by which private or professional scenarios can be detected, or predicted, based on advanced machine learning techniques. Finally, the project is concerned about legal compliance in regards of Information Security Policies, so that it  contributes to the proposal for the EU Data Protection: legal binding force and legal certainty of company policies, and end-user responsibility.}
 
 \begin{verbatim}
 This reviewer would also suggest to provide more details on 
@@ -518,8 +511,18 @@ of the system, and also central server and other clients?
 % Antonio - por favor, dí eso mismo al revisor.
 % Dirígelo a la respuesta que sea o repite de otra forma lo mismo.
 
-The reviewer might find answered this comment in this document, in page XX, paragraph YY. 
-In any case, this issue has been faced in the reviewed text (see page ZZ, paragraph TT).
+% Antonio - esto no está respondido. Voy a improvisar algo.
+
+The system we present is mainly based in the interaction through MUSES Aware Apps. These should be secured and could not inject rules, in principle.
+Also the default set of policies provided by the company should take care of the use of non-permitted applications (black and white lists).
+
+Anyway, if a client would be `infected' somehow and the user could perform some malicious actions, the CSO probably could detect them using some of the provided tools for the identification of anomalous, so, this kind of behaviour would be identified.
+
+Moreover, the set of local rules is updated from time to time, as the database of an antivirus, so this could also prevent the use of this kind of malicious applications.
+
+Finally, the set of security rules can only be modified by a superuser (the CSO), by means of a secure and direct interaction with the server database. Even those rules generated or refined by MUSES are not included in the system. They must be approved by the CSO.
+
+So, we think that the scenario that the reviewer is suggesting is not easy to happen.
 
 
 \begin{verbatim}
@@ -577,7 +580,7 @@ the sake of a better text flow and reading.
 3) The structure and flow of the work can be improved.
 \end{verbatim}
 
-We have rewritten several parts of the paper and included new sections, subsections, tables and lists in order to improve the structure, contents and fluency of the text. Moreover, some paragraphs have been also rewritten to avoid large phrases, the inadequate use of parentheses, or the misunderstanding of some concepts.
+We have rewritten several parts of the paper and included new sections, subsections, tables and lists in order to improve the structure, contents and fluency of the text. Moreover, several paragraphs have been also rewritten to avoid large phrases, the inadequate use of parentheses, or the misunderstanding of some concepts.
 % Antonio - Por favor, completad esta justificación mejor.
 
 
