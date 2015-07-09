@@ -84,12 +84,12 @@ As a summary:
 %
 \begin{itemize}
 \item We have described in a more detailed way our previously published papers in this scope (in Section 1), clarifying the differences and contributions of this work with respect to them.
-\item Section 2 has been deeply improved adding a much more complete state of the art in the scope of this work. To this end, several works have been read and commented in that section and along the text.
-% Antonio - TODO: Fergu, completa esto t˙ que tienes la idea global de lo nuevo en el SotA, por favor.
+\item Section 2 has been deeply improved adding a much more complete state of the art in the scope of this work. To this end, several research works have been read and commented in that section and along the text. This has helped us to better compare our system against the other products available in the market. Also, an analysis of the best practices for BYOD have been applied for each product and our system.
+% Antonio - TODO: Fergu, completa esto t˙ que tienes la idea global de lo nuevo en el SotA, por favor. FERGU: Hecho. Metido tambiÈn lo de las best practices
 New references added after the review can be found at the end of this letter.
 
-\item Section 3 has been rewritten in a big part, including a new taxonomy for the analyzed systems at the beginning of the section. Some new tools have been revised and better classified considering the defined taxonomy.
-% Antonio - TODO: extender esto de la secciÛn 3 y 5 un poco m·s.
+\item Section 3 has been rewritten in a big part, including a new taxonomy for the analyzed systems at the beginning of the section. This taxonomy has been created taking into account the expertise extracted from the new references of the state of the art, such as the best practices by Romer \cite{Romer14BestPractices} or the hands-off/hands-on classification by Scarfo et al. \cite{Scarfo12survey}, among others. Furthermore, some new tools have been added, and all the products have been better classified considering the defined taxonomy.
+% Antonio - TODO: extender esto de la secciÛn 3 y 5 un poco m·s. FERGU: Done
 
 \item The description of MUSES system has been also improved. Several points have been clarified and better explained in Section 4. Moreover, a prototype of the system has been tested in an actual company with success, according to the obtained results. This is explained in the new Section 4.4 (page XX), where the results of some trials are presented.
 
@@ -128,7 +128,7 @@ MUSES starts from a defined set of security rules that the CSO must
 define. Ideally, these rules should deal, in principle, with all the
 potential security incidents that the company aims to detect. MUSES
 would be able to define new rules, by means of refinement, which could
-be labelled, i.e. assigned a decision, after the corresponding events
+be labeled, i.e. assigned a decision, after the corresponding events
 have happened. However, it can also infer or create new rules, which
 the CSO must approve, using computational intelligence
 techniques. These rules could deal with unexpected situations, which
@@ -144,12 +144,12 @@ In order to clarify this we have rewritten and completed the second
 paragraph in section 4.1 (page XX). It is now: 
 
 \textit{The client is an important part of the a-priori risk treatment, because it both monitors the whole context, and finally acts or warns the user in event of a security violation. 
-But security violations are mainly identified by security rules, which is why MUSES needs at least an initial set of rules, defined by the CSO. Then, it makes use of DM and CI techniques to improve or optimise them, enhancing the coverage. 
+But security violations are mainly identified by security rules, which is why MUSES needs at least an initial set of rules, defined by the CSO. Then, it makes use of DM and CI techniques to improve or optimize them, enhancing the coverage. 
 That is to say, the more sensors are implemented, the more information related to event context can be extracted. Implementing a sensor means to include a programmed method which triggers MUSES to start `listening' to some parts of a device. Then, the initial security rules establish which situations might cause a security violation, and the sensors provide with information which helps the MUSES server to identify events that are alike to the ones that are already known as dangerous.}
 
 We have also improved this clarification in section 5 (page XX), adding the text:
 
-\textit{However, MUSES presents a limitation regarding the enhancement of rules, since, in principle, it cannot predict (generate rules for dealing with) unexpected or unknown events which could lead to a security incident. The philosophy is that the initial set of rules, defined by the CSO, should be very restrictive regarding possible unexpected users' behaviours or events, in order to avoid as much security incidents as possible. As the system works, MUSES would be able to define new rules (through refinement) which could get an associated decision after the corresponding events have happened. Thus, this will lead to get eventually an optimal set of security rules.}
+\textit{However, MUSES presents a limitation regarding the enhancement of rules, since, in principle, it cannot predict (generate rules for dealing with) unexpected or unknown events which could lead to a security incident. The philosophy is that the initial set of rules, defined by the CSO, should be very restrictive regarding possible unexpected users' behaviors or events, in order to avoid as much security incidents as possible. As the system works, MUSES would be able to define new rules (through refinement) which could get an associated decision after the corresponding events have happened. Thus, this will lead to get eventually an optimal set of security rules.}
 
 \textit{In addition, MUSES can also infer or create new rules using computational intelligence techniques. These rules could deal with unexpected situations (not previously happened), but must be previously approved by the CSO. Of course, everything is constrained by the available set of sensors which, in turn, define the possible information that MUSES will analyze and use in the refinement and inference processes.}
 
@@ -286,12 +286,13 @@ current tools in comparison.
 
 Following reviewer's suggestions, this section has been rewritten, and
 the references mentioned by the referee, including new products, have
-been considered in the study. Tools have been described 
+been considered in the study. The different IBM tools and services have been described 
 (end of Section 3.1, in page XX), and compared to MUSES in Section 5.
 %FERGU: PONED ESTO M√ÅS BONICO!
 % Antonio - ahora est· un poco mejor, pero no sÈ si m·s bonico. Fergu debes justificar el por quÈ se han puesto los tres servicios de IBM, ya que el revisor dice que algunos no est·n relacionados con el tema del trabajo... t˙ que sabes de esto de IBM. ;D
 % Fergu, tambiÈn falta la comparativa con MUSES de esas herramientas (SecciÛn 5)...
 % [Pedro] he cambiado un poco la redacciÛn   ;)
+% FERGU: Bueno, al final estos productos forman parte del "Entorno IBM" en general, que sÌ se ha comparado con MUSES. Paloma ha reescrito tambiÈn la secciÛn y quitado lo que sobraba.
 
 \begin{verbatim}
 In section 3.3 (p.7, sentence in l.18-19) there is provided a
@@ -348,9 +349,10 @@ classification of those approaches, and state the place of MUSES
 there (or define a new subcategory, if deemed necessary)
 \end{verbatim}
 
-Following the reviewer's suggestion we have introduced a taxonomy for the analyzed systems, according to the works that we have revised in the state of the art (Section 2). This taxonomy is described at the beginning of Section 3 (second paragraph, page XX). All the tools have been included in the types defined by the taxonomy.
+Following the reviewer's suggestion we have introduced a taxonomy for BYOD, according to the works that we have revised in the state of the art (Section 2). Different concepts mentioned in this improved state of the art, such as the hands-off/hand-off differentiation or BYOD best practices, have been taken into account to justify the proposed taxonomy. This taxonomy is described at the beginning of Section 3 (second paragraph, page XX). Then, all the tools, including MUSES, have been classified in the types defined by the taxonomy, and summarized in Table 1.
 % Antonio - completar con el n˙mero de p·gina final
 % Antonio - TODO: decir si MUSES y el resto de sistemas se han encuadrado dentro de esa taxonomÌa
+% FERGU: completado lo de la taxonomia (falta lo de los n˙meros de p·gina a˙n!) TODO
 
 \begin{verbatim}
  3) Some presented solutions miss their relationship to MUSES 
@@ -561,7 +563,7 @@ the sake of a better text flow and reading.
 3) The structure and flow of the work can be improved.
 \end{verbatim}
 
-We have rewritten several parts of the paper and included new sections, subsections, tables and lists in order to improve the structure, contents and fluency of the text.
+We have rewritten several parts of the paper and included new sections, subsections, tables and lists in order to improve the structure, contents and fluency of the text. Moreover, some paragraphs have been also rewritten to avoid large phrases, the inadequate use of parentheses, or the misunderstanding of some concepts.
 % Antonio - Por favor, completad esta justificaciÛn mejor.
 
 
