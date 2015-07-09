@@ -569,8 +569,11 @@ As a summary, the Knowledge Compiler module uses two EC-based processes for infe
  Both the inferred rules and the refined rules are presented to the CSO, who includes them or not in the system, and this acceptance or rejection acts itself as a feedback for future rule inference.
 
 
+% ---------------------------------------------------
+
 % Antonio - pongo esto en una sección nueva para que destaque más. Es muy importante para los revisores. Por favor Paloma, revisa si lo que he puesto es correcto (número de usuarios y demás).
-\subsubsection{Trials and tests of MUSES}
+\subsection{Trials and tests of MUSES}
+\label{subsec:trials}
 
 A MUSES first prototype, implemented on Android devices, has been tested recently. These trials have been conducted in an actual Spanish company (a partner in the European Project where the system is being developed), with 50 employees using the system on their own devices.
 The trials were divided in two phases: \textit{silent} and \textit{verbose}, 1 month duration each. During the \textit{silent} phase, MUSES was able to gather data, but without warning the users when a security incident was happening. A total of 23358 security violations were detected. In the \textit{verbose} stage, MUSES started to show warning pop-ups to the users, every time a security incident happened. 
@@ -591,36 +594,37 @@ Table \ref{tab:taxonomy} summarizes the features of the main analyzed tools, wit
 % Antonio - Antares, ¿podrías incluir en la comparativa las otras herramientas que se han analizado? Las de Citrix, WSO2, Azzurri, Good...
 
 \begin{table}[ht]
-
+\begin{footnotesize}
   \centering
-  \renewcommand{\arraystretch}{1.8}% Spread rows out...
-  \resizebox{12cm}{!}{
-  \begin{tabular}{>{\centering\bfseries}m{0.8in} >{\centering}m{0.8in} >{\centering}m{0.8in} >{\centering}m{0.8in} >{\centering}m{0.8in} >{\centering\arraybackslash}m{0.8in}}
+  \renewcommand{\arraystretch}{2.0}% Spread rows out...
+%  \resizebox{12cm}{!}{
+  \begin{tabular}{>{\centering\bfseries}m{0.6in} >{\centering}m{0.6in} >{\centering}m{0.6in} >{\centering}m{0.6in} >{\centering}m{0.6in} >{\centering\arraybackslash}m{0.6in}}
     \toprule
       & \textbf{Offline threat detection method} & \textbf{Updatable database} & \textbf{Standalone} & \textbf{Non-invasive data access} & \textbf{Superuser system control} \\
     \midrule
     MUSES & \cmark & \cmark & \cmark & \cmark & \cmark  \\
-     \arrayrulecolor[gray]{0.8}\hline
+     \arrayrulecolor[gray]{0.6}\hline
     IBM Mobile Security & \xmark & \xmark & \cmark & \xmark & \xmark  \\
-     \arrayrulecolor[gray]{0.8}\hline
+     \arrayrulecolor[gray]{0.6}\hline
     Sophos Mobile Control & \cmark & \xmark & \cmark & \xmark & \xmark \\
-     \arrayrulecolor[gray]{0.8}\hline
+     \arrayrulecolor[gray]{0.6}\hline
     Samsung Knox & \cmark & \nmark & \cmark & \nmark & \cmark\\
-     \arrayrulecolor[gray]{0.8}\hline
+     \arrayrulecolor[gray]{0.6}\hline
      Blackbery Balance & \nmark & \nmark & \cmark & \nmark & \cmark\\
-     \arrayrulecolor[gray]{0.8}\hline
+     \arrayrulecolor[gray]{0.6}\hline
     Blackphone & \nmark & \nmark & \cmark & \cmark & \nmark\\
-     \arrayrulecolor[gray]{0.8}\hline
+     \arrayrulecolor[gray]{0.6}\hline
     Android for Work & \xmark & \xmark & \cmark & \xmark & \cmark\\
     \bottomrule
   \end{tabular}
-  }
-  \caption{Proposed taxonomy to classify the BYOD tools described in this paper.}
+%  }
+\end{footnotesize}
+  \caption{Features of the analyzed tools regarding the proposed taxonomy to classify BYOD systems (see Section \ref{sec:toolsreview}).}
   \label{tab:taxonomy}
 \end{table}
 
 \begin{table}[ht]
-
+\begin{footnotesize}
   \centering
   \renewcommand{\arraystretch}{1.8}% Spread rows out...
 %  \resizebox{8cm}{!}{
@@ -628,7 +632,7 @@ Table \ref{tab:taxonomy} summarizes the features of the main analyzed tools, wit
        \toprule
       & \textbf{License} & \textbf{Devices} & \textbf{Price} \\
        \midrule
-    MUSES & OpenSource &  & Free*  \\
+    MUSES & OpenSource &  & Free  \\
        \arrayrulecolor[gray]{0.8}\hline
     IBM Mobile Security & Proprietary & IOS, Android, Windows Phone, Blackberry  &  By Request\\\\
         \arrayrulecolor[gray]{0.8}\hline
@@ -642,6 +646,7 @@ Table \ref{tab:taxonomy} summarizes the features of the main analyzed tools, wit
        \bottomrule
   \end{tabular}
 %  }
+\end{footnotesize}
   \caption{Features of the analyzed products considering licenses, type of devices and price.}
   \label{tab:features}
 \end{table}
