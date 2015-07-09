@@ -82,19 +82,41 @@ Corporate mobile security \sep End-to-end security solutions \sep User-centric s
 The way how users employ their devices has changed in the past few
 years; even the number of different devices per user is increasing
 because of the so-called Internet of Things
-\cite{weber2010internet}. Thanks to it, users have more flexibility,
-and also at their works, because now they can use their devices to
+\cite{weber2010internet}. Thanks to it, users have more flexibility
+since they can now use their devices to
 access company assets and continue working outside of the
-workplace. To allow this way of working, companies started to adopt
+workplace. To allow this way of working, companies have started to adopt
 what has been called the Bring Your Own Device (BYOD) philosophy. 
 
-Data security and privacy are key factors for a company, and thus, in
+But data security and privacy are key factors for a company, and thus, in
 order to protect them, it is usual that the Chief Security Officer (CSO) of a company defines a set of Organizational Security
-Policies \cite{Opp_Security11}. However, allowing a BYOD environment means to take care of the risks that the use of personal devices can bring to the company \cite{gangula2013survey}. For instance, the mixture between personal and professional information in these devices would allow the user to navigate inside social networks, where important data could be leaked in the event of a security incident. 
+Policies \cite{Opp_Security11}; allowing a BYOD environment implies
+taking care of the risks that the use of personal devices can bring to
+the company \cite{gangula2013survey}. For instance, the mixture
+between personal and professional information in these devices would
+allow the user to navigate inside social networks, where important
+data could be leaked in the event of a security incident.  
 
-In this scenario several solutions have appeared in order to manage corporate security. Most of the solutions are focused for both smartphones and desktop PCs, although some are implemented for a certain platform. However, almost all of them try to be non-intrusive -with regard to users' personal data-, friendly, and easy to use. 
+In this scenario several solutions that manage corporate security have
+appeared. Most of them are geared for both smartphones and desktop
+PCs, although some are implemented only for a certain platform. However,
+almost all of them try to be non-intrusive with regards to users'
+personal data, friendly, and easy to use.
 
-Moreover, it has been demonstrated that employees who ignore company security policies are the main hazard for company security \cite{Adams_Users05}. In this situation, the tools that are appearing in the market aim to cope with the concept of seamless working experience on different devices. This concept is a methodology of work which allows users to start, or continue a working session, over multiple devices and locations, without any significant loss of data. This new situation has a big impact from the point of view of the security \cite{Schu_SecPatterns05}, since company data borders have changed in the last years. Therefore, now the users can access important data from outside the enterprise, and possibly through a non completely secure channel. %Antares - Yo quitaba lo de significant loss of data, ya que significant se repite después.
+Even with the help of those solutions, it has been demonstrated that
+employees who ignore company security policies are the main hazard for
+company security \cite{Adams_Users05}. In this situation, the tools
+that are appearing in the market aim to cope with the concept of
+seamless working experience on different devices. This concept is a
+methodology of work which allows users to start, or continue a working
+session, over multiple devices and locations, without any significant
+loss of data. This new situation has a big impact from the point of
+view of the security \cite{Schu_SecPatterns05}, since company data
+borders have changed in the last years. Therefore, now the users can
+access important data from outside the enterprise, and possibly
+through a non completely secure channel. %Antares - Yo quitaba lo de
+                                %significant loss of data, ya que
+                                %significant se repite después. 
 %Cambiado
 
 This work introduces a recently released system named
@@ -121,7 +143,9 @@ MUSES includes some important modules in its core, %FERGU: no habéis hablado de 
 The general ideas behind MUSES were already presented in
 \cite{DBLP:conf/sac/MoraCGZJEBAH14,DBLP:conf/gecco/MoraCGZE14}. However,
 the implementation was in its early stages when those papers were
-published. Also, an additional work on applying data mining and machine learning techniques was conducted in \cite{mora14:urls}. It presented a study over a dataset similar to those that MUSES manages, but not the same, since the prototype of MUSES had not still been released.
+published. Also, an additional work on applying data mining and
+machine learning techniques was conducted in \cite{mora14:urls}. This
+last paper presented a study over a dataset similar to those that MUSES manages, but not the same, since the prototype of MUSES had not still been released.
 Thus, a set of URL connection logs were provided by a Spanish security company, % [Pedro] quizás decir que es una empresa de seguridad o algo así % Añadido, gracias!
 as well as both black and white lists. These lists contained the URLs that were forbidden, or allowed, to be accessed by the employees. 
 By taking the lists as `rules', and the HTTP connections as `events', a previous simulation of the rule generation through classification, and its results, were presented in that work. % [Pedro] ¿ese "could be" se refiere a verbo en pasado? en ese caso, quizás usar "... was presented at..." % Gracias again
@@ -132,9 +156,18 @@ The first prototype of the MUSES system has recently been tested in an actual co
 Thus, in this paper we present an overview of the main existing solutions in the BYOD environment. Then, a comparison between these tools and MUSES is conducted, focusing on the advances beyond the state of the art that this novel system % [Pedro] esa aclaración y demás yo lo podría más arriba, cuando se definen qué son las siglas de MUSES. % Perfecto, cambiado.
  includes.
 
-The rest of the paper is organized as follows. First, some background situation about enterprise security is presented in Section \ref{sec:preliminaryconcepts}, explaining how BYOD philosophy affects it. The main solutions or tools are detailed in Section \ref{sec:toolsreview}, even if they are still in development.  
-Section \ref{sec:muses} presents the Multi-platform Usable Endpoint Security System, with its architecture and the soft computing techniques it makes uses of. Advantages and benefits of the proposed system are compared to other solutions found in bibliography in Section \ref{sec:comparison}.
-Finally, the reached conclusions are discussed in Section \ref{sec:conclusions}, followed by future work.
+The rest of the paper is organized as follows. First, some background
+material about enterprise security is presented in Section
+\ref{sec:preliminaryconcepts}, explaining how the BYOD philosophy
+affects it. The main solutions or tools available or in development
+are detailed in Section \ref{sec:toolsreview}.
+Section \ref{sec:muses} presents the Multi-platform Usable Endpoint
+Security System, with its architecture and the soft computing
+techniques it makes uses of. Advantages and benefits of the proposed
+system are compared to other solutions found in bibliography in
+Section \ref{sec:comparison}. 
+Finally, the reached conclusions are discussed in Section
+\ref{sec:conclusions}, followed by future work. 
 
 
 %----------------------------------------------------------------------------
